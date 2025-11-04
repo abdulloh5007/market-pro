@@ -1,0 +1,32 @@
+{
+  "hello": "Здравствуйте!",
+  "welcome": "Добро пожаловать в Uzum Market",
+  "description": "Лучший онлайн-маркетплейс в Узбекистане",
+  "cta": "Начать покупки",
+  "header": {
+    "profile": "Профиль",
+    "favorites": "Избранное",
+    "cart": "Корзина",
+    "search_placeholder": "Искать товары и категории",
+    "search_button": "Начать поиск",
+    "search": "Поиск",
+    "no_items": "0 товаров",
+    "one_item": "1 товар"
+  },
+  "footer": {
+    "about_us": "О нас",
+    "pickup_points": "Пункты выдачи заказов",
+    "vacancies": "Вакансии",
+    "for_users": "Пользователям",
+    "contact_us": "Связаться с нами",
+    "faq": "Часто задаваемые вопросы",
+    "for_entrepreneurs": "Для предпринимателей",
+    "sell_on_uzum": "Продавайте на Uzum",
+    "seller_login": "Вход для продавцов",
+    "open_pickup_point": "Открыть пункт выдачи",
+    "social_media": "Мы в соцсетях",
+    "privacy_policy": "Соглашение о конфиденциальности",
+    "terms_of_use": "Пользовательское соглашение",
+    "copyright": "©{currentYear} ООО «UZUM MARKET». Все права защищены"
+  }
+}

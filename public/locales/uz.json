@@ -1,0 +1,32 @@
+{
+  "hello": "Salom!",
+  "welcome": "Uzum Marketga xush kelibsiz",
+  "description": "Oʻzbekistondagi eng yaxshi onlayn bozor",
+  "cta": "Hozir xarid qilish",
+  "header": {
+    "profile": "Profil",
+    "favorites": "Sevimlilar",
+    "cart": "Savatcha",
+    "search_placeholder": "Mahsulotlar va toifalarni qidirish",
+    "search_button": "Qidiruvni boshlash",
+    "search": "Qidiruv",
+    "no_items": "0 ta mahsulot",
+    "one_item": "1 ta mahsulot"
+  },
+  "footer": {
+    "about_us": "Biz haqimizda",
+    "pickup_points": "Buyurtmalarni tarqatish punktlari",
+    "vacancies": "Vakansiyalar",
+    "for_users": "Foydalanuvchilarga",
+    "contact_us": "Biz bilan bog'lanish",
+    "faq": "Ko'p beriladigan savollar",
+    "for_entrepreneurs": "Tadbirkorlarga",
+    "sell_on_uzum": "Uzumda soting",
+    "seller_login": "Sotuvchilar uchun kirish",
+    "open_pickup_point": "Buyurtmalarni tarqatish punktini ochish",
+    "social_media": "Biz ijtimoiy tarmoqlarda",
+    "privacy_policy": "Maxfiylik siyosati",
+    "terms_of_use": "Foydalanish shartlari",
+    "copyright": "©{currentYear} «UZUM MARKET» MChJ. Barcha huquqlar himoyalangan"
+  }
+}
