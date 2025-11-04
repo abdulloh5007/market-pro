@@ -6,10 +6,11 @@ import type { Locale } from "@/lib/i18n/config";
 import { LanguageSwitcher } from "../[lang]/(components)/LanguageSwitcher";
 import { ThemeSwitcher } from "../[lang]/(components)/ThemeSwitcher";
 
-const navActions = [
+// @ts-ignore
+const navActions = (dictionary) => [
   {
     label: "Ergashev",
-    description: "Профиль",
+    description: dictionary.profile,
     href: "#profile",
     icon: (
       <svg
@@ -30,8 +31,8 @@ const navActions = [
     ),
   },
   {
-    label: "Избранное",
-    description: "0 товаров",
+    label: dictionary.favorites,
+    description: dictionary.no_items,
     href: "#favorites",
     icon: (
       <svg
@@ -52,8 +53,8 @@ const navActions = [
     ),
   },
   {
-    label: "Корзина",
-    description: "1 товар",
+    label: dictionary.cart,
+    description: dictionary.one_item,
     href: "#cart",
     icon: (
       <svg
@@ -84,10 +85,13 @@ const navActions = [
 
 type HeaderProps = {
   locale: Locale;
+  // @ts-ignore
+  dictionary: any;
 };
 
-export function Header({ locale }: HeaderProps) {
+export function Header({ locale, dictionary }: HeaderProps) {
   const [query, setQuery] = useState("");
+  const actions = navActions(dictionary.header);
 
   return (
     <header className="border-b border-neutral-100 bg-white dark:border-neutral-800 dark:bg-neutral-900">
@@ -111,13 +115,13 @@ export function Header({ locale }: HeaderProps) {
               type="search"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              placeholder="Искать товары и категории"
+              placeholder={dictionary.header.search_placeholder}
               className="w-full rounded-xl border border-neutral-200 bg-neutral-50 py-3 pl-4 pr-12 text-sm text-neutral-700 shadow-sm focus:outline-none dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:placeholder:text-neutral-500"
             />
             <button
               type="submit"
               className="absolute right-1 top-1 flex h-9 w-9 items-center justify-center rounded-lg bg-neutral-100 text-neutral-500 dark:bg-neutral-700 dark:text-neutral-400"
-              aria-label="Начать поиск"
+              aria-label={dictionary.header.search_button}
             >
               <svg
                 width="18"
@@ -144,7 +148,7 @@ export function Header({ locale }: HeaderProps) {
           <button
             type="button"
             className="flex h-11 w-11 items-center justify-center rounded-xl border border-neutral-200 text-neutral-500 dark:border-neutral-700 dark:text-neutral-400 md:hidden"
-            aria-label="Поиск"
+            aria-label={dictionary.header.search}
           >
             <svg
               width="20"
@@ -168,7 +172,7 @@ export function Header({ locale }: HeaderProps) {
           </button>
 
           <nav className="ml-auto flex flex-wrap items-center gap-5">
-            {navActions.map((action) => (
+            {actions.map((action) => (
               <Link
                 key={action.label}
                 href={action.href}
@@ -181,7 +185,7 @@ export function Header({ locale }: HeaderProps) {
                   <span className="text-[13px] font-semibold text-neutral-800 dark:text-neutral-200">{action.label}</span>
                   <span className="text-xs text-neutral-500 dark:text-neutral-400">{action.description}</span>
                 </span>
-                {action.label === "Корзина" && (
+                {action.label === dictionary.header.cart && (
                   <span className="ml-1 inline-flex h-5 items-center rounded-full bg-[#5e28d1] px-2 text-[11px] font-semibold text-white dark:bg-[#8b5cf6]">
                     1
                   </span>
@@ -201,4 +205,3 @@ export function Header({ locale }: HeaderProps) {
     </header>
   );
 }
-

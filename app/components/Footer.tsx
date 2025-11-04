@@ -1,26 +1,27 @@
 import Link from "next/link";
 
-const footerColumns = [
+// @ts-ignore
+const footerColumns = (dictionary) => [
   {
-    title: "О нас",
+    title: dictionary.about_us,
     links: [
-      { label: "Пункты выдачи заказов", href: "#pickup" },
-      { label: "Вакансии", href: "#careers" },
+      { label: dictionary.pickup_points, href: "#pickup" },
+      { label: dictionary.vacancies, href: "#careers" },
     ],
   },
   {
-    title: "Пользователям",
+    title: dictionary.for_users,
     links: [
-      { label: "Связаться с нами", href: "#contact" },
-      { label: "Часто задаваемые вопросы", href: "#faq" },
+      { label: dictionary.contact_us, href: "#contact" },
+      { label: dictionary.faq, href: "#faq" },
     ],
   },
   {
-    title: "Для предпринимателей",
+    title: dictionary.for_entrepreneurs,
     links: [
-      { label: "Продавайте на Uzum", href: "#sell" },
-      { label: "Вход для продавцов", href: "#login" },
-      { label: "Открыть пункт выдачи", href: "#open-point" },
+      { label: dictionary.sell_on_uzum, href: "#sell" },
+      { label: dictionary.seller_login, href: "#login" },
+      { label: dictionary.open_pickup_point, href: "#open-point" },
     ],
   },
 ];
@@ -93,13 +94,16 @@ function renderIcon(name: string) {
   }
 }
 
-export function Footer() {
+// @ts-ignore
+export function Footer({ dictionary }) {
   const currentYear = new Date().getFullYear();
+  const columns = footerColumns(dictionary.footer);
+
   return (
     <footer className="mt-auto bg-[#f7f8fa] text-sm text-neutral-600 dark:bg-neutral-950 dark:text-neutral-400">
       <div className="mx-auto w-full max-w-6xl px-4 py-12 md:px-6">
         <div className="grid gap-10 md:grid-cols-5">
-          {footerColumns.map((column) => (
+          {columns.map((column) => (
             <div key={column.title} className="space-y-4">
               <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">{column.title}</h3>
               <ul className="space-y-2.5 text-sm text-neutral-600 dark:text-neutral-400">
@@ -120,7 +124,7 @@ export function Footer() {
           <div className="hidden md:block" />
 
           <div className="space-y-4">
-            <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">Мы в соцсетях</h3>
+            <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">{dictionary.footer.social_media}</h3>
             <div className="flex flex-wrap gap-3">
               {socialLinks.map((social) => (
                 <a
@@ -141,18 +145,17 @@ export function Footer() {
         <div className="mt-12 flex flex-col gap-4 border-t border-neutral-200 pt-6 text-xs text-neutral-500 dark:border-neutral-800 dark:text-neutral-400 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-wrap gap-x-6 gap-y-2">
             <Link href="#privacy" className="hover:text-purple-600 hover:underline dark:hover:text-purple-400">
-              Соглашение о конфиденциальности
+              {dictionary.footer.privacy_policy}
             </Link>
             <Link href="#terms" className="hover:text-purple-600 hover:underline dark:hover:text-purple-400">
-              Пользовательское соглашение
+              {dictionary.footer.terms_of_use}
             </Link>
           </div>
           <p className="text-[11px] text-neutral-400 dark:text-neutral-500 sm:text-xs">
-            ©{currentYear} ООО «UZUM MARKET». Все права защищены
+            {dictionary.footer.copyright.replace("{currentYear}", currentYear.toString())}
           </p>
         </div>
       </div>
     </footer>
   );
 }
-
