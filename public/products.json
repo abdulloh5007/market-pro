@@ -1,0 +1,533 @@
+{
+  "electronics": [
+    {
+      "category": "smartphones",
+      "products": [
+        {
+          "id": "e1_s1",
+          "name": "Samsung Galaxy S23 Ultra",
+          "description": "Powerful smartphone with advanced camera system.",
+          "price": 1200,
+          "quantity": 50,
+          "discount": 10,
+          "memory": "256GB",
+          "color": "Phantom Black",
+          "photos": ["/images/electronics/s23_ultra_black.png", "/images/electronics/s23_ultra_front.png"],
+          "model": "Galaxy S23 Ultra",
+          "rating": 4.8,
+          "comments": [
+            {
+              "user": "Alice",
+              "text": "Amazing phone, camera is incredible!",
+              "date": "2023-10-26"
+            },
+            {
+              "user": "Bob",
+              "text": "A bit pricey, but worth every penny.",
+              "date": "2023-10-20"
+            }
+          ]
+        },
+        {
+          "id": "e1_s2",
+          "name": "iPhone 15 Pro Max",
+          "description": "Latest iPhone with A17 Bionic chip.",
+          "price": 1300,
+          "quantity": 70,
+          "discount": null,
+          "memory": "512GB",
+          "color": "Titanium Blue",
+          "photos": ["/images/electronics/iphone15_blue.png", "/images/electronics/iphone15_back.png"],
+          "model": "iPhone 15 Pro Max",
+          "rating": 4.9,
+          "comments": [
+            {
+              "user": "Charlie",
+              "text": "Fast and smooth, battery life is great.",
+              "date": "2023-11-01"
+            },
+            {
+              "user": "David",
+              "text": "Love the new design and camera improvements.",
+              "date": "2023-10-28"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "laptops",
+      "products": [
+        {
+          "id": "e2_l1",
+          "name": "MacBook Air M2",
+          "description": "Thin and light laptop with M2 chip.",
+          "price": 1100,
+          "quantity": 30,
+          "discount": 5,
+          "memory": "8GB RAM, 256GB SSD",
+          "model": "MacBook Air",
+          "photos": ["/images/electronics/macbook_air.png", "/images/electronics/macbook_air_open.png"],
+          "rating": 4.7,
+          "comments": [
+            {
+              "user": "Eve",
+              "text": "Perfect for everyday tasks and very portable.",
+              "date": "2023-09-15"
+            },
+            {
+              "user": "Frank",
+              "text": "Great battery life, but 8GB RAM can be limiting for heavy use.",
+              "date": "2023-09-10"
+            }
+          ]
+        },
+        {
+          "id": "e2_l2",
+          "name": "Dell XPS 15",
+          "description": "High-performance laptop for professionals.",
+          "price": 1800,
+          "quantity": 20,
+          "discount": null,
+          "memory": "16GB RAM, 512GB SSD",
+          "model": "XPS 15",
+          "photos": ["/images/electronics/dell_xps.png", "/images/electronics/dell_xps_keyboard.png"],
+          "rating": 4.6,
+          "comments": [
+            {
+              "user": "Grace",
+              "text": "Powerful machine, excellent display.",
+              "date": "2023-10-05"
+            },
+            {
+              "user": "Heidi",
+              "text": "Gets a bit warm under heavy load, but overall very good.",
+              "date": "2023-09-28"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "airpods",
+      "products": [
+        {
+          "id": "e3_a1",
+          "name": "AirPods Pro 2nd Gen",
+          "description": "Active Noise Cancellation and Adaptive Transparency.",
+          "price": 249,
+          "quantity": 100,
+          "discount": null,
+          "model": "AirPods Pro 2",
+          "photos": ["/images/electronics/airpods_pro2.png", "/images/electronics/airpods_pro2_case.png"],
+          "rating": 4.7,
+          "comments": [
+            {
+              "user": "Ivan",
+              "text": "Noise cancellation is superb!",
+              "date": "2023-11-03"
+            },
+            {
+              "user": "Judy",
+              "text": "Comfortable fit and great sound quality.",
+              "date": "2023-10-30"
+            }
+          ]
+        },
+        {
+          "id": "e3_a2",
+          "name": "AirPods 3rd Gen",
+          "description": "Spatial Audio with dynamic head tracking.",
+          "price": 179,
+          "quantity": 80,
+          "discount": 15,
+          "model": "AirPods 3",
+          "photos": ["/images/electronics/airpods3.png", "/images/electronics/airpods3_case.png"],
+          "rating": 4.5,
+          "comments": [
+            {
+              "user": "Karl",
+              "text": "Good sound, but I miss the active noise cancellation.",
+              "date": "2023-09-25"
+            },
+            {
+              "user": "Liam",
+              "text": "Perfect for casual listening and calls.",
+              "date": "2023-09-20"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "clothes": [
+    {
+      "category": "headwear",
+      "products": [
+        {
+          "id": "c1_h1",
+          "name": "Baseball Cap",
+          "description": "Classic cotton baseball cap.",
+          "price": 20,
+          "quantity": 150,
+          "discount": null,
+          "photos": ["/images/clothes/cap_blue.png", "/images/clothes/cap_red.png"],
+          "rating": 4.2,
+          "comments": [
+            {
+              "user": "Mia",
+              "text": "Comfortable and stylish, good for sunny days.",
+              "date": "2023-08-10"
+            }
+          ]
+        },
+        {
+          "id": "c1_h2",
+          "name": "Beanie Hat",
+          "description": "Warm knitted beanie for winter.",
+          "price": 25,
+          "quantity": 120,
+          "discount": 5,
+          "photos": ["/images/clothes/beanie_black.png", "/images/clothes/beanie_grey.png"],
+          "rating": 4.5,
+          "comments": [
+            {
+              "user": "Noah",
+              "text": "Very warm and soft, perfect for cold weather.",
+              "date": "2023-10-15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "clothing",
+      "products": [
+        {
+          "id": "c2_c1",
+          "name": "Men's T-Shirt",
+          "description": "Comfortable cotton t-shirt.",
+          "price": 30,
+          "quantity": 200,
+          "discount": null,
+          "size": ["S", "M", "L", "XL"],
+          "color": ["White", "Black", "Blue"],
+          "photos": ["/images/clothes/tshirt_white.png", "/images/clothes/tshirt_black.png"],
+          "rating": 4.3,
+          "comments": [
+            {
+              "user": "Olivia",
+              "text": "Good quality for the price.",
+              "date": "2023-07-20"
+            }
+          ]
+        },
+        {
+          "id": "c2_c2",
+          "name": "Women's Jeans",
+          "description": "Stylish slim-fit jeans.",
+          "price": 70,
+          "quantity": 100,
+          "discount": 10,
+          "size": ["XS", "S", "M", "L"],
+          "color": ["Blue", "Dark Blue"],
+          "photos": ["/images/clothes/jeans_blue.png", "/images/clothes/jeans_darkblue.png"],
+          "rating": 4.6,
+          "comments": [
+            {
+              "user": "Peter",
+              "text": "Fits perfectly and looks great!",
+              "date": "2023-08-01"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "underwear",
+      "products": [
+        {
+          "id": "c3_u1",
+          "name": "Men's Boxer Briefs",
+          "description": "Soft and breathable boxer briefs.",
+          "price": 15,
+          "quantity": 300,
+          "discount": null,
+          "size": ["M", "L", "XL"],
+          "photos": ["/images/clothes/boxers_black.png", "/images/clothes/boxers_grey.png"],
+          "rating": 4.0,
+          "comments": [
+            {
+              "user": "Quinn",
+              "text": "Comfortable, but could be softer.",
+              "date": "2023-06-10"
+            }
+          ]
+        },
+        {
+          "id": "c3_u2",
+          "name": "Women's Bra",
+          "description": "Comfortable everyday bra.",
+          "price": 25,
+          "quantity": 180,
+          "discount": null,
+          "size": ["S", "M", "L"],
+          "photos": ["/images/clothes/bra_beige.png", "/images/clothes/bra_black.png"],
+          "rating": 4.4,
+          "comments": [
+            {
+              "user": "Rachel",
+              "text": "Good support and comfortable for daily wear.",
+              "date": "2023-07-05"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "footwear",
+      "products": [
+        {
+          "id": "c4_f1",
+          "name": "Sneakers",
+          "description": "Sporty and comfortable sneakers.",
+          "price": 80,
+          "quantity": 90,
+          "discount": 10,
+          "size": ["38", "39", "40", "41", "42", "43", "44"],
+          "photos": ["/images/clothes/sneakers_white.png", "/images/clothes/sneakers_black.png"],
+          "rating": 4.5,
+          "comments": [
+            {
+              "user": "Sam",
+              "text": "Very comfortable for walking and light sports.",
+              "date": "2023-09-01"
+            }
+          ]
+        },
+        {
+          "id": "c4_f2",
+          "name": "Sandals",
+          "description": "Lightweight summer sandals.",
+          "price": 40,
+          "quantity": 110,
+          "discount": null,
+          "size": ["36", "37", "38", "39", "40"],
+          "photos": ["/images/clothes/sandals_brown.png", "/images/clothes/sandals_black.png"],
+          "rating": 4.1,
+          "comments": [
+            {
+              "user": "Tina",
+              "text": "Perfect for the beach, good value.",
+              "date": "2023-07-15"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sport": [
+    {
+      "category": "barbells",
+      "products": [
+        {
+          "id": "s1_b1",
+          "name": "Standard Barbell Set",
+          "description": "Includes barbell and weight plates.",
+          "price": 150,
+          "quantity": 25,
+          "discount": null,
+          "photos": ["/images/sport/barbell_set.png", "/images/sport/barbell_plates.png"],
+          "rating": 4.3,
+          "comments": [
+            {
+              "user": "Uma",
+              "text": "Solid set for home workouts.",
+              "date": "2023-08-20"
+            }
+          ]
+        },
+        {
+          "id": "s1_b2",
+          "name": "Olympic Barbell",
+          "description": "High-quality Olympic barbell for serious lifters.",
+          "price": 200,
+          "quantity": 15,
+          "discount": 10,
+          "photos": ["/images/sport/olympic_barbell.png", "/images/sport/olympic_barbell_detail.png"],
+          "rating": 4.7,
+          "comments": [
+            {
+              "user": "Victor",
+              "text": "Excellent grip and balance.",
+              "date": "2023-09-05"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "treadmills",
+      "products": [
+        {
+          "id": "s2_t1",
+          "name": "Folding Treadmill",
+          "description": "Compact and easy to store treadmill.",
+          "price": 500,
+          "quantity": 10,
+          "discount": null,
+          "photos": ["/images/sport/treadmill_folding.png", "/images/sport/treadmill_folded.png"],
+          "rating": 4.0,
+          "comments": [
+            {
+              "user": "Wendy",
+              "text": "Good for small spaces, a bit noisy.",
+              "date": "2023-10-01"
+            }
+          ]
+        },
+        {
+          "id": "s2_t2",
+          "name": "Professional Treadmill",
+          "description": "Durable treadmill with multiple programs.",
+          "price": 1200,
+          "quantity": 5,
+          "discount": null,
+          "photos": ["/images/sport/treadmill_pro.png", "/images/sport/treadmill_display.png"],
+          "rating": 4.8,
+          "comments": [
+            {
+              "user": "Xavier",
+              "text": "Gym-quality treadmill, very sturdy.",
+              "date": "2023-10-25"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "jump_ropes",
+      "products": [
+        {
+          "id": "s3_j1",
+          "name": "Speed Jump Rope",
+          "description": "Adjustable jump rope for speed training.",
+          "price": 15,
+          "quantity": 200,
+          "discount": null,
+          "photos": ["/images/sport/jump_rope_speed.png", "/images/sport/jump_rope_handle.png"],
+          "rating": 4.2,
+          "comments": [
+            {
+              "user": "Yara",
+              "text": "Lightweight and fast, great for cardio.",
+              "date": "2023-07-10"
+            }
+          ]
+        },
+        {
+          "id": "s3_j2",
+          "name": "Weighted Jump Rope",
+          "description": "Heavy jump rope for strength and endurance.",
+          "price": 25,
+          "quantity": 100,
+          "discount": null,
+          "photos": ["/images/sport/jump_rope_weighted.png", "/images/sport/jump_rope_thick.png"],
+          "rating": 4.5,
+          "comments": [
+            {
+              "user": "Zack",
+              "text": "Adds a good challenge to my workouts.",
+              "date": "2023-08-05"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "books": [
+    {
+      "category": "programming",
+      "products": [
+        {
+          "id": "b1_p1",
+          "name": "Clean Code",
+          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "price": 40,
+          "quantity": 60,
+          "discount": null,
+          "photos": ["/images/books/clean_code.png", "/images/books/clean_code_back.png"],
+          "rating": 4.9,
+          "comments": [
+            {
+              "user": "Anna",
+              "text": "A must-read for every developer.",
+              "date": "2023-09-18"
+            },
+            {
+              "user": "Ben",
+              "text": "Changed the way I write code.",
+              "date": "2023-09-10"
+            }
+          ]
+        },
+        {
+          "id": "b1_p2",
+          "name": "The Pragmatic Programmer",
+          "description": "Your Journey To Mastery by David Thomas and Andrew Hunt.",
+          "price": 35,
+          "quantity": 80,
+          "discount": 5,
+          "photos": ["/images/books/pragmatic_programmer.png", "/images/books/pragmatic_programmer_inside.png"],
+          "rating": 4.8,
+          "comments": [
+            {
+              "user": "Chloe",
+              "text": "Full of practical advice.",
+              "date": "2023-10-02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "science",
+      "products": [
+        {
+          "id": "b2_s1",
+          "name": "Cosmos",
+          "description": "Carl Sagan's classic exploration of the universe.",
+          "price": 25,
+          "quantity": 100,
+          "discount": null,
+          "photos": ["/images/books/cosmos.png", "/images/books/cosmos_cover.png"],
+          "rating": 4.7,
+          "comments": [
+            {
+              "user": "Daniel",
+              "text": "A truly inspiring book.",
+              "date": "2023-08-25"
+            }
+          ]
+        },
+        {
+          "id": "b2_s2",
+          "name": "Sapiens: A Brief History of Humankind",
+          "description": "Yuval Noah Harari's groundbreaking book on human history.",
+          "price": 30,
+          "quantity": 90,
+          "discount": null,
+          "photos": ["/images/books/sapiens.png", "/images/books/sapiens_back.png"],
+          "rating": 4.6,
+          "comments": [
+            {
+              "user": "Ella",
+              "text": "Thought-provoking and well-written.",
+              "date": "2023-09-08"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -13,6 +13,23 @@
     "no_items": "0 товаров",
     "one_item": "1 товар"
   },
+  "topRatedProducts": "Топ рейтинга",
+  "currency": "сум",
+  "addToCart": "В корзину",
+  "features": {
+    "installment": {
+      "title": "Рассрочка без переплаты",
+      "description": "Оформите покупку в рассрочку на выгодных условиях"
+    },
+    "support": {
+      "title": "Поддержка 24/7",
+      "description": "Наша команда всегда готова помочь вам в любое время"
+    },
+    "returns": {
+      "title": "Удобный возврат",
+      "description": "Легкий возврат товара в течение 14 дней"
+    }
+  },
   "footer": {
     "about_us": "О нас",
     "pickup_points": "Пункты выдачи заказов",
@@ -27,6 +44,27 @@
     "social_media": "Мы в соцсетях",
     "privacy_policy": "Соглашение о конфиденциальности",
     "terms_of_use": "Пользовательское соглашение",
-    "copyright": "©{currentYear} ООО «UZUM MARKET». Все права защищены"
+    "copyright": "©{currentYear} ООО «MARKET». Все права защищены"
+  },
+  "categories": {
+    "electronics": "Электроника",
+    "clothes": "Одежда",
+    "sport": "Спорт",
+    "books": "Книги"
+  },
+  "product": {
+    "home": "Главная",
+    "model": "Модель",
+    "memory": "Память",
+    "color": "Цвет",
+    "quantity": "В наличии",
+    "items": "шт.",
+    "outOfStock": "Нет в наличии",
+    "description": "Описание",
+    "reviews": "Отзывы",
+    "addedToCart": "Товар добавлен в корзину",
+    "notFound": "Товар не найден",
+    "notFoundDescription": "К сожалению, запрашиваемый товар не существует или был удален.",
+    "backToHome": "Вернуться на главную"
   }
 }

@@ -168,7 +168,7 @@ export function HeroCarousel() {
       {/* Navigation Buttons */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/20 text-white shadow-lg backdrop-blur-sm transition hover:bg-white/40 dark:bg-white/20 dark:text-white dark:hover:bg-white/40"
+        className="absolute left-4 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/20 text-white shadow-lg backdrop-blur-sm transition hover:bg-white/40 dark:bg-white/20 dark:text-white dark:hover:bg-white/40 hidden sm:flex"
         aria-label="Previous slide"
       >
         <svg
@@ -190,7 +190,7 @@ export function HeroCarousel() {
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/20 text-white shadow-lg backdrop-blur-sm transition hover:bg-white/40 dark:bg-white/20 dark:text-white dark:hover:bg-white/40"
+        className="absolute right-4 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/20 text-white shadow-lg backdrop-blur-sm transition hover:bg-white/40 dark:bg-white/20 dark:text-white dark:hover:bg-white/40 hidden sm:flex"
         aria-label="Next slide"
       >
         <svg

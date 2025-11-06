@@ -14,6 +14,51 @@ const languageLabels: Record<Locale, string> = {
   ru: "Русский",
 };
 
+function FlagIcon({ locale, className }: { locale: Locale; className?: string }) {
+  switch (locale) {
+    case "uz":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 1000 500"
+          className={className}
+        >
+          <rect width="1000" height="500" fill="#0072CE" />
+          <rect y="166.66" width="1000" height="166.68" fill="#FFFFFF" />
+          <rect y="333.34" width="1000" height="166.66" fill="#43B02A" />
+          <circle cx="200" cy="83.33" r="60" fill="#FFFFFF" />
+          <circle cx="220" cy="83.33" r="60" fill="#0072CE" />
+          <g fill="#FFFFFF" transform="translate(300, 83.33) scale(2.5)">
+            <g id="star">
+              <path d="M 0,-30 L 8.8, -10 L 28.5, -9.2 L 13.8, 4.8 L 17.6, 24.3 L 0, 14.8 L -17.6, 24.3 L -13.8, 4.8 L -28.5, -9.2 L -8.8, -10 Z" />
+            </g>
+            <use href="#star" transform="translate(40,0)" />
+            <use href="#star" transform="translate(80,0)" />
+            <use href="#star" transform="translate(120,0)" />
+          </g>
+        </svg>
+      );
+    case "ru":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 9 6"
+          className={className}
+        >
+          <path d="m0 0h9v2H0" fill="#fff" />
+          <path d="m0 2h9v2H0" fill="#0039a6" />
+          <path d="m0 4h9v2H0" fill="#d52b1e" />
+        </svg>
+      );
+    default:
+      return null;
+  }
+}
+
 export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
   const router = useRouter();
   const pathname = usePathname();
@@ -58,13 +103,10 @@ export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex h-11 items-center gap-2 rounded-xl border border-neutral-200 px-4 text-sm font-medium text-neutral-600 transition hover:bg-neutral-50 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800"
+        className="flex h-11 items-center gap-2.5 rounded-xl border border-neutral-200 px-4 text-sm font-medium text-neutral-600 transition hover:bg-neutral-50 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800"
         aria-label="Выбрать язык"
       >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.6" />
-          <path d="M3 12h18M12 3c2.5 3 2.5 9 0 18M12 3c-2.5 3-2.5 9 0 18" stroke="currentColor" strokeWidth="1.6" />
-        </svg>
+        <FlagIcon locale={currentLocale} className="h-5 w-5 rounded-full" />
         <span className="uppercase">{currentLocale}</span>
         <svg
           width="14"
@@ -73,26 +115,31 @@ export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
           fill="currentColor"
           className={`transition-transform ${isOpen ? "rotate-180" : ""}`}
         >
-          <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+          <path
+            fillRule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clipRule="evenodd"
+          />
         </svg>
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 top-14 z-50 min-w-[160px] rounded-2xl border border-neutral-200 bg-white p-2 shadow-lg dark:border-neutral-700 dark:bg-neutral-800">
+        <div className="absolute right-0 top-14 z-50 min-w-[180px] rounded-2xl border border-neutral-200 bg-white p-2 shadow-lg dark:border-neutral-700 dark:bg-neutral-800">
           {SUPPORTED_LOCALES.map((locale) => (
             <button
               key={locale}
               onClick={() => handleLocaleChange(locale)}
-              className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-sm transition ${
+              className={`flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-sm transition ${
                 locale === currentLocale
                   ? "bg-purple-50 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400"
                   : "text-neutral-700 hover:bg-neutral-50 dark:text-neutral-300 dark:hover:bg-neutral-700"
               }`}
             >
+              <FlagIcon locale={locale} className="h-5 w-5 flex-shrink-0 rounded-full" />
               <span className="font-medium">{languageLabels[locale]}</span>
               {locale === currentLocale && (
                 <svg
-                  className="h-5 w-5"
+                  className="ml-auto h-5 w-5"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                   xmlns="http://www.w3.org/2000/svg"

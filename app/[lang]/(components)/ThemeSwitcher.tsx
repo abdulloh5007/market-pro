@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import { useTheme } from "@/app/components/ThemeProvider";
 
 const themeOptions = [
   {
     value: "light" as const,
-    label: "Светлая",
+    label: "Light",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.6" />
@@ -16,7 +16,7 @@ const themeOptions = [
   },
   {
     value: "dark" as const,
-    label: "Тёмная",
+    label: "Dark",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
@@ -25,7 +25,7 @@ const themeOptions = [
   },
   {
     value: "system" as const,
-    label: "Системная",
+    label: "System",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="3" y="4" width="18" height="13" rx="2" stroke="currentColor" strokeWidth="1.6" />
@@ -36,7 +36,7 @@ const themeOptions = [
 ];
 
 export function ThemeSwitcher() {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -51,7 +51,14 @@ export function ThemeSwitcher() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const currentTheme = themeOptions.find((opt) => opt.value === theme) || themeOptions[2];
+  const currentThemeIcon = useMemo(() => {
+    if (theme === 'system') {
+      const option = themeOptions.find((opt) => opt.value === resolvedTheme);
+      return option ? option.icon : themeOptions[2].icon;
+    }
+    const option = themeOptions.find((opt) => opt.value === theme);
+    return option ? option.icon : themeOptions[2].icon;
+  }, [theme, resolvedTheme]);
 
   return (
     <div className="relative" ref={dropdownRef}>
@@ -59,9 +66,9 @@ export function ThemeSwitcher() {
         type="button"
         onClick={() => setIsOpen(!isOpen)}
         className="flex h-11 w-11 items-center justify-center rounded-xl border border-neutral-200 text-neutral-600 transition hover:bg-neutral-50 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800"
-        aria-label="Переключить тему"
+        aria-label="Toggle theme"
       >
-        {currentTheme.icon}
+        {currentThemeIcon}
       </button>
 
       {isOpen && (

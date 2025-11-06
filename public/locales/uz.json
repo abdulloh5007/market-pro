@@ -13,6 +13,23 @@
     "no_items": "0 ta mahsulot",
     "one_item": "1 ta mahsulot"
   },
+  "topRatedProducts": "Eng ommabop mahsulotlar",
+  "currency": "so'm",
+  "addToCart": "Savatga qo'shish",
+  "features": {
+    "installment": {
+      "title": "Foizsiz bo'lib to'lash",
+      "description": "Xaridingizni qulay shartlarda bo'lib to'lang"
+    },
+    "support": {
+      "title": "24/7 qo'llab-quvvatlash",
+      "description": "Bizning jamoamiz har doim sizga yordam berishga tayyor"
+    },
+    "returns": {
+      "title": "Qulay qaytarish",
+      "description": "14 kun ichida oson qaytarish"
+    }
+  },
   "footer": {
     "about_us": "Biz haqimizda",
     "pickup_points": "Buyurtmalarni tarqatish punktlari",
@@ -27,6 +44,27 @@
     "social_media": "Biz ijtimoiy tarmoqlarda",
     "privacy_policy": "Maxfiylik siyosati",
     "terms_of_use": "Foydalanish shartlari",
-    "copyright": "©{currentYear} «UZUM MARKET» MChJ. Barcha huquqlar himoyalangan"
+    "copyright": "©{currentYear} «MARKET» MChJ. Barcha huquqlar himoyalangan"
+  },
+  "categories": {
+    "electronics": "Elektronika",
+    "clothes": "Kiyim-Kechak",
+    "sport": "Sport",
+    "books": "Kitoblar"
+  },
+  "product": {
+    "home": "Bosh sahifa",
+    "model": "Model",
+    "memory": "Xotira",
+    "color": "Rang",
+    "quantity": "Mavjud",
+    "items": "dona",
+    "outOfStock": "Mavjud emas",
+    "description": "Tavsif",
+    "reviews": "Sharhlar",
+    "addedToCart": "Mahsulot savatga qo'shildi",
+    "notFound": "Mahsulot topilmadi",
+    "notFoundDescription": "Afsuski, so'ralgan mahsulot mavjud emas yoki o'chirilgan.",
+    "backToHome": "Bosh sahifaga qaytish"
   }
 }

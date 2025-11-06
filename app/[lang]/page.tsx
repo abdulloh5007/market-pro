@@ -1,6 +1,8 @@
 import { SUPPORTED_LOCALES, resolveLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { HeroCarousel } from "./(components)/HeroCarousel";
+import { CatalogCards } from "@/app/components/CatalogCards";
+import TopProducts from "../components/TopProducts";
 
 type PageProps = {
   params: Promise<{
@@ -25,6 +27,12 @@ export default async function LangHomePage({ params }: PageProps) {
         <HeroCarousel />
       </section>
 
+      <CatalogCards dictionary={dictionary} />
+
+      <section className="mx-auto w-full max-w-6xl px-4 pb-20 md:px-6">
+        <TopProducts lang={locale} />
+      </section>
+
       <section className="mx-auto w-full max-w-6xl px-4 pb-20 md:px-6">
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100">
@@ -36,8 +44,8 @@ export default async function LangHomePage({ params }: PageProps) {
         <div className="grid gap-6 md:grid-cols-3">
           {[
             {
-              title: "Рассрочка без переплаты",
-              description: "Оформите покупку в рассрочку на выгодных условиях",
+              title: dictionary.features.installment.title,
+              description: dictionary.features.installment.description,
               icon: (
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" strokeWidth="2" />
@@ -47,8 +55,8 @@ export default async function LangHomePage({ params }: PageProps) {
               ),
             },
             {
-              title: "Поддержка 24/7",
-              description: "Наша команда всегда готова помочь вам в любое время",
+              title: dictionary.features.support.title,
+              description: dictionary.features.support.description,
               icon: (
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -56,8 +64,8 @@ export default async function LangHomePage({ params }: PageProps) {
               ),
             },
             {
-              title: "Удобный возврат",
-              description: "Легкий возврат товара в течение 14 дней",
+              title: dictionary.features.returns.title,
+              description: dictionary.features.returns.description,
               icon: (
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
