@@ -1,7 +1,7 @@
 
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { Locale } from "@/lib/i18n/config";
-import { ProductCard } from "./ProductCard";
+import { ProductCard } from "../product/ProductCard";
 import { getAllProducts } from "@/lib/products";
 
 const fallbackImages = [

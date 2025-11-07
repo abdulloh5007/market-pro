@@ -10,9 +10,9 @@
           "price": 1200,
           "quantity": 50,
           "discount": 10,
-          "memory": "256GB",
-          "color": "Phantom Black",
-          "photos": ["/images/electronics/s23_ultra_black.png", "/images/electronics/s23_ultra_front.png"],
+          "memory": ["256GB", "512GB", "1TB"],
+          "color": ["Phantom Black", "Silver", "Gold"],
+          "photos": ["/catalog-card-photos/technics.png", "/catalog-card-photos/technics.png"],
           "model": "Galaxy S23 Ultra",
           "rating": 4.8,
           "comments": [
@@ -35,9 +35,9 @@
           "price": 1300,
           "quantity": 70,
           "discount": null,
-          "memory": "512GB",
-          "color": "Titanium Blue",
-          "photos": ["/images/electronics/iphone15_blue.png", "/images/electronics/iphone15_back.png"],
+          "memory": ["256GB", "512GB", "1TB"],
+          "color": ["Black", "Silver", "Gold"],
+          "photos": ["/catalog-card-photos/technics.png", "/catalog-card-photos/technics.png"],
           "model": "iPhone 15 Pro Max",
           "rating": 4.9,
           "comments": [
@@ -67,7 +67,7 @@
           "discount": 5,
           "memory": "8GB RAM, 256GB SSD",
           "model": "MacBook Air",
-          "photos": ["/images/electronics/macbook_air.png", "/images/electronics/macbook_air_open.png"],
+          "photos": ["/catalog-card-photos/technics.png", "/catalog-card-photos/technics.png"],
           "rating": 4.7,
           "comments": [
             {
@@ -91,7 +91,7 @@
           "discount": null,
           "memory": "16GB RAM, 512GB SSD",
           "model": "XPS 15",
-          "photos": ["/images/electronics/dell_xps.png", "/images/electronics/dell_xps_keyboard.png"],
+          "photos": ["/catalog-card-photos/technics.png", "/catalog-card-photos/technics.png"],
           "rating": 4.6,
           "comments": [
             {
@@ -119,7 +119,7 @@
           "quantity": 100,
           "discount": null,
           "model": "AirPods Pro 2",
-          "photos": ["/images/electronics/airpods_pro2.png", "/images/electronics/airpods_pro2_case.png"],
+          "photos": ["/catalog-card-photos/technics.png", "/catalog-card-photos/technics.png"],
           "rating": 4.7,
           "comments": [
             {
@@ -142,7 +142,7 @@
           "quantity": 80,
           "discount": 15,
           "model": "AirPods 3",
-          "photos": ["/images/electronics/airpods3.png", "/images/electronics/airpods3_case.png"],
+          "photos": ["/catalog-card-photos/technics.png", "/catalog-card-photos/technics.png"],
           "rating": 4.5,
           "comments": [
             {
@@ -171,7 +171,7 @@
           "price": 20,
           "quantity": 150,
           "discount": null,
-          "photos": ["/images/clothes/cap_blue.png", "/images/clothes/cap_red.png"],
+          "photos": ["/catalog-card-photos/clothes.png", "/catalog-card-photos/clothes.png"],
           "rating": 4.2,
           "comments": [
             {
@@ -188,7 +188,7 @@
           "price": 25,
           "quantity": 120,
           "discount": 5,
-          "photos": ["/images/clothes/beanie_black.png", "/images/clothes/beanie_grey.png"],
+          "photos": ["/catalog-card-photos/clothes.png", "/catalog-card-photos/clothes.png"],
           "rating": 4.5,
           "comments": [
             {
@@ -212,7 +212,7 @@
           "discount": null,
           "size": ["S", "M", "L", "XL"],
           "color": ["White", "Black", "Blue"],
-          "photos": ["/images/clothes/tshirt_white.png", "/images/clothes/tshirt_black.png"],
+          "photos": ["/catalog-card-photos/clothes.png", "/catalog-card-photos/clothes.png"],
           "rating": 4.3,
           "comments": [
             {
@@ -231,7 +231,7 @@
           "discount": 10,
           "size": ["XS", "S", "M", "L"],
           "color": ["Blue", "Dark Blue"],
-          "photos": ["/images/clothes/jeans_blue.png", "/images/clothes/jeans_darkblue.png"],
+          "photos": ["/catalog-card-photos/clothes.png", "/catalog-card-photos/clothes.png"],
           "rating": 4.6,
           "comments": [
             {
@@ -254,7 +254,7 @@
           "quantity": 300,
           "discount": null,
           "size": ["M", "L", "XL"],
-          "photos": ["/images/clothes/boxers_black.png", "/images/clothes/boxers_grey.png"],
+          "photos": ["/catalog-card-photos/clothes.png", "/catalog-card-photos/clothes.png"],
           "rating": 4.0,
           "comments": [
             {
@@ -272,7 +272,7 @@
           "quantity": 180,
           "discount": null,
           "size": ["S", "M", "L"],
-          "photos": ["/images/clothes/bra_beige.png", "/images/clothes/bra_black.png"],
+          "photos": ["/catalog-card-photos/clothes.png", "/catalog-card-photos/clothes.png"],
           "rating": 4.4,
           "comments": [
             {
@@ -295,7 +295,7 @@
           "quantity": 90,
           "discount": 10,
           "size": ["38", "39", "40", "41", "42", "43", "44"],
-          "photos": ["/images/clothes/sneakers_white.png", "/images/clothes/sneakers_black.png"],
+          "photos": ["/catalog-card-photos/clothes.png", "/catalog-card-photos/clothes.png"],
           "rating": 4.5,
           "comments": [
             {
@@ -313,7 +313,7 @@
           "quantity": 110,
           "discount": null,
           "size": ["36", "37", "38", "39", "40"],
-          "photos": ["/images/clothes/sandals_brown.png", "/images/clothes/sandals_black.png"],
+          "photos": ["/catalog-card-photos/clothes.png", "/catalog-card-photos/clothes.png"],
           "rating": 4.1,
           "comments": [
             {
@@ -337,7 +337,7 @@
           "price": 150,
           "quantity": 25,
           "discount": null,
-          "photos": ["/images/sport/barbell_set.png", "/images/sport/barbell_plates.png"],
+          "photos": ["/catalog-card-photos/sports.png", "/catalog-card-photos/sports.png"],
           "rating": 4.3,
           "comments": [
             {
@@ -354,7 +354,7 @@
           "price": 200,
           "quantity": 15,
           "discount": 10,
-          "photos": ["/images/sport/olympic_barbell.png", "/images/sport/olympic_barbell_detail.png"],
+          "photos": ["/catalog-card-photos/sports.png", "/catalog-card-photos/sports.png"],
           "rating": 4.7,
           "comments": [
             {
@@ -376,7 +376,7 @@
           "price": 500,
           "quantity": 10,
           "discount": null,
-          "photos": ["/images/sport/treadmill_folding.png", "/images/sport/treadmill_folded.png"],
+          "photos": ["/catalog-card-photos/sports.png", "/catalog-card-photos/sports.png"],
           "rating": 4.0,
           "comments": [
             {
@@ -393,7 +393,7 @@
           "price": 1200,
           "quantity": 5,
           "discount": null,
-          "photos": ["/images/sport/treadmill_pro.png", "/images/sport/treadmill_display.png"],
+          "photos": ["/catalog-card-photos/sports.png", "/catalog-card-photos/sports.png"],
           "rating": 4.8,
           "comments": [
             {
@@ -415,7 +415,7 @@
           "price": 15,
           "quantity": 200,
           "discount": null,
-          "photos": ["/images/sport/jump_rope_speed.png", "/images/sport/jump_rope_handle.png"],
+          "photos": ["/catalog-card-photos/sports.png", "/catalog-card-photos/sports.png"],
           "rating": 4.2,
           "comments": [
             {
@@ -432,7 +432,7 @@
           "price": 25,
           "quantity": 100,
           "discount": null,
-          "photos": ["/images/sport/jump_rope_weighted.png", "/images/sport/jump_rope_thick.png"],
+          "photos": ["/catalog-card-photos/sports.png", "/catalog-card-photos/sports.png"],
           "rating": 4.5,
           "comments": [
             {
@@ -456,7 +456,7 @@
           "price": 40,
           "quantity": 60,
           "discount": null,
-          "photos": ["/images/books/clean_code.png", "/images/books/clean_code_back.png"],
+          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
           "rating": 4.9,
           "comments": [
             {
@@ -478,7 +478,7 @@
           "price": 35,
           "quantity": 80,
           "discount": 5,
-          "photos": ["/images/books/pragmatic_programmer.png", "/images/books/pragmatic_programmer_inside.png"],
+          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
           "rating": 4.8,
           "comments": [
             {
@@ -500,7 +500,7 @@
           "price": 25,
           "quantity": 100,
           "discount": null,
-          "photos": ["/images/books/cosmos.png", "/images/books/cosmos_cover.png"],
+          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
           "rating": 4.7,
           "comments": [
             {
@@ -517,7 +517,7 @@
           "price": 30,
           "quantity": 90,
           "discount": null,
-          "photos": ["/images/books/sapiens.png", "/images/books/sapiens_back.png"],
+          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
           "rating": 4.6,
           "comments": [
             {

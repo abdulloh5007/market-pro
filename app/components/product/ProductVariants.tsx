@@ -51,7 +51,7 @@ export function ProductVariants({ product, dictionary, onVariantChange }: Produc
               <button
                 key={memory}
                 onClick={() => handleMemoryChange(memory)}
-                className={`px-4 py-2 rounded-lg border-2 font-medium text-sm transition-all duration-200 ${
+                className={`px-4 py-2 rounded-lg border-2 font-medium text-sm transition-all duration-200 cursor-pointer ${
                   selectedMemory === memory
                     ? "border-purple-600 bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 shadow-md scale-105"
                     : "border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:border-purple-300 dark:hover:border-purple-700 hover:scale-105"
@@ -76,7 +76,7 @@ export function ProductVariants({ product, dictionary, onVariantChange }: Produc
               <button
                 key={color}
                 onClick={() => handleColorChange(color)}
-                className={`px-4 py-2 rounded-lg border-2 font-medium text-sm transition-all duration-200 ${
+                className={`px-4 py-2 rounded-lg border-2 font-medium text-sm transition-all duration-200 cursor-pointer ${
                   selectedColor === color
                     ? "border-purple-600 bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 shadow-md scale-105"
                     : "border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:border-purple-300 dark:hover:border-purple-700 hover:scale-105"
@@ -101,7 +101,7 @@ export function ProductVariants({ product, dictionary, onVariantChange }: Produc
               <button
                 key={size}
                 onClick={() => handleSizeChange(size)}
-                className={`px-4 py-2 rounded-lg border-2 font-medium text-sm transition-all duration-200 ${
+                className={`px-4 py-2 rounded-lg border-2 font-medium text-sm transition-all duration-200 cursor-pointer ${
                   selectedSize === size
                     ? "border-purple-600 bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 shadow-md scale-105"
                     : "border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:border-purple-300 dark:hover:border-purple-700 hover:scale-105"

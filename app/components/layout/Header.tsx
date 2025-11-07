@@ -3,11 +3,11 @@
 import Link from "next/link";
 import { useState } from "react";
 import type { Locale } from "@/lib/i18n/config";
-import { LanguageSwitcher } from "../[lang]/(components)/LanguageSwitcher";
-import { ThemeSwitcher } from "../[lang]/(components)/ThemeSwitcher";
+import { LanguageSwitcher } from "../../[lang]/(components)/LanguageSwitcher";
+import { ThemeSwitcher } from "../../[lang]/(components)/ThemeSwitcher";
 
 // @ts-ignore
-const navActions = (dictionary) => [
+const navActions = (dictionary: any, locale: Locale) => [
   {
     label: "Ergashev",
     description: dictionary.profile,
@@ -33,7 +33,7 @@ const navActions = (dictionary) => [
   {
     label: dictionary.favorites,
     description: dictionary.no_items,
-    href: "#favorites",
+    href: `/${locale}/favorites`,
     icon: (
       <svg
         width="22"
@@ -92,7 +92,7 @@ type HeaderProps = {
 export function Header({ locale, dictionary }: HeaderProps) {
   const [query, setQuery] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const actions = navActions(dictionary.header);
+  const actions = navActions(dictionary.header, locale);
 
   return (
     <header className="border-b border-neutral-100 bg-white dark:border-neutral-800 dark:bg-neutral-900">

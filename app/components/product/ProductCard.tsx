@@ -110,7 +110,7 @@ export function ProductCard({ product, imageUrl, dictionary }: ProductCardProps)
             e.preventDefault();
             e.stopPropagation();
           }}
-          className="mt-2 sm:mt-3 md:mt-4 w-full bg-purple-600 hover:bg-purple-700 text-white text-xs sm:text-sm md:text-base font-bold py-1.5 sm:py-2 rounded-lg transform hover:scale-105 transition-transform duration-200 cursor-pointer"
+          className="mt-2 sm:mt-3 md:mt-4 w-full bg-purple-600 hover:bg-purple-700 text-white text-xs sm:text-sm md:text-base font-bold py-1 sm:py-1.5 rounded-lg transform hover:scale-103 transition-transform duration-200 cursor-pointer"
           type="button"
         >
           {dictionary.addToCart}

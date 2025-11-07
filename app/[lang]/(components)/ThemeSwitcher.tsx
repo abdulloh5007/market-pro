@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useMemo } from "react";
-import { useTheme } from "@/app/components/ThemeProvider";
+import { useTheme } from "@/app/components/layout";
 
 const themeOptions = [
   {

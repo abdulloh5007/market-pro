@@ -1,8 +1,7 @@
 import { SUPPORTED_LOCALES, resolveLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { HeroCarousel } from "./(components)/HeroCarousel";
-import { CatalogCards } from "@/app/components/CatalogCards";
-import TopProducts from "../components/TopProducts";
+import { CatalogCards, TopProducts } from "@/app/components/catalog";
 
 type PageProps = {
   params: Promise<{

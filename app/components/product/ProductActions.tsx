@@ -82,11 +82,11 @@ export function ProductActions({ product, dictionary }: ProductActionsProps) {
       </div>
 
       {/* Кнопки действий */}
-      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+      <div className="flex flex-row gap-2 sm:gap-3">
         <button
           onClick={handleAddToCart}
           disabled={product.quantity === 0}
-          className="flex-1 bg-purple-600 hover:bg-purple-700 disabled:bg-neutral-400 disabled:cursor-not-allowed text-white font-semibold py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] hover:shadow-lg disabled:hover:scale-100 disabled:hover:shadow-none text-sm sm:text-base"
+          className="flex-1 bg-purple-600 hover:bg-purple-700 disabled:bg-neutral-400 disabled:cursor-not-allowed text-white font-semibold py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg transition-all duration-300 transform hover:scale-101 active:scale-[0.98] hover:shadow-lg disabled:hover:scale-100 disabled:hover:shadow-none text-sm sm:text-base"
           type="button"
         >
           {dictionary.addToCart || "В корзину"}
@@ -111,7 +111,6 @@ export function ProductActions({ product, dictionary }: ProductActionsProps) {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="transition-all duration-300"
           >
             <path d="M12 18L10.9384 17.0503C6.8 13.4 4 11 4 8C4 5.6 5.6 4 8 4C9.4 4 10.8 4.6 12 5.8C13.2 4.6 14.6 4 16 4C18.4 4 20 5.6 20 8C20 11 17.2 13.4 13.0616 17.0503L12 18Z" />
           </svg>

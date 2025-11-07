@@ -1,9 +1,7 @@
 import { redirect } from "next/navigation";
 import type { ReactNode } from "react";
 
-import { Footer } from "../components/Footer";
-import { Header } from "../components/Header";
-import { ThemeProvider } from "../components/ThemeProvider";
+import { Footer, Header, ThemeProvider } from "@/app/components/layout";
 import { resolveLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 

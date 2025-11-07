@@ -2,10 +2,12 @@ import { notFound } from "next/navigation";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { resolveLocale, type Locale } from "@/lib/i18n/config";
 import { getProductById } from "@/lib/products";
-import { ProductImageGallery } from "@/app/components/ProductImageGallery";
-import { ProductActions } from "@/app/components/ProductActions";
-import { ProductReviews } from "@/app/components/ProductReviews";
-import { ProductVariants } from "@/app/components/ProductVariants";
+import {
+  ProductImageGallery,
+  ProductActions,
+  ProductReviews,
+  ProductVariants,
+} from "@/app/components/product";
 import Link from "next/link";
 
 type ProductPageProps = {
@@ -30,10 +32,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
     : null;
 
   return (
-    <div className="bg-white dark:bg-neutral-900 min-h-screen">
-      <div className="mx-auto w-full max-w-7xl px-3 sm:px-4 md:px-6 py-4 sm:py-6 md:py-8">
+    <div className="bg-white dark:bg-neutral-900 min-h-screen overflow-hidden">
+      <div className="mx-auto w-full max-w-6xl px-3 sm:px-4 md:px-6 py-4 sm:py-6 md:py-8">
         {/* Хлебные крошки */}
-        <nav className="mb-4 sm:mb-6 text-xs sm:text-sm text-neutral-600 dark:text-neutral-400">
+        <nav className="flex mb-4 sm:mb-6 text-xs sm:text-sm text-neutral-600 dark:text-neutral-400">
           <Link href={`/${locale}`} className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">
             {dictionary.product?.home || "Главная"}
           </Link>
@@ -78,7 +80,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </div>
 
             {/* Цена */}
-            <div className="mb-4 sm:mb-6">
+            <div className="mb-4 sm:mb-2">
               <div className="flex items-baseline gap-2 sm:gap-3 mb-1 sm:mb-2 flex-wrap">
                 <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-900 dark:text-neutral-100">
                   {product.price} {dictionary.currency}

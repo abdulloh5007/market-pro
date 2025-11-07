@@ -67,5 +67,9 @@
     "notFound": "Mahsulot topilmadi",
     "notFoundDescription": "Afsuski, so'ralgan mahsulot mavjud emas yoki o'chirilgan.",
     "backToHome": "Bosh sahifaga qaytish"
+  },
+  "favorites": {
+    "title": "Sevimlilar",
+    "empty": "Sizda hali sevimlilar yo'q."
   }
 }
