@@ -61,7 +61,7 @@ export default function CartPage({ params: paramsPromise }: CartPageProps) {
             <div className="lg:col-span-2">
               {cartItems.map((item) => (
                 <CartItem
-                  key={item.id}
+                  key={item.product.id}
                   item={item}
                   dictionary={dictionary}
                   lang={locale}

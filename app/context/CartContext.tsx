@@ -3,7 +3,8 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { Product } from "@/lib/products";
 
-interface CartItem extends Product {
+interface CartItem {
+  product: Product;
   quantity: number;
 }
 
@@ -41,28 +42,30 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   const addToCart = (product: Product, quantity: number) => {
     setCartItems((prevItems) => {
-      const existingItem = prevItems.find((item) => item.id === product.id);
+      const existingItem = prevItems.find(
+        (item) => item.product.id === product.id
+      );
       if (existingItem) {
         return prevItems.map((item) =>
-          item.id === product.id
+          item.product.id === product.id
             ? { ...item, quantity: item.quantity + quantity }
             : item
         );
       }
-      return [...prevItems, { ...product, quantity }];
+      return [...prevItems, { product, quantity }];
     });
   };
 
   const removeFromCart = (productId: string) => {
     setCartItems((prevItems) =>
-      prevItems.filter((item) => item.id !== productId)
+      prevItems.filter((item) => item.product.id !== productId)
     );
   };
 
   const updateQuantity = (productId: string, quantity: number) => {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
-        item.id === productId ? { ...item, quantity } : item
+        item.product.id === productId ? { ...item, quantity } : item
       )
     );
   };

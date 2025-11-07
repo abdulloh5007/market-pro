@@ -9,10 +9,13 @@ interface CartSummaryProps {
 export function CartSummary({ dictionary }: CartSummaryProps) {
   const { cartItems } = useCart();
 
-  const subtotal = cartItems.reduce(
-    (acc, item) => acc + item.price * item.quantity,
-    0
-  );
+  const subtotal = cartItems.reduce((acc, item) => {
+    const price =
+      item.product.price *
+      (1 - (item.product.discount || 0) / 100) *
+      item.quantity;
+    return acc + price;
+  }, 0);
 
   return (
     <div className="rounded-lg bg-neutral-100 p-6 dark:bg-neutral-800">
