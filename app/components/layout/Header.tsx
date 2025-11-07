@@ -3,11 +3,12 @@
 import Link from "next/link";
 import { useState } from "react";
 import type { Locale } from "@/lib/i18n/config";
+import { useCart } from "@/app/context/CartContext";
 import { LanguageSwitcher } from "../../[lang]/(components)/LanguageSwitcher";
 import { ThemeSwitcher } from "../../[lang]/(components)/ThemeSwitcher";
 
 // @ts-ignore
-const navActions = (dictionary: any, locale: Locale) => [
+const navActions = (dictionary: any, locale: Locale, cartItemCount: number) => [
   {
     label: "Ergashev",
     description: dictionary.profile,
@@ -54,7 +55,7 @@ const navActions = (dictionary: any, locale: Locale) => [
   },
   {
     label: dictionary.cart,
-    description: dictionary.one_item,
+    description: cartItemCount === 0 ? dictionary.no_items : `${cartItemCount} ${dictionary.one_item}`,
     href: "#cart",
     icon: (
       <svg
@@ -92,7 +93,15 @@ type HeaderProps = {
 export function Header({ locale, dictionary }: HeaderProps) {
   const [query, setQuery] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const actions = navActions(dictionary.header, locale);
+  const { cartItems } = useCart();
+  const actions = navActions(dictionary.header, locale, cartItems.length);
+
+  const cartAction = actions.find(
+    (action) => action.label === dictionary.header.cart
+  );
+  if (cartAction) {
+    cartAction.href = `/${locale}/cart`;
+  }
 
   return (
     <header className="border-b border-neutral-100 bg-white dark:border-neutral-800 dark:bg-neutral-900">
@@ -158,9 +167,9 @@ export function Header({ locale, dictionary }: HeaderProps) {
                 <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-neutral-100 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">
                   {action.icon}
 
-                  {action.label === dictionary.header.cart && (
+                  {action.label === dictionary.header.cart && cartItems.length > 0 && (
                     <span className="absolute -top-1.5 -right-1.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#8b5cf6] text-[11px] font-bold text-white border-2 border-white dark:border-neutral-900">
-                      1
+                      {cartItems.length}
                     </span>
                   )}
                 </span>
@@ -170,7 +179,9 @@ export function Header({ locale, dictionary }: HeaderProps) {
                     {action.label}
                   </span>
                   <span className="text-xs text-neutral-500 dark:text-neutral-400">
-                    {action.description}
+                    {action.label === dictionary.header.cart
+                      ? `${cartItems.length} ${dictionary.header.no_items}`
+                      : action.description}
                   </span>
                 </span>
               </Link>
@@ -255,9 +266,9 @@ export function Header({ locale, dictionary }: HeaderProps) {
                 >
                   {action.icon}
                   <span>{action.label}</span>
-                  {action.label === dictionary.header.cart && (
+                  {action.label === dictionary.header.cart && cartItems.length > 0 && (
                     <span className="ml-auto inline-flex h-6 items-center rounded-full bg-[#5e28d1] px-2.5 text-xs font-semibold text-white dark:bg-[#8b5cf6]">
-                      1
+                      {cartItems.length}
                     </span>
                   )}
                 </Link>

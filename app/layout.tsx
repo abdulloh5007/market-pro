@@ -24,6 +24,8 @@ export const viewport = {
   userScalable: false,
 };
 
+import { CartProvider } from "./context/CartContext";
+
 export default function RootLayout({
   children,
   params,
@@ -36,7 +38,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-50 text-neutral-900`}
       >
-        {children}
+        <CartProvider>{children}</CartProvider>
       </body>
     </html>
   );

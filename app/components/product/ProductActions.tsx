@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import type { Product } from "@/lib/products";
+import { useCart } from "@/app/context/CartContext";
 
 interface ProductActionsProps {
   product: Product;
@@ -11,6 +12,7 @@ interface ProductActionsProps {
 export function ProductActions({ product, dictionary }: ProductActionsProps) {
   const [isLiked, setIsLiked] = useState(false);
   const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
@@ -32,18 +34,7 @@ export function ProductActions({ product, dictionary }: ProductActionsProps) {
   };
 
   const handleAddToCart = () => {
-    // Здесь можно добавить логику добавления в корзину
-    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    const existingItem = cart.find((item: any) => item.id === product.id);
-
-    if (existingItem) {
-      existingItem.quantity += quantity;
-    } else {
-      cart.push({ id: product.id, quantity, product });
-    }
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-    // Можно добавить уведомление об успешном добавлении
+    addToCart(product, quantity);
     alert(dictionary.product?.addedToCart || "Товар добавлен в корзину");
   };
 

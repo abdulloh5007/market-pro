@@ -10,7 +10,7 @@
     "search_placeholder": "Mahsulotlar va toifalarni qidirish",
     "search_button": "Qidiruvni boshlash",
     "search": "Qidiruv",
-    "no_items": "0 ta mahsulot",
+    "no_items": "ta mahsulot",
     "one_item": "1 ta mahsulot"
   },
   "topRatedProducts": "Eng ommabop mahsulotlar",
@@ -71,5 +71,15 @@
   "favorites": {
     "title": "Sevimlilar",
     "empty": "Sizda hali sevimlilar yo'q."
+  },
+  "cart": {
+    "summary": "Jami",
+    "subtotal": "Oraliq jami",
+    "shipping": "Yetkazib berish",
+    "free": "Bepul",
+    "total": "Jami",
+    "checkout": "Rasmiylashtirish",
+    "empty": "Sizning savatingiz bo'sh.",
+    "remove": "O'chirish"
   }
 }
