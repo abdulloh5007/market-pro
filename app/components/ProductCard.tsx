@@ -72,7 +72,7 @@ export function ProductCard({ product, imageUrl, dictionary }: ProductCardProps)
         )}
         <button
           onClick={toggleLike}
-          className="absolute top-1 right-1 sm:top-2 sm:right-2 p-1.5 sm:p-2 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm rounded-full shadow-md hover:shadow-lg transition-all duration-200 hover:scale-110 active:scale-95 z-10"
+          className="absolute top-1 right-1 sm:top-2 sm:right-2 p-1.5 sm:p-2 bg-white/95 dark:bg-neutral-800/95 backdrop-blur-sm rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110 active:scale-95 z-10 touch-manipulation"
           aria-label={isLiked ? "Remove from favorites" : "Add to favorites"}
           type="button"
         >
@@ -85,7 +85,7 @@ export function ProductCard({ product, imageUrl, dictionary }: ProductCardProps)
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700 dark:text-gray-300"
+            className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700 dark:text-gray-300 transition-all duration-300"
           >
             <path d="M12 18L10.9384 17.0503C6.8 13.4 4 11 4 8C4 5.6 5.6 4 8 4C9.4 4 10.8 4.6 12 5.8C13.2 4.6 14.6 4 16 4C18.4 4 20 5.6 20 8C20 11 17.2 13.4 13.0616 17.0503L12 18Z" />
           </svg>

@@ -5,8 +5,9 @@ export interface Product {
   price: number;
   quantity: number;
   discount: number | null;
-  memory?: string;
-  color?: string;
+  memory?: string | string[];
+  color?: string | string[];
+  size?: string[];
   photos: string[];
   model: string;
   rating: number;

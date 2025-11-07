@@ -19,23 +19,21 @@ const CatalogCard: React.FC<CatalogCardProps> = ({
     <Link
       href={href}
       className={`
-        group relative flex h-[60px] flex-1 items-center justify-between 
-        rounded-xl p-4 ${bgColor} 
+        group relative flex flex-col lg:flex-row lg:aspect-auto lg:h-[60px]
+        items-center justify-center lg:justify-between
+        rounded-xl md:p-4 ${bgColor} 
         shadow-md transition-transform duration-300 
         hover:scale-[1.03] hover:shadow-lg
       `}
     >
-      {/* Заголовок */}
-      <span className="text-lg font-semibold text-white z-10">
-        {title}
-      </span>
-
-      {/* Картинка */}
+      {/* Картинка - сверху по центру на мобильных/планшетах, справа на десктопах */}
       <div
         className={`
-          absolute right-0 top-1/2 -translate-y-1/2 
-          translate-x-1/6 sm:translate-x-[10%] md:translate-x-1/4 
-          rotate-12 opacity-70 w-20 h-20
+          relative lg:absolute
+          w-20 h-20
+          lg:right-0 lg:top-1/2 lg:-translate-y-1/2 
+          lg:translate-x-[10%] xl:translate-x-1/4 
+          rotate-12 opacity-70
           transition-all duration-500
           group-hover:opacity-90 group-hover:rotate-6 group-hover:scale-110
         `}
@@ -47,6 +45,11 @@ const CatalogCard: React.FC<CatalogCardProps> = ({
           className="object-contain drop-shadow-lg"
         />
       </div>
+
+      {/* Заголовок - внизу на мобильных/планшетах, слева на десктопах */}
+      <span className="text-sm sm:text-base lg:text-lg font-semibold text-white z-10 mt-auto lg:mt-0">
+        {title}
+      </span>
     </Link>
   );
 };
@@ -80,8 +83,8 @@ export function CatalogCards({ dictionary }: { dictionary: any }) {
   ];
 
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 py-2 md:px-6 overflow-hidden">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:grid-cols-4">
+    <section className="mx-auto w-full max-w-6xl px-4 py-2 md:px-6">
+      <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-3 sm:gap-4">
         {categories.map((category) => (
           <CatalogCard key={category.title} {...category} />
         ))}

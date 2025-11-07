@@ -4,7 +4,7 @@ import { Locale } from "@/lib/i18n/config";
 import { ProductCard } from "./ProductCard";
 import { getAllProducts } from "@/lib/products";
 
-const images = [
+const fallbackImages = [
   "/catalog-card-photos/books.png",
   "/catalog-card-photos/clothes.png",
   "/catalog-card-photos/joy.png",
@@ -13,7 +13,14 @@ const images = [
   "/catalog-card-photos/technics.png",
 ];
 
-const getRandomImage = () => images[Math.floor(Math.random() * images.length)];
+const getProductImage = (product: { photos?: string[] }) => {
+  // Используем первое изображение из photos, если оно есть
+  if (product.photos && product.photos.length > 0) {
+    return product.photos[0];
+  }
+  // Иначе используем случайную заглушку
+  return fallbackImages[Math.floor(Math.random() * fallbackImages.length)];
+};
 
 export default async function TopProducts({ lang }: { lang: Locale }) {
   const dictionary = await getDictionary(lang);
@@ -28,7 +35,7 @@ export default async function TopProducts({ lang }: { lang: Locale }) {
           <ProductCard
             key={product.id}
             product={product}
-            imageUrl={getRandomImage()}
+            imageUrl={getProductImage(product)}
             dictionary={dictionary}
           />
         ))}
