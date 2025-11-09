@@ -12,7 +12,8 @@
     "search": "Поиск",
     "no_items": "товаров",
     "one_item": "товар",
-    "show_more": "Показать еще"
+    "show_more": "Показать еще",
+    "no_products_found": "Товары не найдены."
   },
   "topRatedProducts": "Топ рейтинга",
   "currency": "сум",

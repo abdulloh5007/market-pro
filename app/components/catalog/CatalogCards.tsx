@@ -22,11 +22,12 @@ const CatalogCard: React.FC<CatalogCardProps> = ({
         group relative flex flex-col lg:flex-row lg:aspect-auto lg:h-[60px]
         items-center justify-center lg:justify-between
         rounded-xl md:p-4 ${bgColor} 
-        shadow-md transition-transform duration-300 
+        shadow-md transition-transform duration-300
         hover:scale-[1.03] hover:shadow-lg
+        relative z-10 hover:z-50
       `}
     >
-      {/* Картинка - сверху по центру на мобильных/планшетах, справа на десктопах */}
+      {/* Картинка */}
       <div
         className={`
           relative lg:absolute
@@ -36,6 +37,7 @@ const CatalogCard: React.FC<CatalogCardProps> = ({
           rotate-12 opacity-70
           transition-all duration-500
           group-hover:opacity-90 group-hover:rotate-6 group-hover:scale-110
+          z-20
         `}
       >
         <Image
@@ -46,7 +48,7 @@ const CatalogCard: React.FC<CatalogCardProps> = ({
         />
       </div>
 
-      {/* Заголовок - внизу на мобильных/планшетах, слева на десктопах */}
+      {/* Заголовок */}
       <span className="text-sm sm:text-base lg:text-lg font-semibold text-white z-10 mt-auto lg:mt-0">
         {title}
       </span>

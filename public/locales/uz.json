@@ -12,7 +12,8 @@
     "search": "Qidiruv",
     "no_items": "ta mahsulot",
     "one_item": "ta mahsulot",
-    "show_more": "Ko'proq ko'rsatish"
+    "show_more": "Ko'proq ko'rsatish",
+    "no_products_found": "Mahsulotlar topilmadi."
   },
   "topRatedProducts": "Eng ommabop mahsulotlar",
   "currency": "so'm",
