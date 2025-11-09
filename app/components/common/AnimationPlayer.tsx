@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import Lottie from "lottie-react";
+import lottie, { AnimationItem } from "lottie-web";
 import pako from "pako";
 
 interface AnimationPlayerProps {
@@ -14,9 +14,11 @@ interface AnimationPlayerProps {
 
 export const AnimationPlayer = React.memo(
   ({ src, className, style, loop = false, autoplay = false }: AnimationPlayerProps) => {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const animationRef = useRef<AnimationItem | null>(null);
     const [animationData, setAnimationData] = useState<object | null>(null);
-    const lottieRef = useRef<any>(null);
 
+    // Загрузка и распаковка TGS / Lottie файла
     useEffect(() => {
       const fetchAndDecompress = async () => {
         try {
@@ -31,31 +33,31 @@ export const AnimationPlayer = React.memo(
       fetchAndDecompress();
     }, [src]);
 
+    // Инициализация lottie-web анимации
     useEffect(() => {
-      if (lottieRef.current && autoplay) {
-        lottieRef.current.play();
-      }
-    }, [animationData, autoplay]);
+      if (!animationData || !containerRef.current) return;
 
-    if (!animationData) {
-      return <div className="w-full h-full bg-muted/20 rounded-lg animate-pulse" />;
-    }
+      animationRef.current = lottie.loadAnimation({
+        container: containerRef.current,
+        renderer: "canvas", // canvas тоже можно, если хочешь
+        loop,
+        autoplay,
+        animationData,
+      });
+
+      return () => {
+        animationRef.current?.destroy();
+      };
+    }, [animationData, loop, autoplay]);
 
     return (
       <div
+        ref={containerRef}
         style={style}
         className={`w-full h-full flex items-center justify-center ${className || ""}`}
-      >
-        <Lottie
-          lottieRef={lottieRef}
-          animationData={animationData}
-          loop={loop}
-          autoplay={autoplay}
-          className="w-full h-full object-contain"
-        />
-      </div>
+      />
     );
   }
 );
 
-AnimationPlayer.displayName = "TgsPlayer";
+AnimationPlayer.displayName = "AnimationPlayer";
