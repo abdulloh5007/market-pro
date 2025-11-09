@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Uzum Market",
+  title: "Market",
   description: "Маркетплейс с лучшими предложениями для всей семьи",
 };
 
