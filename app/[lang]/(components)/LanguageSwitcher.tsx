@@ -99,7 +99,7 @@ export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
   }
 
   return (
-    <div className="relative flex justify-end w-full md:static md:block md:justify-normal md:w-auto" ref={dropdownRef}>
+    <div className="relative flex justify-end w-full md:flex md:justify-normal md:w-auto" ref={dropdownRef}>
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}

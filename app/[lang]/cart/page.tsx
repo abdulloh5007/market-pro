@@ -5,6 +5,8 @@ import { CartItem } from "@/app/components/cart/CartItem";
 import { CartSummary } from "@/app/components/cart/CartSummary";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { resolveLocale, type Locale } from "@/lib/i18n/config";
+import { Modal } from "@/app/components/common/Modal";
+import { AnimationPlayer } from "@/app/components/common/AnimationPlayer";
 import { useState, useEffect, use as useReact } from "react";
 import Link from "next/link";
 
@@ -15,11 +17,19 @@ type CartPageProps = {
 };
 
 export default function CartPage({ params: paramsPromise }: CartPageProps) {
-  const { cartItems } = useCart();
+  const { cartItems, clearCart } = useCart();
   const [dictionary, setDictionary] = useState<any>({});
   const [locale, setLocale] = useState<Locale>("ru");
+  const [isOrderSuccessModalOpen, setIsOrderSuccessModalOpen] = useState(false);
+  const [orderPlacedItems, setOrderPlacedItems] = useState<typeof cartItems>([]);
 
   const params = useReact(paramsPromise);
+
+  const handlePlaceOrder = () => {
+    setOrderPlacedItems(cartItems);
+    clearCart();
+    setIsOrderSuccessModalOpen(true);
+  };
 
   useEffect(() => {
     async function fetchData() {
@@ -66,6 +76,12 @@ export default function CartPage({ params: paramsPromise }: CartPageProps) {
             </div>
             <div>
               <CartSummary dictionary={dictionary} />
+              <button
+                onClick={handlePlaceOrder}
+                className="mt-4 w-full rounded-lg bg-purple-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-purple-700 focus:outline-none focus:ring-4 focus:ring-purple-300 dark:bg-purple-500 dark:hover:bg-purple-600 dark:focus:ring-purple-900"
+              >
+                {dictionary.cart?.placeOrder || "Оформить заказ"}
+              </button>
             </div>
           </div>
         ) : (
@@ -75,6 +91,52 @@ export default function CartPage({ params: paramsPromise }: CartPageProps) {
             </p>
           </div>
         )}
+
+        <Modal
+          isOpen={isOrderSuccessModalOpen}
+          onClose={() => setIsOrderSuccessModalOpen(false)}
+        >
+          <div className="flex flex-col items-center justify-center p-6">
+            <AnimationPlayer
+              src="/animations/cart/orderSuccess.tgs"
+              loop={false}
+              autoplay={true}
+              className="w-48 h-48"
+            />
+            <h2 className="mt-4 text-2xl font-bold text-neutral-900 dark:text-neutral-100">
+              {dictionary.cart?.orderSuccessTitle || "Заказ успешно оформлен!"}
+            </h2>
+            <p className="mt-2 text-neutral-600 dark:text-neutral-400">
+              {dictionary.cart?.orderSuccessMessage ||
+                "Спасибо за ваш заказ. Мы свяжемся с вами в ближайшее время."}
+            </p>
+
+            {orderPlacedItems.length > 0 && (
+              <div className="mt-6 w-full">
+                <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">
+                  {dictionary.cart?.orderedItems || "Заказанные товары:"}
+                </h3>
+                <div className="grid grid-cols-1 gap-4">
+                  {orderPlacedItems.map((item) => (
+                    <CartItem
+                      key={item.product.id}
+                      item={item}
+                      dictionary={dictionary}
+                      lang={locale}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <button
+              onClick={() => setIsOrderSuccessModalOpen(false)}
+              className="mt-8 rounded-lg bg-purple-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-purple-700 focus:outline-none focus:ring-4 focus:ring-purple-300 dark:bg-purple-500 dark:hover:bg-purple-600 dark:focus:ring-purple-900"
+            >
+              {dictionary.cart?.continueShopping || "Продолжить покупки"}
+            </button>
+          </div>
+        </Modal>
       </div>
     </div>
   );
