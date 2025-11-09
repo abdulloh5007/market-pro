@@ -25,16 +25,9 @@ export const viewport = {
   userScalable: false,
 };
 
-interface RootLayoutProps {
-  children: React.ReactNode;
-  params: {
-    lang: string;
-  };
-}
-
-export default function RootLayout({ children, params }: RootLayoutProps) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang={params.lang} suppressHydrationWarning>
+    <html lang="ru" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-50 text-neutral-900`}
       >
