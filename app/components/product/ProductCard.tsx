@@ -29,6 +29,17 @@ export function ProductCard({ product, imageUrl, dictionary }: ProductCardProps)
     setIsLiked(favorites.includes(product.id));
   }, [product.id]);
 
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = ''; // Clean up on unmount
+    };
+  }, [isModalOpen]);
+
   const toggleLike = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();

@@ -98,17 +98,17 @@ export default function CartPage({ params: paramsPromise }: CartPageProps) {
               autoplay={true}
               className="w-32 h-32"
             />
-            <h2 className="mt-4 text-2xl font-bold text-neutral-900 dark:text-neutral-100">
+            <h2 className="mt-4 text-xl sm:text-2xl font-bold text-neutral-900 dark:text-neutral-100">
               {dictionary.cart?.orderSuccessTitle || "Заказ успешно оформлен!"}
             </h2>
-            <p className="mt-2 text-neutral-600 dark:text-neutral-400">
+            <p className="mt-2 text-sm sm:text-base text-neutral-600 dark:text-neutral-400 text-center">
               {dictionary.cart?.orderSuccessMessage ||
                 "Спасибо за ваш заказ. Мы свяжемся с вами в ближайшее время."}
             </p>
 
             {orderPlacedItems.length > 0 && (
               <div className="mt-6 w-full">
-                <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">
+                <h3 className="text-lg sm:text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">
                   {dictionary.cart?.orderedItems || "Заказанные товары:"}
                 </h3>
                 <div className="grid grid-cols-1 gap-4">

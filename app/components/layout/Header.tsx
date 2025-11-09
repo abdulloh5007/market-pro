@@ -95,6 +95,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
   const [query, setQuery] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const [isMobile, setIsMobile] = useState(false); // New state for mobile detection
   const { cartItems } = useCart();
   const [favoritesCount, setFavoritesCount] = useState(0);
   const searchContainerRef = useRef<HTMLFormElement>(null);
@@ -105,6 +106,27 @@ export function Header({ locale, dictionary }: HeaderProps) {
     const storedFavorites = JSON.parse(localStorage.getItem("favorites") || "[]");
     setFavoritesCount(storedFavorites.length);
   }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Tailwind's 'md' breakpoint is 768px
+    };
+
+    handleResize(); // Set initial value
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (isSearchFocused && isMobile) { // Apply only on mobile when search is focused
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = ''; // Clean up on unmount
+    };
+  }, [isSearchFocused, isMobile]);
 
   // обновляем описание для избранного
   const favoritesAction = actions.find(a => a.label === dictionary.header.favorites);
