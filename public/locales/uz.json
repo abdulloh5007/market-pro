@@ -81,6 +81,10 @@
     "total": "Jami",
     "checkout": "Rasmiylashtirish",
     "empty": "Sizning savatingiz bo'sh.",
-    "remove": "O'chirish"
+    "remove": "O'chirish",
+    "orderSuccessTitle": "Buyurtma muvaffaqiyatli joylashtirildi!",
+    "orderSuccessMessage": "Buyurtmangiz uchun rahmat. Tez orada siz bilan bog'lanamiz.",
+    "orderedItems": "Buyurtma qilingan mahsulotlar:",
+    "continueShopping": "Xarid qilishni davom ettirish"
   }
 }

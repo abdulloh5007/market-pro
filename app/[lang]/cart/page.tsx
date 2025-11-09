@@ -2,13 +2,14 @@
 
 import { useCart } from "@/app/context/CartContext";
 import { CartItem } from "@/app/components/cart/CartItem";
+import { OrderedItemCard } from "@/app/components/cart/OrderedItemCard";
 import { CartSummary } from "@/app/components/cart/CartSummary";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { resolveLocale, type Locale } from "@/lib/i18n/config";
-import { Modal } from "@/app/components/common/Modal";
-import { AnimationPlayer } from "@/app/components/common/AnimationPlayer";
 import { useState, useEffect, use as useReact } from "react";
 import Link from "next/link";
+import { Modal } from "@/app/components/common/Modal";
+import { AnimationPlayer } from "@/app/components/common/AnimationPlayer";
 
 type CartPageProps = {
   params: Promise<{
@@ -112,11 +113,10 @@ export default function CartPage({ params: paramsPromise }: CartPageProps) {
                 </h3>
                 <div className="grid grid-cols-1 gap-4">
                   {orderPlacedItems.map((item) => (
-                    <CartItem
+                    <OrderedItemCard
                       key={item.product.id}
                       item={item}
                       dictionary={dictionary}
-                      lang={locale}
                     />
                   ))}
                 </div>
@@ -125,7 +125,7 @@ export default function CartPage({ params: paramsPromise }: CartPageProps) {
 
             <button
               onClick={() => setIsOrderSuccessModalOpen(false)}
-              className="mt-8 rounded-lg bg-purple-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-purple-700 focus:outline-none focus:ring-4 focus:ring-purple-300 dark:bg-purple-500 dark:hover:bg-purple-600 dark:focus:ring-purple-900"
+              className="mt-8 w-full rounded-lg bg-purple-600 py-3 font-semibold text-white hover:bg-purple-700 focus:outline-none focus:ring-4 focus:ring-purple-300 dark:bg-purple-500 dark:hover:bg-purple-600 dark:focus:ring-purple-900 transition-all duration-300 transform cursor-pointer"
             >
               {dictionary.cart?.continueShopping || "Продолжить покупки"}
             </button>

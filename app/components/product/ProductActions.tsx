@@ -77,14 +77,14 @@ export function ProductActions({ product, dictionary }: ProductActionsProps) {
         <button
           onClick={handleAddToCart}
           disabled={product.quantity === 0}
-          className="flex-1 bg-purple-600 hover:bg-purple-700 disabled:bg-neutral-400 disabled:cursor-not-allowed text-white font-semibold py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg transition-all duration-300 transform hover:scale-101 active:scale-[0.98] hover:shadow-lg disabled:hover:scale-100 disabled:hover:shadow-none text-sm sm:text-base"
+          className="flex-1 bg-purple-600 hover:bg-purple-700 disabled:bg-neutral-400 disabled:cursor-not-allowed text-white font-semibold py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg transition-all duration-300 transform hover:scale-101 active:scale-[0.98] hover:shadow-lg disabled:hover:scale-100 disabled:hover:shadow-none text-sm sm:text-base cursor-pointer"
           type="button"
         >
           {dictionary.addToCart || "В корзину"}
         </button>
         <button
           onClick={toggleLike}
-          className={`px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border-2 transition-all duration-300 transform hover:scale-105 active:scale-95 ${
+          className={`px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border-2 transition-all duration-300 transform hover:scale-105 active:scale-95 cursor-pointer ${
             isLiked
               ? "border-red-500 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 shadow-md"
               : "border-neutral-300 dark:border-neutral-600 hover:border-red-300 dark:hover:border-red-700 text-neutral-700 dark:text-neutral-300 bg-white dark:bg-neutral-800 hover:bg-red-50 dark:hover:bg-red-900/10"
