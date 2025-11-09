@@ -47,6 +47,8 @@ export default function CartPage({ params: paramsPromise }: CartPageProps) {
     return null; // Or a loading spinner
   }
 
+  const noItemsAnimationUrl = "/animations/cart/noItems.tgs";
+
   return (
     <div className="bg-white dark:bg-neutral-900 min-h-screen">
       <div className="mx-auto w-full max-w-6xl px-4 py-8 md:px-6">
@@ -62,7 +64,7 @@ export default function CartPage({ params: paramsPromise }: CartPageProps) {
             {dictionary.header?.cart || "Корзина"}
           </span>
         </nav>
-        
+
         {cartItems.length > 0 ? (
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div className="lg:col-span-2">
@@ -80,10 +82,15 @@ export default function CartPage({ params: paramsPromise }: CartPageProps) {
             </div>
           </div>
         ) : (
-          <div className="text-center py-16">
-            <p className="text-xl text-neutral-600 dark:text-neutral-400">
-              {dictionary.cart?.empty || "Ваша корзина пуста."}
-            </p>
+          <div className="flex min-h-screen items-center justify-center bg-white dark:bg-neutral-900">
+            <div className="text-center">
+              <div className="w-64 h-64 mx-auto mb-8">
+                <AnimationPlayer src={noItemsAnimationUrl} loop={true} autoplay={true} />
+              </div>
+              <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-8">
+                {dictionary.cart?.empty || "Ваша корзина пуста."}
+              </p>
+            </div>
           </div>
         )}
 

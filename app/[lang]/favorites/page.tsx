@@ -6,6 +6,7 @@ import { getProductById, Product } from '@/lib/products';
 import { ProductCard } from '@/app/components/product';
 import { getDictionary } from '@/lib/i18n/get-dictionary';
 import { resolveLocale, type Locale } from '@/lib/i18n/config';
+import { AnimationPlayer } from '@/app/components/common/AnimationPlayer';
 
 type FavoritesPageProps = {
   params: {
@@ -42,6 +43,8 @@ export default function FavoritesPage({ params }: FavoritesPageProps) {
     fetchFavoriteProducts();
   }, []);
 
+  const noLikedAnimationUrl = "/animations/favourites/noLiked.tgs";
+
   return (
     <div className="bg-white dark:bg-neutral-900 min-h-screen overflow-hidden">
       <div className="mx-auto w-full max-w-6xl px-3 sm:px-4 md:px-6 py-4 sm:py-6 md:py-8">
@@ -70,10 +73,15 @@ export default function FavoritesPage({ params }: FavoritesPageProps) {
             ))}
           </div>
         ) : (
-          <div className="text-center py-12 sm:py-16">
-            <p className="text-lg sm:text-xl text-neutral-600 dark:text-neutral-400">
-              {dictionary.favorites?.empty || 'У вас пока нет избранных товаров.'}
-            </p>
+          <div className="flex min-h-screen items-center justify-center bg-white dark:bg-neutral-900">
+            <div className="text-center">
+              <div className="w-64 h-64 mx-auto mb-8">
+                <AnimationPlayer src={noLikedAnimationUrl} loop={true} autoplay={true} />
+              </div>
+              <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-8">
+                {dictionary.favorites?.empty || 'У вас пока нет избранных товаров.'}
+              </p>
+            </div>
           </div>
         )}
       </div>
