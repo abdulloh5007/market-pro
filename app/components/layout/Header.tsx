@@ -132,10 +132,10 @@ export function Header({ locale, dictionary }: HeaderProps) {
   const favoritesAction = actions.find(a => a.label === dictionary.header.favorites);
   if (favoritesAction) {
     favoritesAction.href = `/${locale}/favorites`;
-    favoritesAction.description = favoritesCount === 0
-      ? dictionary.header.no_items
-      : `${favoritesCount} ${dictionary.header.one_item}`;
+
+    favoritesAction.description = `${favoritesCount} ${dictionary.header.one_item}`;
   }
+
 
   const cartAction = actions.find(action => action.label === dictionary.header.cart);
   if (cartAction) {

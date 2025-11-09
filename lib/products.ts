@@ -21,24 +21,29 @@ export interface Product {
 
 export async function getProductById(id: string): Promise<Product | null> {
   try {
-    // В серверных компонентах Next.js используем абсолютный URL или относительный путь
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : (typeof window === "undefined" ? "http://localhost:3000" : ""));
-    const url = baseUrl ? `${baseUrl}/products.json` : "/products.json";
-    const res = await fetch(url, {
-      cache: "no-store",
-    });
-    if (!res.ok) {
-      throw new Error("Failed to fetch products");
+    let url = "/products.json";
+
+    // Если код выполняется на сервере — делаем абсолютный путь
+    if (typeof window === "undefined") {
+      const base =
+        process.env.NEXT_PUBLIC_BASE_URL ||
+        `https://${process.env.VERCEL_URL}` ||
+        "http://localhost:3000";
+
+      url = `${base}/products.json`;
     }
+
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) throw new Error("Failed to fetch products");
+
     const data = await res.json();
 
-    // Ищем товар по ID во всех категориях
     for (const category in data) {
       for (const subCategory of data[category]) {
-        const product = subCategory.products?.find((p: Product) => p.id === id);
-        if (product) {
-          return product;
-        }
+        const product = subCategory.products?.find(
+          (p: Product) => p.id === id
+        );
+        if (product) return product;
       }
     }
 
@@ -51,15 +56,21 @@ export async function getProductById(id: string): Promise<Product | null> {
 
 export async function getAllProducts(): Promise<Product[]> {
   try {
-    // В серверных компонентах Next.js используем абсолютный URL или относительный путь
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : (typeof window === "undefined" ? "http://localhost:3000" : ""));
-    const url = baseUrl ? `${baseUrl}/products.json` : "/products.json";
-    const res = await fetch(url, {
-      cache: "no-store",
-    });
-    if (!res.ok) {
-      throw new Error("Failed to fetch products");
+    let url = "/products.json";
+
+    // Абсолютный — только на сервере
+    if (typeof window === "undefined") {
+      const base =
+        process.env.NEXT_PUBLIC_BASE_URL ||
+        `https://${process.env.VERCEL_URL}` ||
+        "http://localhost:3000";
+
+      url = `${base}/products.json`;
     }
+
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) throw new Error("Failed to fetch products");
+
     const data = await res.json();
 
     const allProducts: Product[] = [];
