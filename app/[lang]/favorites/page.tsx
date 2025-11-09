@@ -58,10 +58,6 @@ export default function FavoritesPage({ params }: FavoritesPageProps) {
           </span>
         </nav>
 
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-900 dark:text-neutral-100 mb-6 sm:mb-8">
-          {dictionary.favorites?.title || 'Избранные товары'}
-        </h1>
-
         {favoriteProducts.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
             {favoriteProducts.map((product) => (

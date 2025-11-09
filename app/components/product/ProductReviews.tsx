@@ -2,6 +2,7 @@ interface Comment {
   user: string;
   text: string;
   date: string;
+  rating: number;
 }
 
 interface ProductReviewsProps {
@@ -45,6 +46,22 @@ export function ProductReviews({ comments, dictionary }: ProductReviewsProps) {
                   <p className="font-semibold text-neutral-900 dark:text-neutral-100">{comment.user}</p>
                   <p className="text-xs text-neutral-500 dark:text-neutral-400">{formatDate(comment.date)}</p>
                 </div>
+              </div>
+              <div className="flex items-center">
+                {[...Array(5)].map((_, i) => (
+                  <svg
+                    key={i}
+                    className={`w-5 h-5 ${
+                      i < comment.rating
+                        ? "text-yellow-400"
+                        : "text-neutral-300 dark:text-neutral-600"
+                    }`}
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                  </svg>
+                ))}
               </div>
             </div>
             <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">

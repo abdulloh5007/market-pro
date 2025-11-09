@@ -29,7 +29,7 @@ export default async function LangHomePage({ params }: PageProps) {
       <CatalogCards dictionary={dictionary} />
 
       <section className="mx-auto w-full max-w-6xl px-4 pb-20 md:px-6">
-        <TopProducts lang={locale} />
+        <TopProducts dictionary={dictionary} />
       </section>
     </div>
   );

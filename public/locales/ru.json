@@ -11,7 +11,8 @@
     "search_button": "Начать поиск",
     "search": "Поиск",
     "no_items": "товаров",
-    "one_item": "1 товар"
+    "one_item": "товар",
+    "show_more": "Показать еще"
   },
   "topRatedProducts": "Топ рейтинга",
   "currency": "сум",

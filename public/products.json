@@ -19,12 +19,26 @@
             {
               "user": "Alice",
               "text": "Amazing phone, camera is incredible!",
-              "date": "2023-10-26"
+              "date": "2023-10-26",
+              "rating": 5
             },
             {
               "user": "Bob",
               "text": "A bit pricey, but worth every penny.",
-              "date": "2023-10-20"
+              "date": "2023-10-20",
+              "rating": 4
+            },
+            {
+              "user": "Alice",
+              "text": "Amazing phone, camera is incredible!",
+              "date": "2023-10-26",
+              "rating": 3
+            },
+            {
+              "user": "Alice",
+              "text": "Amazing phone, camera is incredible!",
+              "date": "2023-10-26",
+              "rating": 4
             }
           ]
         },
@@ -44,12 +58,14 @@
             {
               "user": "Charlie",
               "text": "Fast and smooth, battery life is great.",
-              "date": "2023-11-01"
+              "date": "2023-11-01",
+              "rating": 5
             },
             {
               "user": "David",
               "text": "Love the new design and camera improvements.",
-              "date": "2023-10-28"
+              "date": "2023-10-28",
+              "rating": 5
             }
           ]
         }
@@ -73,12 +89,14 @@
             {
               "user": "Eve",
               "text": "Perfect for everyday tasks and very portable.",
-              "date": "2023-09-15"
+              "date": "2023-09-15",
+              "rating": 5
             },
             {
               "user": "Frank",
               "text": "Great battery life, but 8GB RAM can be limiting for heavy use.",
-              "date": "2023-09-10"
+              "date": "2023-09-10",
+              "rating": 4
             }
           ]
         },
@@ -97,12 +115,14 @@
             {
               "user": "Grace",
               "text": "Powerful machine, excellent display.",
-              "date": "2023-10-05"
+              "date": "2023-10-05",
+              "rating": 5
             },
             {
               "user": "Heidi",
               "text": "Gets a bit warm under heavy load, but overall very good.",
-              "date": "2023-09-28"
+              "date": "2023-09-28",
+              "rating": 4
             }
           ]
         }
@@ -125,12 +145,14 @@
             {
               "user": "Ivan",
               "text": "Noise cancellation is superb!",
-              "date": "2023-11-03"
+              "date": "2023-11-03",
+              "rating": 5
             },
             {
               "user": "Judy",
               "text": "Comfortable fit and great sound quality.",
-              "date": "2023-10-30"
+              "date": "2023-10-30",
+              "rating": 5
             }
           ]
         },
@@ -148,12 +170,14 @@
             {
               "user": "Karl",
               "text": "Good sound, but I miss the active noise cancellation.",
-              "date": "2023-09-25"
+              "date": "2023-09-25",
+              "rating": 4
             },
             {
               "user": "Liam",
               "text": "Perfect for casual listening and calls.",
-              "date": "2023-09-20"
+              "date": "2023-09-20",
+              "rating": 4
             }
           ]
         }
@@ -177,7 +201,8 @@
             {
               "user": "Mia",
               "text": "Comfortable and stylish, good for sunny days.",
-              "date": "2023-08-10"
+              "date": "2023-08-10",
+              "rating": 4
             }
           ]
         },
@@ -194,7 +219,8 @@
             {
               "user": "Noah",
               "text": "Very warm and soft, perfect for cold weather.",
-              "date": "2023-10-15"
+              "date": "2023-10-15",
+              "rating": 5
             }
           ]
         }
@@ -218,7 +244,8 @@
             {
               "user": "Olivia",
               "text": "Good quality for the price.",
-              "date": "2023-07-20"
+              "date": "2023-07-20",
+              "rating": 4
             }
           ]
         },
@@ -237,7 +264,8 @@
             {
               "user": "Peter",
               "text": "Fits perfectly and looks great!",
-              "date": "2023-08-01"
+              "date": "2023-08-01",
+              "rating": 5
             }
           ]
         }
@@ -260,7 +288,8 @@
             {
               "user": "Quinn",
               "text": "Comfortable, but could be softer.",
-              "date": "2023-06-10"
+              "date": "2023-06-10",
+              "rating": 4
             }
           ]
         },
@@ -278,7 +307,8 @@
             {
               "user": "Rachel",
               "text": "Good support and comfortable for daily wear.",
-              "date": "2023-07-05"
+              "date": "2023-07-05",
+              "rating": 5
             }
           ]
         }
@@ -301,7 +331,8 @@
             {
               "user": "Sam",
               "text": "Very comfortable for walking and light sports.",
-              "date": "2023-09-01"
+              "date": "2023-09-01",
+              "rating": 5
             }
           ]
         },
@@ -319,7 +350,8 @@
             {
               "user": "Tina",
               "text": "Perfect for the beach, good value.",
-              "date": "2023-07-15"
+              "date": "2023-07-15",
+              "rating": 4
             }
           ]
         }
@@ -343,7 +375,8 @@
             {
               "user": "Uma",
               "text": "Solid set for home workouts.",
-              "date": "2023-08-20"
+              "date": "2023-08-20",
+              "rating": 4
             }
           ]
         },
@@ -360,7 +393,8 @@
             {
               "user": "Victor",
               "text": "Excellent grip and balance.",
-              "date": "2023-09-05"
+              "date": "2023-09-05",
+              "rating": 5
             }
           ]
         }
@@ -382,7 +416,8 @@
             {
               "user": "Wendy",
               "text": "Good for small spaces, a bit noisy.",
-              "date": "2023-10-01"
+              "date": "2023-10-01",
+              "rating": 4
             }
           ]
         },
@@ -399,7 +434,8 @@
             {
               "user": "Xavier",
               "text": "Gym-quality treadmill, very sturdy.",
-              "date": "2023-10-25"
+              "date": "2023-10-25",
+              "rating": 5
             }
           ]
         }
@@ -421,7 +457,8 @@
             {
               "user": "Yara",
               "text": "Lightweight and fast, great for cardio.",
-              "date": "2023-07-10"
+              "date": "2023-07-10",
+              "rating": 4
             }
           ]
         },
@@ -438,7 +475,8 @@
             {
               "user": "Zack",
               "text": "Adds a good challenge to my workouts.",
-              "date": "2023-08-05"
+              "date": "2023-08-05",
+              "rating": 5
             }
           ]
         }
@@ -462,12 +500,14 @@
             {
               "user": "Anna",
               "text": "A must-read for every developer.",
-              "date": "2023-09-18"
+              "date": "2023-09-18",
+              "rating": 5
             },
             {
               "user": "Ben",
               "text": "Changed the way I write code.",
-              "date": "2023-09-10"
+              "date": "2023-09-10",
+              "rating": 5
             }
           ]
         },
@@ -484,7 +524,8 @@
             {
               "user": "Chloe",
               "text": "Full of practical advice.",
-              "date": "2023-10-02"
+              "date": "2023-10-02",
+              "rating": 5
             }
           ]
         }
@@ -506,7 +547,8 @@
             {
               "user": "Daniel",
               "text": "A truly inspiring book.",
-              "date": "2023-08-25"
+              "date": "2023-08-25",
+              "rating": 5
             }
           ]
         },
@@ -523,7 +565,8 @@
             {
               "user": "Ella",
               "text": "Thought-provoking and well-written.",
-              "date": "2023-09-08"
+              "date": "2023-09-08",
+              "rating": 5
             }
           ]
         }

@@ -15,6 +15,7 @@ export interface Product {
     user: string;
     text: string;
     date: string;
+    rating: number;
   }>;
 }
 

@@ -18,25 +18,68 @@ type ProductPageProps = {
 };
 
 export default async function ProductPage({ params }: ProductPageProps) {
+  // Получаем параметры
   const { lang, id } = await params;
   const locale: Locale = resolveLocale(lang);
   const dictionary = await getDictionary(locale);
+
+  // Получаем продукт (await!).
   const product = await getProductById(id);
 
   if (!product) {
+    // Если нет товара — 404
     notFound();
   }
 
-  const originalPrice = product.discount
-    ? Math.round(product.price / (1 - product.discount / 100))
-    : null;
+  // Безопасный price (если вдруг undefined) — используем 0 как запасной вариант
+  const priceNumber = typeof product.price === "number" ? product.price : Number(product.price) || 0;
+
+  // Рассчёт оригинальной цены (до скидки) — только если есть валидная скидка и price > 0
+  const originalPrice =
+    product.discount && typeof product.discount === "number" && product.discount > 0 && priceNumber > 0
+      ? Math.round(priceNumber / (1 - product.discount / 100))
+      : null;
+
+  // Рассчитываем средний рейтинг по комментариям, если они есть.
+  // Если комментариев нет, используем product.rating (если есть) или 0.
+  let averageRating = 0;
+  if (Array.isArray(product.comments) && product.comments.length > 0) {
+    const sum = product.comments.reduce((acc, c) => {
+      const r = typeof c.rating === "number" ? c.rating : Number(c.rating) || 0;
+      return acc + r;
+    }, 0);
+    averageRating = sum / product.comments.length;
+  } else if (typeof product.rating === "number") {
+    averageRating = product.rating;
+  } else {
+    averageRating = 0;
+  }
+
+  // Форматирование для вывода (без падения, если NaN)
+  const averageRatingDisplay = Number.isFinite(averageRating) ? averageRating.toFixed(1) : "0.0";
+  const priceDisplay = Number.isFinite(priceNumber) ? priceNumber.toFixed(2) : "0.00";
+  const originalPriceDisplay = originalPrice !== null ? `${originalPrice} ${dictionary.currency}` : null;
+
+
+  {/* Нормализация комментариев перед рендером */ }
+  const normalizedComments = Array.isArray(product.comments)
+    ? product.comments.map((c) => ({
+      user: c.user ?? "Anonymous",
+      text: c.text ?? "",
+      date: c.date ?? new Date().toISOString(),
+      rating: typeof c.rating === "number" ? c.rating : 0,
+    }))
+    : [];
 
   return (
     <div className="bg-white dark:bg-neutral-900 min-h-screen overflow-hidden">
       <div className="mx-auto w-full max-w-6xl px-3 sm:px-4 md:px-6 py-4 sm:py-6 md:py-8">
         {/* Хлебные крошки */}
         <nav className="flex mb-4 sm:mb-6 text-xs sm:text-sm text-neutral-600 dark:text-neutral-400">
-          <Link href={`/${locale}`} className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">
+          <Link
+            href={`/${locale}`}
+            className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200"
+          >
             {dictionary.product?.home || "Главная"}
           </Link>
           <span className="mx-2">/</span>
@@ -46,7 +89,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <div className="grid gap-4 sm:gap-6 md:gap-8 lg:grid-cols-2">
           {/* Левая колонка - Изображения */}
           <div className="w-full">
-            <ProductImageGallery images={product.photos} productName={product.name} />
+            <ProductImageGallery images={product.photos ?? []} productName={product.name ?? ""} />
           </div>
 
           {/* Правая колонка - Информация о товаре */}
@@ -61,11 +104,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   {[...Array(5)].map((_, i) => (
                     <svg
                       key={i}
-                      className={`w-4 h-4 sm:w-5 sm:h-5 ${
-                        i < Math.floor(product.rating)
-                          ? "text-yellow-400 fill-yellow-400"
-                          : "text-neutral-300 dark:text-neutral-600"
-                      }`}
+                      className={`w-4 h-4 sm:w-5 sm:h-5 ${i < Math.floor(averageRating) ? "text-yellow-400 fill-yellow-400" : "text-neutral-300 dark:text-neutral-600"
+                        }`}
                       viewBox="0 0 20 20"
                       fill="currentColor"
                     >
@@ -74,7 +114,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   ))}
                 </div>
                 <span className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400">
-                  {product.rating} ({product.comments?.length || 0} {dictionary.product?.reviews || "отзывов"})
+                  {averageRatingDisplay} ({product.comments?.length ?? 0} {dictionary.product?.reviews || "отзывов"})
                 </span>
               </div>
             </div>
@@ -83,7 +123,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <div className="mb-4 sm:mb-2">
               <div className="flex items-baseline gap-2 sm:gap-3 mb-1 sm:mb-2 flex-wrap">
                 <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-900 dark:text-neutral-100">
-                  {product.price} {dictionary.currency}
+                  {priceDisplay} {dictionary.currency}
                 </span>
                 {product.discount && (
                   <span className="text-base sm:text-lg md:text-xl text-red-600 dark:text-red-400 font-semibold">
@@ -91,9 +131,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   </span>
                 )}
               </div>
-              {originalPrice && (
+              {originalPriceDisplay && (
                 <p className="text-base sm:text-lg text-neutral-500 dark:text-neutral-400 line-through">
-                  {originalPrice} {dictionary.currency}
+                  {originalPriceDisplay}
                 </p>
               )}
             </div>
@@ -134,7 +174,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   <span className="text-xs sm:text-sm font-medium text-neutral-600 dark:text-neutral-400 min-w-[80px] sm:min-w-[100px]">
                     {dictionary.product?.quantity || "В наличии"}:
                   </span>
-                  <span className={`text-xs sm:text-sm font-semibold ${product.quantity > 0 ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"}`}>
+                  <span
+                    className={`text-xs sm:text-sm font-semibold ${product.quantity > 0 ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"
+                      }`}
+                  >
                     {product.quantity > 0 ? `${product.quantity} ${dictionary.product?.items || "шт."}` : dictionary.product?.outOfStock || "Нет в наличии"}
                   </span>
                 </div>
@@ -157,13 +200,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </div>
 
         {/* Отзывы */}
-        {product.comments && product.comments.length > 0 && (
+        {normalizedComments.length > 0 && (
           <div className="mt-8 sm:mt-12">
-            <ProductReviews comments={product.comments} dictionary={dictionary} />
+            <ProductReviews comments={normalizedComments} dictionary={dictionary} />
           </div>
         )}
+
       </div>
     </div>
   );
 }
-

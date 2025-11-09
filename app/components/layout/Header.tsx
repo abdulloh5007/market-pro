@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import type { Locale } from "@/lib/i18n/config";
 import { useCart } from "@/app/context/CartContext";
 import { LanguageSwitcher } from "../../[lang]/(components)/LanguageSwitcher";
 import { ThemeSwitcher } from "../../[lang]/(components)/ThemeSwitcher";
+import { SearchDropdown } from "./SearchDropdown";
 
 // @ts-ignore
 const navActions = (dictionary: any, locale: Locale, cartItemCount: number) => [
@@ -93,15 +94,47 @@ type HeaderProps = {
 export function Header({ locale, dictionary }: HeaderProps) {
   const [query, setQuery] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
   const { cartItems } = useCart();
+  const [favoritesCount, setFavoritesCount] = useState(0);
+  const searchContainerRef = useRef<HTMLFormElement>(null);
+
   const actions = navActions(dictionary.header, locale, cartItems.length);
 
-  const cartAction = actions.find(
-    (action) => action.label === dictionary.header.cart
-  );
+  useEffect(() => {
+    const storedFavorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+    setFavoritesCount(storedFavorites.length);
+  }, []);
+
+  // обновляем описание для избранного
+  const favoritesAction = actions.find(a => a.label === dictionary.header.favorites);
+  if (favoritesAction) {
+    favoritesAction.href = `/${locale}/favorites`;
+    favoritesAction.description = favoritesCount === 0
+      ? dictionary.header.no_items
+      : `${favoritesCount} ${dictionary.header.one_item}`;
+  }
+
+  const cartAction = actions.find(action => action.label === dictionary.header.cart);
   if (cartAction) {
     cartAction.href = `/${locale}/cart`;
   }
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        searchContainerRef.current &&
+        !searchContainerRef.current.contains(event.target as Node)
+      ) {
+        setIsSearchFocused(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <header className="border-b border-neutral-100 bg-white dark:border-neutral-800 dark:bg-neutral-900">
@@ -118,6 +151,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
 
         <div className="hidden md:flex flex-1 justify-center px-8">
           <form
+            ref={searchContainerRef}
             className="relative w-full max-w-lg"
             onSubmit={(event) => event.preventDefault()}
           >
@@ -125,6 +159,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
               type="search"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
+              onFocus={() => setIsSearchFocused(true)}
               placeholder={dictionary.header.search_placeholder}
               className="w-full rounded-xl border border-neutral-200 bg-neutral-50 py-3 pl-4 pr-12 text-sm text-neutral-700 shadow-sm focus:outline-none dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:placeholder:text-neutral-500"
             />
@@ -153,6 +188,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
                 />
               </svg>
             </button>
+            {isSearchFocused && <SearchDropdown query={query} locale={locale} dictionary={dictionary} />}
           </form>
         </div>
 
@@ -187,7 +223,6 @@ export function Header({ locale, dictionary }: HeaderProps) {
               </Link>
             ))}
           </nav>
-
 
           <div className="hidden h-10 w-px bg-neutral-200 dark:bg-neutral-700 md:block"></div>
 

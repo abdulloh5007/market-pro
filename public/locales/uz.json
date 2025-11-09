@@ -11,7 +11,8 @@
     "search_button": "Qidiruvni boshlash",
     "search": "Qidiruv",
     "no_items": "ta mahsulot",
-    "one_item": "1 ta mahsulot"
+    "one_item": "ta mahsulot",
+    "show_more": "Ko'proq ko'rsatish"
   },
   "topRatedProducts": "Eng ommabop mahsulotlar",
   "currency": "so'm",

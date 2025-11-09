@@ -51,11 +51,7 @@ export default function CartPage({ params: paramsPromise }: CartPageProps) {
             {dictionary.header?.cart || "Корзина"}
           </span>
         </nav>
-
-        <h1 className="text-3xl font-bold mb-8">
-          {dictionary.header?.cart || "Корзина"}
-        </h1>
-
+        
         {cartItems.length > 0 ? (
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div className="lg:col-span-2">
