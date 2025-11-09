@@ -75,13 +75,7 @@ export default function CartPage({ params: paramsPromise }: CartPageProps) {
               ))}
             </div>
             <div>
-              <CartSummary dictionary={dictionary} />
-              <button
-                onClick={handlePlaceOrder}
-                className="mt-4 w-full rounded-lg bg-purple-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-purple-700 focus:outline-none focus:ring-4 focus:ring-purple-300 dark:bg-purple-500 dark:hover:bg-purple-600 dark:focus:ring-purple-900"
-              >
-                {dictionary.cart?.placeOrder || "Оформить заказ"}
-              </button>
+              <CartSummary dictionary={dictionary} onPlaceOrder={handlePlaceOrder} />
             </div>
           </div>
         ) : (
@@ -99,9 +93,9 @@ export default function CartPage({ params: paramsPromise }: CartPageProps) {
           <div className="flex flex-col items-center justify-center p-6">
             <AnimationPlayer
               src="/animations/cart/orderSuccess.tgs"
-              loop={false}
+              loop={true}
               autoplay={true}
-              className="w-48 h-48"
+              className="w-32 h-32"
             />
             <h2 className="mt-4 text-2xl font-bold text-neutral-900 dark:text-neutral-100">
               {dictionary.cart?.orderSuccessTitle || "Заказ успешно оформлен!"}

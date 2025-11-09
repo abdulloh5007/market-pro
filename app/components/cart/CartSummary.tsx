@@ -4,9 +4,10 @@ import { useCart } from "@/app/context/CartContext";
 
 interface CartSummaryProps {
   dictionary: any;
+  onPlaceOrder: () => void;
 }
 
-export function CartSummary({ dictionary }: CartSummaryProps) {
+export function CartSummary({ dictionary, onPlaceOrder }: CartSummaryProps) {
   const { cartItems } = useCart();
 
   const subtotal = cartItems.reduce((acc, item) => {
@@ -36,6 +37,7 @@ export function CartSummary({ dictionary }: CartSummaryProps) {
         </span>
       </div>
       <button
+        onClick={onPlaceOrder}
         disabled={cartItems.length === 0}
         className="w-full rounded-lg bg-purple-600 py-3 font-semibold text-white hover:bg-purple-700 disabled:bg-neutral-400 cursor-pointer transition-all duration-300 transform"
       >
