@@ -18,8 +18,8 @@ export function CartItem({ item, dictionary, lang }: CartItemProps) {
     : product.price;
 
   return (
-    <div className="flex flex-col md:flex-row items-start gap-4 p-4 mb-4 border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-sm">
-      <div className="relative h-32 w-32 flex-shrink-0 overflow-hidden rounded-lg">
+    <div className="grid grid-cols-[auto_1fr] gap-4 p-4 mb-4 border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-sm md:flex md:flex-row md:items-start">
+      <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden rounded-lg md:h-32 md:w-32">
         <Image
           src={
             product.photos && product.photos.length > 0
@@ -31,33 +31,35 @@ export function CartItem({ item, dictionary, lang }: CartItemProps) {
           objectFit="cover"
         />
       </div>
-      <div className="flex-grow">
-        <Link
-          href={`/${lang}/product/${product.id}`}
-          className="text-lg font-semibold text-neutral-900 dark:text-neutral-100 hover:text-purple-600 dark:hover:text-purple-400"
-        >
-          {product.name}
-        </Link>
-        <div className="flex items-center gap-2 mt-1">
-          <p
-            className={`text-lg font-bold ${
-              product.discount
-                ? "text-red-500"
-                : "text-neutral-900 dark:text-neutral-100"
-            }`}
+      <div className="flex flex-col justify-between flex-grow">
+        <div>
+          <Link
+            href={`/${lang}/product/${product.id}`}
+            className="text-base font-semibold text-neutral-900 dark:text-neutral-100 hover:text-purple-600 dark:hover:text-purple-400"
           >
-            {discountedPrice} {dictionary.currency}
-          </p>
-          {product.discount && (
-            <p className="text-sm text-neutral-500 dark:text-neutral-400 line-through">
-              {product.price} {dictionary.currency}
+            {product.name}
+          </Link>
+          <div className="flex items-center gap-2 mt-1">
+            <p
+              className={`text-md font-bold ${
+                product.discount
+                  ? "text-red-500"
+                  : "text-neutral-900 dark:text-neutral-100"
+              }`}
+            >
+              {discountedPrice} {dictionary.currency}
             </p>
-          )}
+            {product.discount && (
+              <p className="text-sm text-neutral-500 dark:text-neutral-400 line-through">
+                {product.price} {dictionary.currency}
+              </p>
+            )}
+          </div>
+          <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
+            {dictionary.cart?.stock || "В наличии"}: {product.quantity}
+          </p>
         </div>
-        <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
-          {dictionary.cart?.stock || "В наличии"}: {product.quantity}
-        </p>
-        <div className="flex items-center justify-between mt-4">
+        <div className="flex items-center justify-between mt-4 col-span-2 md:col-span-1">
           <div className="flex items-center gap-1 sm:gap-2 border border-neutral-300 dark:border-neutral-600 rounded-lg overflow-hidden">
             <button
               onClick={() => updateQuantity(product.id, Math.max(1, quantity - 1))}

@@ -22,7 +22,7 @@ export interface Product {
 export async function getProductById(id: string): Promise<Product | null> {
   try {
     // В серверных компонентах Next.js используем абсолютный URL или относительный путь
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || (typeof window === "undefined" ? "http://localhost:3000" : "");
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : (typeof window === "undefined" ? "http://localhost:3000" : ""));
     const url = baseUrl ? `${baseUrl}/products.json` : "/products.json";
     const res = await fetch(url, {
       cache: "no-store",
@@ -52,7 +52,7 @@ export async function getProductById(id: string): Promise<Product | null> {
 export async function getAllProducts(): Promise<Product[]> {
   try {
     // В серверных компонентах Next.js используем абсолютный URL или относительный путь
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || (typeof window === "undefined" ? "http://localhost:3000" : "");
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : (typeof window === "undefined" ? "http://localhost:3000" : ""));
     const url = baseUrl ? `${baseUrl}/products.json` : "/products.json";
     const res = await fetch(url, {
       cache: "no-store",
@@ -77,4 +77,3 @@ export async function getAllProducts(): Promise<Product[]> {
     return [];
   }
 }
-
