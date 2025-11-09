@@ -13,7 +13,7 @@ const navActions = (dictionary: any, locale: Locale, cartItemCount: number) => [
   {
     label: "Ergashev",
     description: dictionary.profile,
-    href: "#profile",
+    href: `/${locale}/profile`,
     icon: (
       <svg
         width="22"

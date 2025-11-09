@@ -97,7 +97,7 @@ export function CartItem({ item, dictionary, lang }: CartItemProps) {
             <button
               onClick={() => updateQuantity(product.id, quantity + 1)}
               disabled={quantity >= product.quantity}
-              className="px-2 sm:px-3 py-2 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 disabled:text-neutral-300 dark:disabled:text-neutral-600 disabled:cursor-not-allowed transition-all duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-700 active:scale-95"
+              className="px-2 sm:px-3 py-2 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 disabled:text-neutral-300 dark:disabled:text-neutral-600 disabled:cursor-not-allowed transition-all duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-700 active:scale-95 cursor-pointer"
               type="button"
             >
               <svg
@@ -117,7 +117,7 @@ export function CartItem({ item, dictionary, lang }: CartItemProps) {
           </div>
           <button
             onClick={() => removeFromCart(product.id)}
-            className="text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-200 p-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors"
+            className="text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-200 p-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors cursor-pointer"
             aria-label={dictionary.cart?.remove || "Удалить"}
           >
             <svg

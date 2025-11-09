@@ -5,7 +5,7 @@ import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { resolveLocale, type Locale } from "@/lib/i18n/config";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { NotFoundPlayer } from "@/app/components/common/NotFoundPlayer";
+import { AnimationPlayer } from "@/app/components/common/AnimationPlayer";
 
 export default function ProductNotFound() {
   const pathname = usePathname();
@@ -26,7 +26,7 @@ export default function ProductNotFound() {
     <div className="flex min-h-screen items-center justify-center bg-white dark:bg-neutral-900">
       <div className="text-center">
         <div className="w-64 h-64 mx-auto mb-8">
-          <NotFoundPlayer src={notFoundAnimationUrl} loop={true} autoplay={true} />
+          <AnimationPlayer src={notFoundAnimationUrl} loop={true} autoplay={true} />
         </div>
         <h1 className="text-4xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
           {dictionary.product?.notFound || "Товар не найден"}

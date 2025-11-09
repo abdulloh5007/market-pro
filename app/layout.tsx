@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { CartProvider } from "./context/CartContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,15 +25,14 @@ export const viewport = {
   userScalable: false,
 };
 
-import { CartProvider } from "./context/CartContext";
-
-export default function RootLayout({
-  children,
-  params,
-}: Readonly<{
+interface RootLayoutProps {
   children: React.ReactNode;
-  params: { lang: string };
-}>) {
+  params: {
+    lang: string;
+  };
+}
+
+export default function RootLayout({ children, params }: RootLayoutProps) {
   return (
     <html lang={params.lang} suppressHydrationWarning>
       <body

@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Lottie from "lottie-react";
 import pako from "pako";
 
-interface NotFoundPlayerProps {
+interface AnimationPlayerProps {
   src: string;
   className?: string;
   style?: React.CSSProperties;
@@ -12,8 +12,8 @@ interface NotFoundPlayerProps {
   autoplay?: boolean;
 }
 
-export const NotFoundPlayer = React.memo(
-  ({ src, className, style, loop = false, autoplay = false }: NotFoundPlayerProps) => {
+export const AnimationPlayer = React.memo(
+  ({ src, className, style, loop = false, autoplay = false }: AnimationPlayerProps) => {
     const [animationData, setAnimationData] = useState<object | null>(null);
     const lottieRef = useRef<any>(null);
 
@@ -59,4 +59,4 @@ export const NotFoundPlayer = React.memo(
   }
 );
 
-NotFoundPlayer.displayName = "TgsPlayer";
+AnimationPlayer.displayName = "TgsPlayer";
