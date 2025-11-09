@@ -51,7 +51,6 @@ export const AnimationPlayer = React.memo(
           animationData={animationData}
           loop={loop}
           autoplay={autoplay}
-          renderer="canvas"
           className="w-full h-full object-contain"
         />
       </div>

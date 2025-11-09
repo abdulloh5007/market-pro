@@ -56,7 +56,6 @@ export const TgsPlayer = React.memo(
             animationData={animationData}
             loop={false}
             autoplay={false}
-            renderer="canvas"
             className="w-full h-full object-contain"
             onComplete={() => setIsPlaying(false)}
           />
