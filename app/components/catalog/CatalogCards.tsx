@@ -26,15 +26,15 @@ const CatalogCard: React.FC<CatalogCardProps> = ({
     <button
       onClick={() => onClick(catalogKey)}
       className={`
-        group relative flex flex-col lg:flex-row lg:aspect-auto lg:h-[60px]
-        items-center justify-center lg:justify-between
-        rounded-xl md:p-4 ${bgColor} 
-        shadow-md transition-all duration-300
-        hover:scale-[1.03] hover:shadow-lg
-        relative z-10 hover:z-50
-        ${isActive ? 'ring-4 ring-white ring-opacity-50' : ''}
-        cursor-pointer
-      `}
+    group relative flex flex-col lg:flex-row lg:aspect-auto lg:h-[60px]
+    items-center justify-center lg:justify-between
+    rounded-xl md:p-4 ${bgColor} 
+    shadow-md transition-all duration-300
+    hover:scale-[1.03] hover:shadow-lg
+    relative z-10 hover:z-50
+    ${isActive ? 'active-glow scale-[1.02]' : ''}
+    cursor-pointer 
+  `}
     >
       {/* Картинка */}
       <div

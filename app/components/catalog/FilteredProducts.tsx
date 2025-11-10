@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { ProductCard } from "../product/ProductCard";
-import { getProductsByCatalog, CatalogType } from "@/lib/products";
+import { getProductsByCatalogAndCategory, CatalogType } from "@/lib/products";
 import { Product } from "@/lib/products";
 
 const PAGE_SIZE = 10;
@@ -24,9 +24,32 @@ const getProductImage = (product: { photos?: string[] }) => {
   return fallbackImages[Math.floor(Math.random() * fallbackImages.length)];
 };
 
+const getCategoryLabel = (category: string, dictionary?: any) => {
+  if (category === "all") return dictionary?.categories?.all || "Все";
+  
+  // Dynamic category name mapping - can be extended as needed
+  const categoryTranslations: Record<string, string> = {
+    smartphones: "Смартфоны",
+    laptops: "Ноутбуки", 
+    airpods: "Наушники",
+    headwear: "Головные уборы",
+    clothing: "Одежда",
+    underwear: "Нижнее белье",
+    footwear: "Обувь",
+    barbells: "Штанги",
+    treadmills: "Беговые дорожки",
+    jump_ropes: "Скакалки",
+    programming: "Программирование",
+    science: "Наука",
+  };
+  
+  return categoryTranslations[category] || category.charAt(0).toUpperCase() + category.slice(1).replace('_', ' ');
+};
+
 export default function FilteredProducts({ dictionary }: { dictionary: any }) {
   const searchParams = useSearchParams();
   const catalogParam = searchParams.get("catalog");
+  const categoryParam = searchParams.get("category") || "all";
   const [products, setProducts] = useState<Product[]>([]);
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [loading, setLoading] = useState(false);
@@ -38,8 +61,8 @@ export default function FilteredProducts({ dictionary }: { dictionary: any }) {
       if (catalog) {
         setLoading(true);
         try {
-          const catalogProducts = await getProductsByCatalog(catalog);
-          const sortedProducts = catalogProducts.sort((a, b) => b.rating - a.rating);
+          const catalogProducts = await getProductsByCatalogAndCategory(catalog, categoryParam);
+          const sortedProducts = catalogProducts.sort((a: Product, b: Product) => b.rating - a.rating);
           setProducts(sortedProducts);
           setVisibleCount(PAGE_SIZE);
         } catch (error) {
@@ -55,7 +78,7 @@ export default function FilteredProducts({ dictionary }: { dictionary: any }) {
     };
 
     fetchProducts();
-  }, [catalog]);
+  }, [catalog, categoryParam]);
 
   if (!catalog) {
     return null;
@@ -66,7 +89,10 @@ export default function FilteredProducts({ dictionary }: { dictionary: any }) {
       <section className="mx-auto w-full max-w-6xl px-4 pb-8 md:px-6">
         <div className="py-4 sm:py-6">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">
-            {dictionary.categories[catalog]}
+            {categoryParam === "all" 
+              ? dictionary.categories[catalog] 
+              : `${dictionary.categories[catalog]} - ${getCategoryLabel(categoryParam, dictionary)}`
+            }
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3 md:gap-4">
             {Array.from({ length: 10 }).map((_, index) => (
@@ -86,7 +112,10 @@ export default function FilteredProducts({ dictionary }: { dictionary: any }) {
       <section className="mx-auto w-full max-w-6xl px-4 pb-8 md:px-6">
         <div className="py-4 sm:py-6 text-center">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">
-            {dictionary.categories[catalog]}
+            {categoryParam === "all" 
+              ? dictionary.categories[catalog] 
+              : `${dictionary.categories[catalog]} - ${getCategoryLabel(categoryParam, dictionary)}`
+            }
           </h2>
           <p className="text-gray-500 dark:text-gray-400">
             {dictionary.header?.no_products_found || "Товары не найдены"}
@@ -102,7 +131,10 @@ export default function FilteredProducts({ dictionary }: { dictionary: any }) {
     <section className="mx-auto w-full max-w-6xl px-4 pb-8 md:px-6">
       <div className="py-4 sm:py-6">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">
-          {dictionary.categories[catalog]}
+          {categoryParam === "all" 
+            ? dictionary.categories[catalog] 
+            : `${dictionary.categories[catalog]} - ${getCategoryLabel(categoryParam, dictionary)}`
+          }
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3 md:gap-4">
           {visibleProducts.map((product) => (

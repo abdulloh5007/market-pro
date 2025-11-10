@@ -91,6 +91,81 @@ export async function getProductsByCatalog(catalog: string): Promise<Product[]> 
 
 export type CatalogType = "electronics" | "clothes" | "sport" | "books";
 
+export interface Category {
+  category: string;
+  products: Product[];
+}
+
+export async function getCategoriesByCatalog(catalog: string): Promise<Category[]> {
+  try {
+    let url = "/products.json";
+
+    // Абсолютный — только на сервере
+    if (typeof window === "undefined") {
+      const base =
+        process.env.NEXT_PUBLIC_BASE_URL ||
+        `https://${process.env.VERCEL_URL}` ||
+        "http://localhost:3000";
+
+      url = `${base}/products.json`;
+    }
+
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) throw new Error("Failed to fetch products");
+
+    const data = await res.json();
+
+    return data[catalog] || [];
+  } catch (error) {
+    console.error("Error fetching categories by catalog:", error);
+    return [];
+  }
+}
+
+export async function getProductsByCatalogAndCategory(catalog: string, category: string): Promise<Product[]> {
+  try {
+    let url = "/products.json";
+
+    // Абсолютный — только на сервере
+    if (typeof window === "undefined") {
+      const base =
+        process.env.NEXT_PUBLIC_BASE_URL ||
+        `https://${process.env.VERCEL_URL}` ||
+        "http://localhost:3000";
+
+      url = `${base}/products.json`;
+    }
+
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) throw new Error("Failed to fetch products");
+
+    const data = await res.json();
+
+    const catalogProducts: Product[] = [];
+    if (data[catalog]) {
+      if (category === "all") {
+        // Return all products from catalog
+        data[catalog].forEach((subCategory: any) => {
+          if (subCategory.products) {
+            catalogProducts.push(...subCategory.products);
+          }
+        });
+      } else {
+        // Return products from specific category
+        const categoryData = data[catalog].find((cat: any) => cat.category === category);
+        if (categoryData && categoryData.products) {
+          catalogProducts.push(...categoryData.products);
+        }
+      }
+    }
+
+    return catalogProducts;
+  } catch (error) {
+    console.error("Error fetching products by catalog and category:", error);
+    return [];
+  }
+}
+
 export async function getAllProducts(): Promise<Product[]> {
   try {
     let url = "/products.json";

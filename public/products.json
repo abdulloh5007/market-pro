@@ -883,6 +883,47 @@
           ]
         }
       ]
+    },
+    {
+      "category": "games",
+      "products": [
+        {
+          "id": "b3_s1",
+          "name": "Cosmos",
+          "description": "Carl Sagan's classic exploration of the universe.",
+          "price": 25,
+          "quantity": 100,
+          "discount": null,
+          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "rating": 4.7,
+          "comments": [
+            {
+              "user": "Daniel",
+              "text": "A truly inspiring book.",
+              "date": "2023-08-25",
+              "rating": 5
+            }
+          ]
+        },
+        {
+          "id": "b3_s2",
+          "name": "Sapiens: A Brief History of Humankind",
+          "description": "Yuval Noah Harari's groundbreaking book on human history.",
+          "price": 30,
+          "quantity": 90,
+          "discount": null,
+          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "rating": 4.6,
+          "comments": [
+            {
+              "user": "Ella",
+              "text": "Thought-provoking and well-written.",
+              "date": "2023-09-08",
+              "rating": 5
+            }
+          ]
+        }
+      ]
     }
   ]
 }
