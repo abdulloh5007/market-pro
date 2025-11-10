@@ -513,6 +513,318 @@
         },
         {
           "id": "b1_p2",
+          "name": "Clean Code",
+          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "price": 40,
+          "quantity": 60,
+          "discount": null,
+          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "rating": 4.9,
+          "comments": [
+            {
+              "user": "Anna",
+              "text": "A must-read for every developer.",
+              "date": "2023-09-18",
+              "rating": 5
+            },
+            {
+              "user": "Ben",
+              "text": "Changed the way I write code.",
+              "date": "2023-09-10",
+              "rating": 5
+            }
+          ]
+        },
+        {
+          "id": "b1_p3",
+          "name": "Clean Code",
+          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "price": 40,
+          "quantity": 60,
+          "discount": null,
+          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "rating": 4.9,
+          "comments": [
+            {
+              "user": "Anna",
+              "text": "A must-read for every developer.",
+              "date": "2023-09-18",
+              "rating": 5
+            },
+            {
+              "user": "Ben",
+              "text": "Changed the way I write code.",
+              "date": "2023-09-10",
+              "rating": 5
+            }
+          ]
+        },
+        {
+          "id": "b1_p4",
+          "name": "Clean Code",
+          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "price": 40,
+          "quantity": 60,
+          "discount": null,
+          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "rating": 4.9,
+          "comments": [
+            {
+              "user": "Anna",
+              "text": "A must-read for every developer.",
+              "date": "2023-09-18",
+              "rating": 5
+            },
+            {
+              "user": "Ben",
+              "text": "Changed the way I write code.",
+              "date": "2023-09-10",
+              "rating": 5
+            }
+          ]
+        },
+        {
+          "id": "b1_p5",
+          "name": "Clean Code",
+          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "price": 40,
+          "quantity": 60,
+          "discount": null,
+          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "rating": 4.9,
+          "comments": [
+            {
+              "user": "Anna",
+              "text": "A must-read for every developer.",
+              "date": "2023-09-18",
+              "rating": 5
+            },
+            {
+              "user": "Ben",
+              "text": "Changed the way I write code.",
+              "date": "2023-09-10",
+              "rating": 5
+            }
+          ]
+        },
+        {
+          "id": "b1_p6",
+          "name": "Clean Code",
+          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "price": 40,
+          "quantity": 60,
+          "discount": null,
+          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "rating": 4.9,
+          "comments": [
+            {
+              "user": "Anna",
+              "text": "A must-read for every developer.",
+              "date": "2023-09-18",
+              "rating": 5
+            },
+            {
+              "user": "Ben",
+              "text": "Changed the way I write code.",
+              "date": "2023-09-10",
+              "rating": 5
+            }
+          ]
+        },
+        {
+          "id": "b1_p7",
+          "name": "Clean Code",
+          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "price": 40,
+          "quantity": 60,
+          "discount": null,
+          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "rating": 4.9,
+          "comments": [
+            {
+              "user": "Anna",
+              "text": "A must-read for every developer.",
+              "date": "2023-09-18",
+              "rating": 5
+            },
+            {
+              "user": "Ben",
+              "text": "Changed the way I write code.",
+              "date": "2023-09-10",
+              "rating": 5
+            }
+          ]
+        },
+        {
+          "id": "b1_p8",
+          "name": "Clean Code",
+          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "price": 40,
+          "quantity": 60,
+          "discount": null,
+          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "rating": 4.9,
+          "comments": [
+            {
+              "user": "Anna",
+              "text": "A must-read for every developer.",
+              "date": "2023-09-18",
+              "rating": 5
+            },
+            {
+              "user": "Ben",
+              "text": "Changed the way I write code.",
+              "date": "2023-09-10",
+              "rating": 5
+            }
+          ]
+        },
+        {
+          "id": "b1_p9",
+          "name": "Clean Code",
+          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "price": 40,
+          "quantity": 60,
+          "discount": null,
+          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "rating": 4.9,
+          "comments": [
+            {
+              "user": "Anna",
+              "text": "A must-read for every developer.",
+              "date": "2023-09-18",
+              "rating": 5
+            },
+            {
+              "user": "Ben",
+              "text": "Changed the way I write code.",
+              "date": "2023-09-10",
+              "rating": 5
+            }
+          ]
+        },
+        {
+          "id": "b1_p10",
+          "name": "Clean Code",
+          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "price": 40,
+          "quantity": 60,
+          "discount": null,
+          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "rating": 4.9,
+          "comments": [
+            {
+              "user": "Anna",
+              "text": "A must-read for every developer.",
+              "date": "2023-09-18",
+              "rating": 5
+            },
+            {
+              "user": "Ben",
+              "text": "Changed the way I write code.",
+              "date": "2023-09-10",
+              "rating": 5
+            }
+          ]
+        },
+        {
+          "id": "b1_p11",
+          "name": "Clean Code",
+          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "price": 40,
+          "quantity": 60,
+          "discount": null,
+          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "rating": 4.9,
+          "comments": [
+            {
+              "user": "Anna",
+              "text": "A must-read for every developer.",
+              "date": "2023-09-18",
+              "rating": 5
+            },
+            {
+              "user": "Ben",
+              "text": "Changed the way I write code.",
+              "date": "2023-09-10",
+              "rating": 5
+            }
+          ]
+        },
+        {
+          "id": "b1_p12",
+          "name": "Clean Code",
+          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "price": 40,
+          "quantity": 60,
+          "discount": null,
+          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "rating": 4.9,
+          "comments": [
+            {
+              "user": "Anna",
+              "text": "A must-read for every developer.",
+              "date": "2023-09-18",
+              "rating": 5
+            },
+            {
+              "user": "Ben",
+              "text": "Changed the way I write code.",
+              "date": "2023-09-10",
+              "rating": 5
+            }
+          ]
+        },
+        {
+          "id": "b1_p13",
+          "name": "Clean Code",
+          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "price": 40,
+          "quantity": 60,
+          "discount": null,
+          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "rating": 4.9,
+          "comments": [
+            {
+              "user": "Anna",
+              "text": "A must-read for every developer.",
+              "date": "2023-09-18",
+              "rating": 5
+            },
+            {
+              "user": "Ben",
+              "text": "Changed the way I write code.",
+              "date": "2023-09-10",
+              "rating": 5
+            }
+          ]
+        },
+        {
+          "id": "b1_p14",
+          "name": "Clean Code",
+          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "price": 40,
+          "quantity": 60,
+          "discount": null,
+          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "rating": 4.9,
+          "comments": [
+            {
+              "user": "Anna",
+              "text": "A must-read for every developer.",
+              "date": "2023-09-18",
+              "rating": 5
+            },
+            {
+              "user": "Ben",
+              "text": "Changed the way I write code.",
+              "date": "2023-09-10",
+              "rating": 5
+            }
+          ]
+        },
+        {
+          "id": "b1_p15",
           "name": "The Pragmatic Programmer",
           "description": "Your Journey To Mastery by David Thomas and Andrew Hunt.",
           "price": 35,

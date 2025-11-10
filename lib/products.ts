@@ -54,6 +54,43 @@ export async function getProductById(id: string): Promise<Product | null> {
   }
 }
 
+export async function getProductsByCatalog(catalog: string): Promise<Product[]> {
+  try {
+    let url = "/products.json";
+
+    // Абсолютный — только на сервере
+    if (typeof window === "undefined") {
+      const base =
+        process.env.NEXT_PUBLIC_BASE_URL ||
+        `https://${process.env.VERCEL_URL}` ||
+        "http://localhost:3000";
+
+      url = `${base}/products.json`;
+    }
+
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) throw new Error("Failed to fetch products");
+
+    const data = await res.json();
+
+    const catalogProducts: Product[] = [];
+    if (data[catalog]) {
+      data[catalog].forEach((subCategory: any) => {
+        if (subCategory.products) {
+          catalogProducts.push(...subCategory.products);
+        }
+      });
+    }
+
+    return catalogProducts;
+  } catch (error) {
+    console.error("Error fetching products by catalog:", error);
+    return [];
+  }
+}
+
+export type CatalogType = "electronics" | "clothes" | "sport" | "books";
+
 export async function getAllProducts(): Promise<Product[]> {
   try {
     let url = "/products.json";

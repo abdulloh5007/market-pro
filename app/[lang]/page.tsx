@@ -1,7 +1,7 @@
 import { SUPPORTED_LOCALES, resolveLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { HeroCarousel } from "./(components)/HeroCarousel";
-import { CatalogCards, TopProducts } from "@/app/components/catalog";
+import { CatalogCards, TopProducts, FilteredProducts } from "@/app/components/catalog";
 
 type PageProps = {
   params: Promise<{
@@ -27,6 +27,8 @@ export default async function LangHomePage({ params }: PageProps) {
       </section>
 
       <CatalogCards dictionary={dictionary} />
+
+      <FilteredProducts dictionary={dictionary} />
 
       <section className="mx-auto w-full max-w-6xl px-4 pb-20 md:px-6">
         <TopProducts dictionary={dictionary} />
