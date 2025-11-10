@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Product, getAllProducts } from "@/lib/products";
 import { useDebounce } from "@/hooks/useDebounce";
 
-interface SearchDropdownProps {
+interface SearchDropdownForMobileProps {
   query: string;
   locale: string;
   dictionary: any;
@@ -14,7 +14,7 @@ interface SearchDropdownProps {
 
 const PAGE_SIZE = 10;
 
-export function SearchDropdown({ query, locale, dictionary, onClose }: SearchDropdownProps) {
+export function SearchDropdownForMobile({ query, locale, dictionary, onClose }: SearchDropdownForMobileProps) {
   const [products, setProducts] = useState<Product[]>([]);
   const [categories, setCategories] = useState<any>({});
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
@@ -96,8 +96,8 @@ export function SearchDropdown({ query, locale, dictionary, onClose }: SearchDro
 
   return (
     <div
-      id="search-dropdown"
-      className="absolute top-full mt-2 w-full rounded-lg border border-neutral-200 bg-white shadow-lg dark:border-neutral-700 dark:bg-neutral-800 z-50 max-h-[300px] overflow-y-auto md:z-100"
+      id="search-dropdown-mobile"
+      className="absolute top-full mt-2 w-full rounded-lg border border-neutral-200 bg-white shadow-lg dark:border-neutral-700 dark:bg-neutral-800 z-50 max-h-[300px] overflow-y-auto"
       onClick={(e) => e.stopPropagation()}
     >
       {visibleProducts.length > 0 ? (

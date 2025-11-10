@@ -94,9 +94,8 @@
     "havePromoCode": "Promokod bormi?"
   },
   "announcement": {
-    "discount": "50% CHEGIRMA",
-    "freeDelivery": "BEPUL YETKAZIB BERISH",
-    "discountShort": "CHEGIRMA",
-    "delivery": "YETKAZIB BERISH"
+    "discount": "-50%",
+    "promoTextShort": "Promokoddan foydalaning",
+    "promocode": "MARKET"
   }
 }

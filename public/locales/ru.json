@@ -94,9 +94,8 @@
     "havePromoCode": "Есть промокод?"
   },
   "announcement": {
-    "discount": "СКИДКА 50%",
-    "freeDelivery": "БЕСПЛАТНАЯ ДОСТАВКА",
-    "discountShort": "СКИДКА",
-    "delivery": "ДОСТАВКА"
+    "discount": "-50%",
+    "promoTextShort": "Используйте промокод",
+    "promocode": "MARKET"
   }
 }

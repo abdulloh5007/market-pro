@@ -29,13 +29,14 @@ export function AnnouncementBar({ dictionary }: AnnouncementBarProps) {
             </svg>
           </div>
 
-          <span className="flex">
+          <span className="flex items-center">
             <span className="bg-[#5e28d1] text-white px-2 py-1 rounded-full text-xs font-bold mr-2">
-              -50%
+              {dictionary.announcement.discount} 
             </span>
             {/* <span className="mx-1">•</span> */}
-            <p className="text-neutral-700 dark:text-neutral-300 font-bold">Используй промокод <span className="text-[#5e28d1] font-bold">MARKET</span></p>
+            <p className="text-neutral-700 dark:text-neutral-300 font-bold">{dictionary.announcement.promoTextShort} <span className="text-[#5e28d1] font-bold">{dictionary.announcement.promocode}</span></p>
           </span>
+
         </div>
       </div>
     </div>

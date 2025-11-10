@@ -7,6 +7,7 @@ import { useCart } from "@/app/context/CartContext";
 import { LanguageSwitcher } from "../../[lang]/(components)/LanguageSwitcher";
 import { ThemeSwitcher } from "../../[lang]/(components)/ThemeSwitcher";
 import { SearchDropdown } from "./SearchDropdown";
+import { SearchDropdownForMobile } from "./SearchDropdownForMobile";
 
 // @ts-ignore
 const navActions = (dictionary: any, locale: Locale, cartItemCount: number) => [
@@ -117,16 +118,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  useEffect(() => {
-    if (isSearchFocused && isMobile) { // Apply only on mobile when search is focused
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = ''; // Clean up on unmount
-    };
-  }, [isSearchFocused, isMobile]);
+  // Remove the mobile-specific body overflow logic since SearchDropdown handles it
 
   // обновляем описание для избранного
   const favoritesAction = actions.find(a => a.label === dictionary.header.favorites);
@@ -146,7 +138,9 @@ export function Header({ locale, dictionary }: HeaderProps) {
     const handleClickOutside = (event: MouseEvent) => {
       if (
         searchContainerRef.current &&
-        !searchContainerRef.current.contains(event.target as Node)
+        !searchContainerRef.current.contains(event.target as Node) &&
+        !document.querySelector("#search-dropdown")?.contains(event.target as Node) &&
+        !document.querySelector("#search-dropdown-mobile")?.contains(event.target as Node)
       ) {
         setIsSearchFocused(false);
       }
@@ -210,7 +204,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
                 />
               </svg>
             </button>
-            {isSearchFocused && <SearchDropdown query={query} locale={locale} dictionary={dictionary} />}
+            {isSearchFocused && <SearchDropdownForMobile query={query} locale={locale} dictionary={dictionary} onClose={() => setIsSearchFocused(false)} />}
           </form>
         </div>
 
@@ -284,6 +278,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
                 type="search"
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
+                onFocus={() => setIsSearchFocused(true)}
                 placeholder={dictionary.header.search_placeholder}
                 className="w-full rounded-xl border border-neutral-200 bg-neutral-50 py-3 pl-4 pr-12 text-sm text-neutral-700 shadow-sm focus:outline-none dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:placeholder:text-neutral-500"
               />
@@ -312,6 +307,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
                   />
                 </svg>
               </button>
+              {isSearchFocused && <SearchDropdown query={query} locale={locale} dictionary={dictionary} onClose={() => setIsSearchFocused(false)} />}
             </form>
 
             <nav className="flex flex-col gap-2 border-b border-neutral-100 pb-4 dark:border-neutral-800">
