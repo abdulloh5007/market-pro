@@ -117,7 +117,7 @@ export function ProductCard({ product, imageUrl, dictionary }: ProductCardProps)
           <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 h-8 sm:h-10 mt-1 overflow-hidden line-clamp-2">{product.description}</p>
           <button 
             onClick={handleAddToCartClick}
-            className="mt-2 sm:mt-3 md:mt-4 w-full bg-purple-600 hover:bg-purple-700 text-white text-xs sm:text-sm md:text-base font-bold py-1 sm:py-1.5 rounded-lg transform hover:scale-103 transition-transform duration-200 cursor-pointer"
+            className="mt-2 sm:mt-3 md:mt-4 w-full bg-purple-600 hover:bg-purple-700 text-white text-xs sm:text-sm md:text-base font-bold py-1 sm:py-1.5 rounded-lg transform hover:scale-103 transition-all duration-200 cursor-pointer"
             type="button"
           >
             {dictionary.addToCart}

@@ -1,11 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { getCategoriesByCatalog, CatalogType } from "@/lib/products";
 
 const getCategoryLabel = (category: string) => {
-  // Dynamic category name mapping - can be extended as needed
   const categoryTranslations: Record<string, string> = {
     smartphones: "Смартфоны",
     laptops: "Ноутбуки",
@@ -38,6 +37,37 @@ export default function CategoryFilters({ dictionary }: { dictionary: any }) {
   const catalogParam = searchParams.get("catalog");
   const categoryParam = searchParams.get("category") || "all";
   const catalog = catalogParam as CatalogType | null;
+
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [showLeftShadow, setShowLeftShadow] = useState(false);
+  const [showRightShadow, setShowRightShadow] = useState(false);
+
+  // ✅ Проверка видимости теней
+  const updateShadows = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const canScroll = el.scrollWidth > el.clientWidth;
+
+    if (!canScroll) {
+      setShowLeftShadow(false);
+      setShowRightShadow(false);
+      return;
+    }
+
+    setShowLeftShadow(el.scrollLeft > 0);
+    setShowRightShadow(el.scrollLeft + el.clientWidth < el.scrollWidth);
+  };
+
+  useEffect(() => {
+    updateShadows();
+    window.addEventListener("resize", updateShadows);
+    return () => window.removeEventListener("resize", updateShadows);
+  }, [categories]);
+
+  const handleScroll = () => {
+    updateShadows();
+  };
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -84,18 +114,16 @@ export default function CategoryFilters({ dictionary }: { dictionary: any }) {
     router.push(newUrl);
   };
 
-  if (!catalog || categories.length === 0) {
-    return null;
-  }
+  if (!catalog || categories.length === 0) return null;
 
   if (loading) {
     return (
       <section className="mx-auto w-full max-w-6xl px-4 pb-4 md:px-6">
-        <div className="flex gap-2 overflow-x-auto">
+        <div className="flex gap-2 overflow-x-auto py-4 scrollbar-hide">
           {Array.from({ length: 4 }).map((_, index) => (
             <div
               key={index}
-              className="bg-gray-200 dark:bg-gray-800 rounded-lg h-10 w-24 animate-pulse flex-shrink-0"
+              className="bg-gray-200 dark:bg-gray-800 rounded-full h-10 w-24 animate-pulse flex-shrink-0"
             />
           ))}
         </div>
@@ -105,25 +133,42 @@ export default function CategoryFilters({ dictionary }: { dictionary: any }) {
 
   return (
     <section className="mx-auto w-full max-w-6xl px-4 pb-4 md:px-6">
-      <div className="flex gap-2 overflow-x-auto py-2">
-        {categories.map((category) => {
-          const isActive = categoryParam === category.key;
-          return (
-            <button
-              key={category.key}
-              onClick={() => handleCategoryClick(category.key)}
-              className={`
-                flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer
-                ${isActive 
-                  ? 'bg-purple-50 text-purple-600 shadow-sm hover:bg-purple-100 dark:bg-purple-900/30 dark:text-purple-400 dark:hover:bg-purple-900/50' 
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700'
-                }
-              `}
-            >
-              {category.label}
-            </button>
-          );
-        })}
+      <div className="relative">
+        {/* Scrollable buttons */}
+        <div
+          ref={scrollRef}
+          onScroll={handleScroll}
+          className="flex gap-2 overflow-x-auto py-6 md:py-4 scrollbar-hide"
+        >
+          {categories.map((category) => {
+            const isActive = categoryParam === category.key;
+            return (
+              <button
+                key={category.key}
+                onClick={() => handleCategoryClick(category.key)}
+                className={`
+                  flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 bg-neutral-800 cursor-pointer
+                  ${isActive 
+                    ? 'bg-purple-600 hover:bg-purple-700 text-white' 
+                    : 'text-gray-700 hover:bg-gray-400 dark:text-gray-200 dark:hover:bg-neutral-700'
+                  }
+                `}
+              >
+                {category.label}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* ✅ Left shadow */}
+        {showLeftShadow && (
+          <div className="pointer-events-none absolute top-0 left-0 h-full w-8 rounded-full bg-gradient-to-r from-black/40 to-transparent" />
+        )}
+
+        {/* ✅ Right shadow */}
+        {showRightShadow && (
+          <div className="pointer-events-none absolute top-0 right-0 h-full w-8 rounded-full bg-gradient-to-l from-black/40 to-transparent" />
+        )}
       </div>
     </section>
   );

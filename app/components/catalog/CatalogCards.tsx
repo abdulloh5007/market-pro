@@ -111,7 +111,7 @@ function CatalogCardsClient({ dictionary }: { dictionary: any }) {
   ];
 
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 py-2 md:px-6">
+    <section className="mx-auto w-full max-w-6xl px-4  md:px-6">
       <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-3 sm:gap-4">
         {categories.map((category) => (
           <CatalogCard
