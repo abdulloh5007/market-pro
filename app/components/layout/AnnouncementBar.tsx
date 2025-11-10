@@ -16,7 +16,7 @@ export function AnnouncementBar({ dictionary }: AnnouncementBarProps) {
               height="16"
               viewBox="0 0 24 24"
               fill="none"
-              className="text-[#5e28d1]"
+              className="text-[#5e28d1] shake-animation"
             >
               <path
                 d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
@@ -29,14 +29,13 @@ export function AnnouncementBar({ dictionary }: AnnouncementBarProps) {
             </svg>
           </div>
 
-          <span className="flex items-center">
+          <span className="flex">
             <span className="bg-[#5e28d1] text-white px-2 py-1 rounded-full text-xs font-bold mr-2">
-              {dictionary.announcement.discount} 
+              -50%
             </span>
             {/* <span className="mx-1">•</span> */}
-            <p className="text-neutral-700 dark:text-neutral-300 font-bold">{dictionary.announcement.promoTextShort} <span className="text-[#5e28d1] font-bold">{dictionary.announcement.promocode}</span></p>
+            <p className="text-neutral-700 dark:text-neutral-300 font-bold">Используй промокод <span className="text-[#5e28d1] font-bold">MARKET</span></p>
           </span>
-
         </div>
       </div>
     </div>

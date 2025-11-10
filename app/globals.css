@@ -56,3 +56,31 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #7c3aed;
 }
+
+.shake-animation {
+  animation: shake-and-grow 4s ease-in-out infinite;
+}
+
+@keyframes shake-and-grow {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  10% {
+    transform: scale(1.35) rotate(-8deg);
+  }
+  20% {
+    transform: scale(1.35) rotate(8deg);
+  }
+  30% {
+    transform: scale(1.35) rotate(-6deg);
+  }
+  40% {
+    transform: scale(1.35) rotate(6deg);
+  }
+  50% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
