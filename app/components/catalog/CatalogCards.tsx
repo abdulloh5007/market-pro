@@ -75,11 +75,11 @@ function CatalogCardsClient({ dictionary }: { dictionary: any }) {
     const currentPath = window.location.pathname;
     if (catalog === currentCatalog) {
       // If same catalog is clicked, remove the parameter
-      router.push(currentPath);
+      router.replace(currentPath, { scroll: false });
     } else {
       // If different catalog is clicked, update the parameter
       const newUrl = `${currentPath}?catalog=${catalog}`;
-      router.push(newUrl);
+      router.replace(newUrl, { scroll: false });
     }
   };
 

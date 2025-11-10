@@ -111,7 +111,8 @@ export default function CategoryFilters({ dictionary }: { dictionary: any }) {
       ? `${currentPath}?${params.toString()}`
       : currentPath;
     
-    router.push(newUrl);
+    // Используем router.replace для обновления URL без перезагрузки страницы
+    router.replace(newUrl, { scroll: false });
   };
 
   if (!catalog || categories.length === 0) return null;
