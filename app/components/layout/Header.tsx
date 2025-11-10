@@ -159,7 +159,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
   }, []);
 
   return (
-    <header className="border-b border-neutral-100 bg-white dark:border-neutral-800 dark:bg-neutral-900">
+    <header className="border-b border-neutral-100 bg-white dark:border-neutral-800 dark:bg-neutral-900 sticky top-0 z-40">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 md:px-6">
         <Link
           href={`/${locale}`}
@@ -256,7 +256,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
           <button
             type="button"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="flex h-11 w-11 items-center justify-center rounded-xl border border-neutral-200 text-neutral-500 dark:border-neutral-700 dark:text-neutral-400 md:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-xl border border-neutral-200 text-neutral-500 dark:border-neutral-700 dark:text-neutral-400 md:hidden cursor-pointer"
             aria-label={dictionary.header.menu}
           >
             {isMenuOpen ? (

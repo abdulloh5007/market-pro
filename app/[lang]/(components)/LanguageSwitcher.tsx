@@ -103,7 +103,7 @@ export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex h-11 items-center gap-2.5 rounded-xl border border-neutral-200 px-4 text-sm font-medium text-neutral-600 transition hover:bg-neutral-50 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800"
+        className="flex h-11 items-center gap-2.5 rounded-xl border border-neutral-200 px-4 text-sm font-medium text-neutral-600 transition hover:bg-neutral-50 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800 cursor-pointer"
         aria-label="Выбрать язык"
       >
         <FlagIcon locale={currentLocale} className="h-5 w-5 rounded-full" />
@@ -129,7 +129,7 @@ export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
             <button
               key={locale}
               onClick={() => handleLocaleChange(locale)}
-              className={`flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-sm transition ${
+              className={`flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-sm transition cursor-pointer ${
                 locale === currentLocale
                   ? "bg-purple-50 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400"
                   : "text-neutral-700 hover:bg-neutral-50 dark:text-neutral-300 dark:hover:bg-neutral-700"

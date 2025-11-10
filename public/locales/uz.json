@@ -86,6 +86,17 @@
     "orderSuccessTitle": "Buyurtma muvaffaqiyatli joylashtirildi!",
     "orderSuccessMessage": "Buyurtmangiz uchun rahmat. Tez orada siz bilan bog'lanamiz.",
     "orderedItems": "Buyurtma qilingan mahsulotlar:",
-    "continueShopping": "Xarid qilishni davom ettirish"
+    "continueShopping": "Xarid qilishni davom ettirish",
+    "promoCode": "Promokod",
+    "applyPromoCode": "Qo'llash",
+    "promoCodeApplied": "Promokod qo'llandi! 50% chegirma",
+    "invalidPromoCode": "Noto'g'ri promokod",
+    "havePromoCode": "Promokod bormi?"
+  },
+  "announcement": {
+    "discount": "50% CHEGIRMA",
+    "freeDelivery": "BEPUL YETKAZIB BERISH",
+    "discountShort": "CHEGIRMA",
+    "delivery": "YETKAZIB BERISH"
   }
 }

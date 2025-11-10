@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import type { ReactNode } from "react";
 
-import { Footer, Header, ThemeProvider } from "@/app/components/layout";
+import { Footer, Header, ThemeProvider, AnnouncementBar } from "@/app/components/layout";
 import { resolveLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 
@@ -24,6 +24,7 @@ export default async function LangLayout({ children, params }: LangLayoutProps) 
   return (
     <ThemeProvider>
       <div className="flex min-h-screen flex-col bg-neutral-50 dark:bg-black">
+        <AnnouncementBar dictionary={dictionary} />
         <Header locale={locale} dictionary={dictionary} />
         <main className="flex-1 bg-white shadow-[0_6px_24px_rgba(15,23,42,0.04)] dark:bg-neutral-900 dark:shadow-[0_6px_24px_rgba(0,0,0,0.3)]">
           {children}

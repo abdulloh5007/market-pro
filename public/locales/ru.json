@@ -86,6 +86,17 @@
     "orderSuccessTitle": "Заказ успешно оформлен!",
     "orderSuccessMessage": "Спасибо за ваш заказ. Мы свяжемся с вами в ближайшее время.",
     "orderedItems": "Заказанные товары:",
-    "continueShopping": "Продолжить покупки"
+    "continueShopping": "Продолжить покупки",
+    "promoCode": "Промокод",
+    "applyPromoCode": "Применить",
+    "promoCodeApplied": "Промокод применен! Скидка 50%",
+    "invalidPromoCode": "Неверный промокод",
+    "havePromoCode": "Есть промокод?"
+  },
+  "announcement": {
+    "discount": "СКИДКА 50%",
+    "freeDelivery": "БЕСПЛАТНАЯ ДОСТАВКА",
+    "discountShort": "СКИДКА",
+    "delivery": "ДОСТАВКА"
   }
 }

@@ -67,7 +67,7 @@ export function ProductCard({ product, imageUrl, dictionary }: ProductCardProps)
   return (
     <>
       <Link href={`/${lang}/product/${product.id}`} className="group flex flex-col rounded-lg overflow-hidden transition-shadow duration-300 ease-in-out hover:shadow-xl">
-        <div className="relative h-32 sm:h-40 md:h-48 overflow-hidden">
+        <div className="relative h-48 sm:h-40 md:h-48 overflow-hidden">
           <Image
             src={imageUrl}
             alt={product.name}

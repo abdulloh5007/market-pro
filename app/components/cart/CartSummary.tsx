@@ -5,9 +5,10 @@ import { useCart } from "@/app/context/CartContext";
 interface CartSummaryProps {
   dictionary: any;
   onPlaceOrder: () => void;
+  appliedPromoCode: string;
 }
 
-export function CartSummary({ dictionary, onPlaceOrder }: CartSummaryProps) {
+export function CartSummary({ dictionary, onPlaceOrder, appliedPromoCode }: CartSummaryProps) {
   const { cartItems } = useCart();
 
   const subtotal = cartItems.reduce((acc, item) => {
@@ -17,6 +18,9 @@ export function CartSummary({ dictionary, onPlaceOrder }: CartSummaryProps) {
       item.quantity;
     return acc + price;
   }, 0);
+
+  const discount = appliedPromoCode === "MARKET" ? subtotal * 0.5 : 0;
+  const total = subtotal - discount;
 
   return (
     <div className="rounded-lg bg-neutral-100 p-6 dark:bg-neutral-800">
@@ -30,12 +34,20 @@ export function CartSummary({ dictionary, onPlaceOrder }: CartSummaryProps) {
         <span>{dictionary.cart?.shipping || "Доставка"}</span>
         <span>{dictionary.cart?.free || "Бесплатно"}</span>
       </div>
+      {discount > 0 && (
+        <div className="flex justify-between mb-2 text-green-600 dark:text-green-400">
+          <span>Скидка (50%)</span>
+          <span>-{discount} {dictionary.currency}</span>
+        </div>
+      )}
       <div className="flex justify-between font-bold text-lg mb-6">
         <span>{dictionary.cart?.total || "Всего"}</span>
         <span>
-          {subtotal} {dictionary.currency}
+          {total} {dictionary.currency}
         </span>
       </div>
+
+
       <button
         onClick={onPlaceOrder}
         disabled={cartItems.length === 0}

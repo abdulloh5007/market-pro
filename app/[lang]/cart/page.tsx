@@ -4,6 +4,7 @@ import { useCart } from "@/app/context/CartContext";
 import { CartItem } from "@/app/components/cart/CartItem";
 import { OrderedItemCard } from "@/app/components/cart/OrderedItemCard";
 import { CartSummary } from "@/app/components/cart/CartSummary";
+import { PromoCodeCard } from "@/app/components/cart/PromoCodeCard";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { resolveLocale, type Locale } from "@/lib/i18n/config";
 import { useState, useEffect, use as useReact } from "react";
@@ -23,6 +24,8 @@ export default function CartPage({ params: paramsPromise }: CartPageProps) {
   const [locale, setLocale] = useState<Locale>("ru");
   const [isOrderSuccessModalOpen, setIsOrderSuccessModalOpen] = useState(false);
   const [orderPlacedItems, setOrderPlacedItems] = useState<typeof cartItems>([]);
+  const [appliedPromoCode, setAppliedPromoCode] = useState("");
+  const [promoMessage, setPromoMessage] = useState("");
 
   const params = useReact(paramsPromise);
 
@@ -30,6 +33,16 @@ export default function CartPage({ params: paramsPromise }: CartPageProps) {
     setOrderPlacedItems(cartItems);
     clearCart();
     setIsOrderSuccessModalOpen(true);
+  };
+
+  const handlePromoCodeApplied = (code: string) => {
+    if (code.toUpperCase() === "MARKET") {
+      setAppliedPromoCode("MARKET");
+      setPromoMessage(dictionary.cart?.promoCodeApplied || "Promo code applied! 50% discount");
+    } else {
+      setPromoMessage(dictionary.cart?.invalidPromoCode || "Invalid promo code");
+      setAppliedPromoCode("");
+    }
   };
 
   useEffect(() => {
@@ -78,7 +91,17 @@ export default function CartPage({ params: paramsPromise }: CartPageProps) {
               ))}
             </div>
             <div>
-              <CartSummary dictionary={dictionary} onPlaceOrder={handlePlaceOrder} />
+              <PromoCodeCard
+                dictionary={dictionary}
+                onPromoCodeApplied={handlePromoCodeApplied}
+                appliedPromoCode={appliedPromoCode}
+                promoMessage={promoMessage}
+              />
+              <CartSummary
+                dictionary={dictionary}
+                onPlaceOrder={handlePlaceOrder}
+                appliedPromoCode={appliedPromoCode}
+              />
             </div>
           </div>
         ) : (

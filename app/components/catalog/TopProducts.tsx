@@ -40,8 +40,8 @@ export default function TopProducts({ dictionary }: { dictionary: any }) {
 
   return (
     <div className="py-4 sm:py-6">
-      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 px-2 sm:px-0">{dictionary.topRatedProducts}</h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3 md:gap-4 px-2 sm:px-0">
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">{dictionary.topRatedProducts}</h2>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3 md:gap-4">
         {visibleProducts.map((product) => (
           <ProductCard
             key={product.id}

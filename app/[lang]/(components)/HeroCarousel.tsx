@@ -122,7 +122,7 @@ export function HeroCarousel() {
   };
 
   return (
-    <div className="relative h-[400px] w-full select-none overflow-hidden rounded-2xl bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-800 dark:to-neutral-900">
+    <div className="relative h-[300px] w-full select-none overflow-hidden rounded-2xl bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-800 dark:to-neutral-900 md:h-[400px]">
       <div
         ref={carouselRef}
         className={`relative h-full w-full select-none ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
