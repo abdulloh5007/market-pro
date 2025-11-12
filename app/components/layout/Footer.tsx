@@ -48,10 +48,10 @@ export function Footer({ dictionary }) {
             ))}
           </div>
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs">
-            <Link href="#privacy" className="transition hover:text-purple-600 hover:underline dark:hover:text-purple-400">
+            <Link href="#privacy" className="transition hover:text-[color:var(--color-primary-text)] hover:underline">
               {dictionary.footer.privacy_policy}
             </Link>
-            <Link href="#terms" className="transition hover:text-purple-600 hover:underline dark:hover:text-purple-400">
+            <Link href="#terms" className="transition hover:text-[color:var(--color-primary-text)] hover:underline">
               {dictionary.footer.terms_of_use}
             </Link>
           </div>

@@ -23,10 +23,10 @@ export default async function LangLayout({ children, params }: LangLayoutProps) 
 
   return (
     <ThemeProvider>
-      <div className="flex min-h-screen flex-col bg-neutral-50 dark:bg-black">
+      <div className="flex min-h-screen flex-col bg-[var(--background)]">
         <AnnouncementBar dictionary={dictionary} />
         <Header locale={locale} dictionary={dictionary} />
-        <main className="flex-1 bg-white shadow-[0_6px_24px_rgba(15,23,42,0.04)] dark:bg-neutral-900 dark:shadow-[0_6px_24px_rgba(0,0,0,0.3)]">
+        <main className="flex-1 bg-[var(--color-surface)] shadow-[0_6px_24px_rgba(15,23,42,0.04)] dark:shadow-[0_6px_24px_rgba(0,0,0,0.3)]">
           {children}
         </main>
         <Footer dictionary={dictionary} />

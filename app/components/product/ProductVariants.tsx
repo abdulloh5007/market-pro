@@ -53,8 +53,8 @@ export function ProductVariants({ product, dictionary, onVariantChange }: Produc
                 onClick={() => handleMemoryChange(memory)}
                 className={`px-4 py-2 rounded-lg border-2 font-medium text-sm transition-all duration-200 cursor-pointer ${
                   selectedMemory === memory
-                    ? "border-purple-600 bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 shadow-md scale-105"
-                    : "border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:border-purple-300 dark:hover:border-purple-700 hover:scale-105"
+                   ? "border-[var(--color-primary)] bg-[color:var(--color-primary-surface)] text-[color:var(--color-primary-text)] shadow-md scale-105"
+                   : "border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:border-[var(--color-primary)] hover:scale-105"
                 }`}
                 type="button"
               >
@@ -78,8 +78,8 @@ export function ProductVariants({ product, dictionary, onVariantChange }: Produc
                 onClick={() => handleColorChange(color)}
                 className={`px-4 py-2 rounded-lg border-2 font-medium text-sm transition-all duration-200 cursor-pointer ${
                   selectedColor === color
-                    ? "border-purple-600 bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 shadow-md scale-105"
-                    : "border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:border-purple-300 dark:hover:border-purple-700 hover:scale-105"
+                   ? "border-[var(--color-primary)] bg-[color:var(--color-primary-surface)] text-[color:var(--color-primary-text)] shadow-md scale-105"
+                   : "border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:border-[var(--color-primary)] hover:scale-105"
                 }`}
                 type="button"
               >
@@ -103,8 +103,8 @@ export function ProductVariants({ product, dictionary, onVariantChange }: Produc
                 onClick={() => handleSizeChange(size)}
                 className={`px-4 py-2 rounded-lg border-2 font-medium text-sm transition-all duration-200 cursor-pointer ${
                   selectedSize === size
-                    ? "border-purple-600 bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 shadow-md scale-105"
-                    : "border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:border-purple-300 dark:hover:border-purple-700 hover:scale-105"
+                   ? "border-[var(--color-primary)] bg-[color:var(--color-primary-surface)] text-[color:var(--color-primary-text)] shadow-md scale-105"
+                   : "border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:border-[var(--color-primary)] hover:scale-105"
                 }`}
                 type="button"
               >

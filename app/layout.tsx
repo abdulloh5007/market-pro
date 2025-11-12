@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ru" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-50 text-neutral-900`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <CartProvider>{children}</CartProvider>
       </body>

@@ -131,7 +131,7 @@ export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
               onClick={() => handleLocaleChange(locale)}
               className={`flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-sm transition cursor-pointer ${
                 locale === currentLocale
-                  ? "bg-purple-50 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400"
+                  ? "bg-[var(--color-primary-surface)] text-[var(--color-primary-text)]"
                   : "text-neutral-700 hover:bg-neutral-50 dark:text-neutral-300 dark:hover:bg-neutral-700"
               }`}
             >

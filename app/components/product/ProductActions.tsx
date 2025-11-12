@@ -77,7 +77,7 @@ export function ProductActions({ product, dictionary }: ProductActionsProps) {
         <button
           onClick={handleAddToCart}
           disabled={product.quantity === 0}
-          className="flex-1 bg-purple-600 hover:bg-purple-700 disabled:bg-neutral-400 disabled:cursor-not-allowed text-white font-semibold py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg transition-all duration-300 transform hover:scale-101 active:scale-[0.98] hover:shadow-lg disabled:hover:scale-100 disabled:hover:shadow-none text-sm sm:text-base cursor-pointer"
+          className="flex-1 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] disabled:bg-neutral-400 disabled:cursor-not-allowed text-white font-semibold py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg transition-all duration-300 transform hover:scale-101 active:scale-[0.98] hover:shadow-lg disabled:hover:scale-100 disabled:hover:shadow-none text-sm sm:text-base cursor-pointer"
           type="button"
         >
           {dictionary.addToCart || "В корзину"}

@@ -148,10 +148,10 @@ export default function CategoryFilters({ dictionary }: { dictionary: any }) {
                 key={category.key}
                 onClick={() => handleCategoryClick(category.key)}
                 className={`
-                  flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 bg-neutral-800 cursor-pointer
+                  flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer
                   ${isActive 
-                    ? 'bg-purple-600 hover:bg-purple-700 text-white' 
-                    : 'text-gray-700 hover:bg-gray-400 dark:text-gray-200 dark:hover:bg-neutral-700'
+                    ? 'bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white' 
+                    : 'text-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700'
                   }
                 `}
               >
