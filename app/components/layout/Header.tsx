@@ -104,8 +104,32 @@ export function Header({ locale, dictionary }: HeaderProps) {
   const actions = navActions(dictionary.header, locale, cartItems.length);
 
   useEffect(() => {
-    const storedFavorites = JSON.parse(localStorage.getItem("favorites") || "[]");
-    setFavoritesCount(storedFavorites.length);
+    const update = () => {
+      const storedFavorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+      setFavoritesCount(storedFavorites.length);
+    };
+    update();
+
+    // instant updates via custom event
+    const handler = (e: Event) => {
+      // @ts-ignore
+      const detailCount = e?.detail?.count as number | undefined;
+      if (typeof detailCount === 'number') {
+        setFavoritesCount(detailCount);
+      } else {
+        update();
+      }
+    };
+
+    window.addEventListener('favorites-updated', handler as EventListener);
+
+    // fallback for cross-tab updates
+    window.addEventListener('storage', update);
+
+    return () => {
+      window.removeEventListener('favorites-updated', handler as EventListener);
+      window.removeEventListener('storage', update);
+    };
   }, []);
 
   useEffect(() => {

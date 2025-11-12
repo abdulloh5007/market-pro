@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import type { Product } from "@/lib/products";
+import { emitFavoritesUpdated } from "@/lib/favorites";
 import { useCart } from "@/app/context/CartContext";
 
 interface ProductActionsProps {
@@ -31,6 +32,8 @@ export function ProductActions({ product, dictionary }: ProductActionsProps) {
 
     localStorage.setItem("favorites", JSON.stringify(newFavorites));
     setIsLiked(!isLiked);
+    // notify others (e.g., Header) immediately
+    emitFavoritesUpdated(newFavorites.length);
   };
 
   const handleAddToCart = () => {

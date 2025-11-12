@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { Modal } from "@/app/components/common/Modal";
 import { QuickView } from "./QuickView";
+import { emitFavoritesUpdated } from "@/lib/favorites";
 import { Product } from "@/lib/products";
 
 interface ProductCardProps {
@@ -56,6 +57,8 @@ export function ProductCard({ product, imageUrl, dictionary }: ProductCardProps)
 
     localStorage.setItem("favorites", JSON.stringify(newFavorites));
     setIsLiked(!isLiked);
+    // notify others (e.g., Header) immediately
+    emitFavoritesUpdated(newFavorites.length);
   };
 
   const handleAddToCartClick = (e: React.MouseEvent) => {
