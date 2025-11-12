@@ -39,7 +39,7 @@ export default function TopProducts({ dictionary }: { dictionary: any }) {
   const visibleProducts = products.slice(0, visibleCount);
 
   return (
-    <div className="py-4 sm:py-6">
+    <div className="pb-4">
       <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">{dictionary.topRatedProducts}</h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3 md:gap-4">
         {visibleProducts.map((product) => (
@@ -52,7 +52,7 @@ export default function TopProducts({ dictionary }: { dictionary: any }) {
         ))}
       </div>
       {products.length > visibleCount && (
-        <div className="mt-6 text-center">
+        <div className="mt-4 text-center">
           <button
             onClick={() => setVisibleCount((count) => count + PAGE_SIZE)}
             className="rounded-lg bg-neutral-100 px-6 py-3 text-sm font-medium text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700 transition-colors duration-200 cursor-pointer"

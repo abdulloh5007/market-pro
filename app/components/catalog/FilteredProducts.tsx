@@ -128,8 +128,8 @@ export default function FilteredProducts({ dictionary }: { dictionary: any }) {
   const visibleProducts = products.slice(0, visibleCount);
 
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 pb-8 md:px-6">
-      <div className="py-4 sm:py-6">
+    <section className="mx-auto w-full max-w-6xl px-4 pb-4 md:px-6">
+      <div className="">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">
           {categoryParam === "all" 
             ? dictionary.categories[catalog] 
@@ -147,7 +147,7 @@ export default function FilteredProducts({ dictionary }: { dictionary: any }) {
           ))}
         </div>
         {products.length > visibleCount && (
-          <div className="mt-6 text-center">
+          <div className="mt-4 text-center">
             <button
               onClick={() => setVisibleCount((count) => count + PAGE_SIZE)}
               className="rounded-lg bg-neutral-100 px-6 py-3 text-sm font-medium text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700 transition-colors duration-200 cursor-pointer"

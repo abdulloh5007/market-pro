@@ -119,7 +119,7 @@ export default function CategoryFilters({ dictionary }: { dictionary: any }) {
 
   if (loading) {
     return (
-      <section className="mx-auto w-full max-w-6xl px-4 pb-4 md:px-6">
+      <section className="mx-auto w-full max-w-6xl px-4 md:px-6">
         <div className="flex gap-2 overflow-x-auto py-4 scrollbar-hide">
           {Array.from({ length: 4 }).map((_, index) => (
             <div
@@ -133,7 +133,7 @@ export default function CategoryFilters({ dictionary }: { dictionary: any }) {
   }
 
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 pb-4 md:px-6">
+    <section className="mx-auto w-full max-w-6xl px-4 md:px-6">
       <div className="relative">
         {/* Scrollable buttons */}
         <div
