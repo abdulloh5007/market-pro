@@ -155,7 +155,7 @@ export default function CartPage({ params: paramsPromise }: CartPageProps) {
 
             <button
               onClick={() => setIsOrderSuccessModalOpen(false)}
-              className="mt-8 w-full rounded-lg bg-purple-600 py-3 font-semibold text-white hover:bg-purple-700 focus:outline-none focus:ring-4 focus:ring-purple-300 dark:bg-purple-500 dark:hover:bg-purple-600 dark:focus:ring-purple-900 transition-all duration-300 transform cursor-pointer"
+              className="mt-8 w-full rounded-lg py-3 font-semibold text-white focus:outline-none focus:ring-4 focus:ring-purple-300 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] dark:focus:ring-purple-900 transition-all duration-300 transform cursor-pointer"
             >
               {dictionary.cart?.continueShopping || "Продолжить покупки"}
             </button>

@@ -51,7 +51,7 @@ export function CartSummary({ dictionary, onPlaceOrder, appliedPromoCode }: Cart
       <button
         onClick={onPlaceOrder}
         disabled={cartItems.length === 0}
-        className="w-full rounded-lg bg-purple-600 py-3 font-semibold text-white hover:bg-purple-700 disabled:bg-neutral-400 cursor-pointer transition-all duration-300 transform"
+        className="w-full rounded-lg bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] py-3 font-semibold text-white disabled:bg-neutral-400 cursor-pointer transition-all duration-300 transform"
       >
         {dictionary.cart?.checkout || "Оформить заказ"}
       </button>

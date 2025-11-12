@@ -42,7 +42,7 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
                         </p>
                         <Link
                             href={`/${lang}`}
-                            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
+                            className="inline-block bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
                         >
                             {"Back to home"}
                         </Link>

@@ -49,20 +49,20 @@ export function PromoCodeCard({
       </button>
 
       {isExpanded && (
-        <div className="mt-4 pt-4 border-t border-neutral-300 dark:border-neutral-600">
+        <div className="mt-4 pt-4 border-t border-[var(--color-primary)] dark:border-neutral-600">
           <div className="space-y-3">
             <div className="relative">
               <input
                 type="text"
                 value={promoCode}
                 onChange={(e) => setPromoCode(e.target.value)}
-                className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-neutral-700 dark:border-neutral-600 dark:text-white dark:placeholder-neutral-400 transition-all duration-200"
+                className="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent dark:bg-neutral-700 dark:border-neutral-600 dark:text-white dark:placeholder-neutral-400 transition-all duration-200"
                 placeholder={dictionary.cart?.promoCode || "Промокод"}
               />
             </div>
             <button
               onClick={handleApplyPromoCode}
-              className="w-full rounded-lg bg-purple-600 py-3 font-semibold text-white hover:bg-purple-700 disabled:bg-neutral-400 cursor-pointer transition-all duration-300 transform"
+              className="w-full rounded-lg bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] py-3 font-semibold text-white disabled:bg-neutral-400 cursor-pointer transition-all duration-300 transform"
             >
               {dictionary.cart?.applyPromoCode || "Применить"}
             </button>

@@ -128,7 +128,7 @@ export default function FilteredProducts({ dictionary }: { dictionary: any }) {
   const visibleProducts = products.slice(0, visibleCount);
 
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 pb-4 md:px-6">
+    <section className="mx-auto w-full max-w-6xl px-4 md:px-6">
       <div className="">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">
           {categoryParam === "all" 

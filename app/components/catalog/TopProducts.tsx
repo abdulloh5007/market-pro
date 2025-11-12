@@ -39,7 +39,7 @@ export default function TopProducts({ dictionary }: { dictionary: any }) {
   const visibleProducts = products.slice(0, visibleCount);
 
   return (
-    <div className="pb-4">
+    <div className="py-4">
       <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">{dictionary.topRatedProducts}</h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3 md:gap-4">
         {visibleProducts.map((product) => (

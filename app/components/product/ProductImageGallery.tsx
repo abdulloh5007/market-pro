@@ -41,8 +41,8 @@ export function ProductImageGallery({ images, productName }: ProductImageGallery
               onClick={() => setSelectedImage(index)}
               className={`relative flex-shrink-0 aspect-square w-16 sm:w-20 md:w-24 lg:w-28 overflow-hidden rounded-lg border-2 transition-all duration-200 ${
                 selectedImage === index
-                  ? "border-purple-600 dark:border-purple-500 scale-105 shadow-md"
-                  : "border-neutral-200 dark:border-neutral-700 hover:border-purple-300 dark:hover:border-purple-700 hover:scale-105"
+                  ? "border-[var(--color-primary)] dark:[var(--color-primary)] scale-105 shadow-md"
+                  : "border-neutral-200 dark:border-neutral-700 dark:hover:border-[var(--color-primary-hover)] hover:scale-105"
               }`}
               type="button"
             >
