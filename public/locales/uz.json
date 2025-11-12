@@ -95,8 +95,7 @@
   },
   "announcement": {
     "discount": "50% CHEGIRMA",
-    "freeDelivery": "BEPUL YETKAZIB BERISH",
-    "discountShort": "CHEGIRMA",
-    "delivery": "YETKAZIB BERISH"
+    "promoText": "Promokodni ishlating",
+    "promoName": "MARKET"
   }
 }

@@ -96,8 +96,7 @@
   },
   "announcement": {
     "discount": "СКИДКА 50%",
-    "freeDelivery": "БЕСПЛАТНАЯ ДОСТАВКА",
-    "discountShort": "СКИДКА",
-    "delivery": "ДОСТАВКА"
+    "promoText": "Используй промокод",
+    "promoName": "MARKET"
   }
 }

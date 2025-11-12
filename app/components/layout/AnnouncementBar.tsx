@@ -34,7 +34,7 @@ export function AnnouncementBar({ dictionary }: AnnouncementBarProps) {
               -50%
             </span>
             {/* <span className="mx-1">•</span> */}
-            <p className="text-neutral-700 dark:text-neutral-300 font-bold">Используй промокод <span className="text-[#5e28d1] font-bold">MARKET</span></p>
+            <p className="text-neutral-700 dark:text-neutral-300 font-bold">{dictionary.announcement.promoText} <span className="text-[#5e28d1] font-bold">{dictionary.announcement.promoName}</span></p>
           </span>
         </div>
       </div>
