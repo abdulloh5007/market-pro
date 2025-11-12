@@ -159,7 +159,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
           href={`/${locale}`}
           className="flex flex-shrink-0 items-center gap-2 text-lg font-semibold tracking-tight text-[var(--color-primary-text)]"
         >
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-yellow-300 to-yellow-400 text-base font-bold text-[var(--color-primary-text)] shadow">
+          <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-neutral-800 text-base font-bold text-[var(--color-primary-text)] shadow">
             M
           </span>
           <span className="text-xl font-bold">market</span>
