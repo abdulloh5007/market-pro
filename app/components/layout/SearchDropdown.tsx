@@ -5,16 +5,19 @@ import Link from "next/link";
 import { Product, getAllProducts } from "@/lib/products";
 import { useDebounce } from "@/hooks/useDebounce";
 
+import type { Dictionary } from "@/lib/i18n/get-dictionary";
+
 interface SearchDropdownProps {
   query: string;
   locale: string;
-  dictionary: any;
+  dictionary: Dictionary;
   onClose: () => void;
+  id?: string;
 }
 
 const PAGE_SIZE = 10;
 
-export function SearchDropdown({ query, locale, dictionary, onClose }: SearchDropdownProps) {
+export function SearchDropdown({ query, locale, dictionary, onClose, id = "search-dropdown" }: SearchDropdownProps) {
   const [products, setProducts] = useState<Product[]>([]);
   const [categories, setCategories] = useState<any>({});
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
@@ -96,8 +99,8 @@ export function SearchDropdown({ query, locale, dictionary, onClose }: SearchDro
 
   return (
     <div
-      id="search-dropdown"
-      className="absolute top-full mt-2 w-full rounded-lg border border-neutral-200 bg-white shadow-lg dark:border-neutral-700 dark:bg-neutral-800 z-50 max-h-[300px] overflow-y-auto md:z-100"
+      id={id}
+      className="absolute top-full mt-2 w-full rounded-xl border border-neutral-200/50 bg-white/90 backdrop-blur-xl shadow-xl dark:border-neutral-700/50 dark:bg-neutral-800/90 z-50 max-h-[300px] overflow-y-auto md:z-100 animate-slide-down"
       onClick={(e) => e.stopPropagation()}
     >
       {visibleProducts.length > 0 ? (

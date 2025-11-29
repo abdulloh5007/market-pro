@@ -11,12 +11,42 @@ export interface Product {
   photos: string[];
   model: string;
   rating: number;
+  variantPricing?: {
+    [variant: string]: number;
+  };
   comments?: Array<{
     user: string;
     text: string;
     date: string;
     rating: number;
   }>;
+}
+
+export function calculatePrice(
+  product: Product,
+  selectedVariants?: { memory?: string; color?: string; size?: string }
+): number {
+  // If no variant pricing defined, return base price
+  if (!product.variantPricing || !selectedVariants) {
+    return product.price;
+  }
+
+  // Check if memory variant has specific pricing
+  if (selectedVariants.memory && product.variantPricing[selectedVariants.memory]) {
+    return product.variantPricing[selectedVariants.memory];
+  }
+
+  // Check if color variant has specific pricing
+  if (selectedVariants.color && product.variantPricing[selectedVariants.color]) {
+    return product.variantPricing[selectedVariants.color];
+  }
+
+  // Check if size variant has specific pricing
+  if (selectedVariants.size && product.variantPricing[selectedVariants.size]) {
+    return product.variantPricing[selectedVariants.size];
+  }
+
+  return product.price;
 }
 
 export async function getProductById(id: string): Promise<Product | null> {

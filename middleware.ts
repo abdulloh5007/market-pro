@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from "@/lib/i18n/config";
 
-export function proxy(request: NextRequest) {
+export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (

@@ -42,18 +42,18 @@ export function Modal({ isOpen, onClose, children }: ModalProps) {
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end md:items-center justify-center bg-opacity-50 backdrop-blur-lg">
+    <div className="fixed inset-0 z-50 flex items-end md:items-center justify-center bg-black/50 backdrop-blur-sm animate-fade-in">
       <div
         ref={modalRef}
-        className="relative w-full max-w-4xl p-6 bg-white rounded-t-lg md:rounded-lg shadow-xl dark:bg-neutral-800 h-3/4 md:h-auto overflow-y-auto"
+        className="relative w-full max-w-4xl p-6 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-xl rounded-t-2xl md:rounded-2xl shadow-2xl h-[85vh] md:h-auto md:max-h-[85vh] overflow-y-auto animate-slide-up md:animate-scale-in border border-white/20 dark:border-neutral-700/50"
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-neutral-500 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200 cursor-pointer"
+          className="absolute top-4 right-4 z-50 p-2 rounded-full bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm text-neutral-500 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors cursor-pointer shadow-lg"
         >
           <svg
-            width="24"
-            height="24"
+            width="20"
+            height="20"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

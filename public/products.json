@@ -7,14 +7,32 @@
           "id": "e1_s1",
           "name": "Samsung Galaxy S23 Ultra",
           "description": "Powerful smartphone with advanced camera system.",
-          "price": 1200,
+          "price": 1080,
           "quantity": 50,
           "discount": 10,
-          "memory": ["256GB", "512GB", "1TB"],
-          "color": ["Phantom Black", "Silver", "Gold"],
-          "photos": ["/catalog-card-photos/technics.png", "/catalog-card-photos/technics.png"],
+          "memory": [
+            "256GB",
+            "512GB",
+            "1TB"
+          ],
+          "color": [
+            "Phantom Black",
+            "Silver",
+            "Gold"
+          ],
+          "photos": [
+            "/catalog-card-photos/technics.png",
+            "/catalog-card-photos/technics.png",
+            "/catalog-card-photos/technics.png",
+            "/catalog-card-photos/technics.png"
+          ],
           "model": "Galaxy S23 Ultra",
           "rating": 4.8,
+          "variantPricing": {
+            "256GB": 1080,
+            "512GB": 1280,
+            "1TB": 1480
+          },
           "comments": [
             {
               "user": "Alice",
@@ -46,14 +64,32 @@
           "id": "e1_s2",
           "name": "iPhone 15 Pro Max",
           "description": "Latest iPhone with A17 Bionic chip.",
-          "price": 1300,
+          "price": 1199,
           "quantity": 70,
           "discount": null,
-          "memory": ["256GB", "512GB", "1TB"],
-          "color": ["Black", "Silver", "Gold"],
-          "photos": ["/catalog-card-photos/technics.png", "/catalog-card-photos/technics.png"],
+          "memory": [
+            "256GB",
+            "512GB",
+            "1TB"
+          ],
+          "color": [
+            "Black",
+            "Silver",
+            "Gold"
+          ],
+          "photos": [
+            "/catalog-card-photos/technics.png",
+            "/catalog-card-photos/technics.png",
+            "/catalog-card-photos/technics.png",
+            "/catalog-card-photos/technics.png"
+          ],
           "model": "iPhone 15 Pro Max",
           "rating": 4.9,
+          "variantPricing": {
+            "256GB": 1199,
+            "512GB": 1399,
+            "1TB": 1599
+          },
           "comments": [
             {
               "user": "Charlie",
@@ -83,7 +119,10 @@
           "discount": 5,
           "memory": "8GB RAM, 256GB SSD",
           "model": "MacBook Air",
-          "photos": ["/catalog-card-photos/technics.png", "/catalog-card-photos/technics.png"],
+          "photos": [
+            "/catalog-card-photos/technics.png",
+            "/catalog-card-photos/technics.png"
+          ],
           "rating": 4.7,
           "comments": [
             {
@@ -109,7 +148,10 @@
           "discount": null,
           "memory": "16GB RAM, 512GB SSD",
           "model": "XPS 15",
-          "photos": ["/catalog-card-photos/technics.png", "/catalog-card-photos/technics.png"],
+          "photos": [
+            "/catalog-card-photos/technics.png",
+            "/catalog-card-photos/technics.png"
+          ],
           "rating": 4.6,
           "comments": [
             {
@@ -139,7 +181,10 @@
           "quantity": 100,
           "discount": null,
           "model": "AirPods Pro 2",
-          "photos": ["/catalog-card-photos/technics.png", "/catalog-card-photos/technics.png"],
+          "photos": [
+            "/catalog-card-photos/technics.png",
+            "/catalog-card-photos/technics.png"
+          ],
           "rating": 4.7,
           "comments": [
             {
@@ -164,7 +209,10 @@
           "quantity": 80,
           "discount": 15,
           "model": "AirPods 3",
-          "photos": ["/catalog-card-photos/technics.png", "/catalog-card-photos/technics.png"],
+          "photos": [
+            "/catalog-card-photos/technics.png",
+            "/catalog-card-photos/technics.png"
+          ],
           "rating": 4.5,
           "comments": [
             {
@@ -195,7 +243,10 @@
           "price": 20,
           "quantity": 150,
           "discount": null,
-          "photos": ["/catalog-card-photos/clothes.png", "/catalog-card-photos/clothes.png"],
+          "photos": [
+            "/catalog-card-photos/clothes.png",
+            "/catalog-card-photos/clothes.png"
+          ],
           "rating": 4.2,
           "comments": [
             {
@@ -213,7 +264,10 @@
           "price": 25,
           "quantity": 120,
           "discount": 5,
-          "photos": ["/catalog-card-photos/clothes.png", "/catalog-card-photos/clothes.png"],
+          "photos": [
+            "/catalog-card-photos/clothes.png",
+            "/catalog-card-photos/clothes.png"
+          ],
           "rating": 4.5,
           "comments": [
             {
@@ -236,9 +290,21 @@
           "price": 30,
           "quantity": 200,
           "discount": null,
-          "size": ["S", "M", "L", "XL"],
-          "color": ["White", "Black", "Blue"],
-          "photos": ["/catalog-card-photos/clothes.png", "/catalog-card-photos/clothes.png"],
+          "size": [
+            "S",
+            "M",
+            "L",
+            "XL"
+          ],
+          "color": [
+            "White",
+            "Black",
+            "Blue"
+          ],
+          "photos": [
+            "/catalog-card-photos/clothes.png",
+            "/catalog-card-photos/clothes.png"
+          ],
           "rating": 4.3,
           "comments": [
             {
@@ -256,9 +322,20 @@
           "price": 70,
           "quantity": 100,
           "discount": 10,
-          "size": ["XS", "S", "M", "L"],
-          "color": ["Blue", "Dark Blue"],
-          "photos": ["/catalog-card-photos/clothes.png", "/catalog-card-photos/clothes.png"],
+          "size": [
+            "XS",
+            "S",
+            "M",
+            "L"
+          ],
+          "color": [
+            "Blue",
+            "Dark Blue"
+          ],
+          "photos": [
+            "/catalog-card-photos/clothes.png",
+            "/catalog-card-photos/clothes.png"
+          ],
           "rating": 4.6,
           "comments": [
             {
@@ -281,8 +358,15 @@
           "price": 15,
           "quantity": 300,
           "discount": null,
-          "size": ["M", "L", "XL"],
-          "photos": ["/catalog-card-photos/clothes.png", "/catalog-card-photos/clothes.png"],
+          "size": [
+            "M",
+            "L",
+            "XL"
+          ],
+          "photos": [
+            "/catalog-card-photos/clothes.png",
+            "/catalog-card-photos/clothes.png"
+          ],
           "rating": 4.0,
           "comments": [
             {
@@ -300,8 +384,15 @@
           "price": 25,
           "quantity": 180,
           "discount": null,
-          "size": ["S", "M", "L"],
-          "photos": ["/catalog-card-photos/clothes.png", "/catalog-card-photos/clothes.png"],
+          "size": [
+            "S",
+            "M",
+            "L"
+          ],
+          "photos": [
+            "/catalog-card-photos/clothes.png",
+            "/catalog-card-photos/clothes.png"
+          ],
           "rating": 4.4,
           "comments": [
             {
@@ -324,8 +415,19 @@
           "price": 80,
           "quantity": 90,
           "discount": 10,
-          "size": ["38", "39", "40", "41", "42", "43", "44"],
-          "photos": ["/catalog-card-photos/clothes.png", "/catalog-card-photos/clothes.png"],
+          "size": [
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44"
+          ],
+          "photos": [
+            "/catalog-card-photos/clothes.png",
+            "/catalog-card-photos/clothes.png"
+          ],
           "rating": 4.5,
           "comments": [
             {
@@ -343,8 +445,17 @@
           "price": 40,
           "quantity": 110,
           "discount": null,
-          "size": ["36", "37", "38", "39", "40"],
-          "photos": ["/catalog-card-photos/clothes.png", "/catalog-card-photos/clothes.png"],
+          "size": [
+            "36",
+            "37",
+            "38",
+            "39",
+            "40"
+          ],
+          "photos": [
+            "/catalog-card-photos/clothes.png",
+            "/catalog-card-photos/clothes.png"
+          ],
           "rating": 4.1,
           "comments": [
             {
@@ -369,7 +480,10 @@
           "price": 150,
           "quantity": 25,
           "discount": null,
-          "photos": ["/catalog-card-photos/sports.png", "/catalog-card-photos/sports.png"],
+          "photos": [
+            "/catalog-card-photos/sports.png",
+            "/catalog-card-photos/sports.png"
+          ],
           "rating": 4.3,
           "comments": [
             {
@@ -387,7 +501,10 @@
           "price": 200,
           "quantity": 15,
           "discount": 10,
-          "photos": ["/catalog-card-photos/sports.png", "/catalog-card-photos/sports.png"],
+          "photos": [
+            "/catalog-card-photos/sports.png",
+            "/catalog-card-photos/sports.png"
+          ],
           "rating": 4.7,
           "comments": [
             {
@@ -410,7 +527,10 @@
           "price": 500,
           "quantity": 10,
           "discount": null,
-          "photos": ["/catalog-card-photos/sports.png", "/catalog-card-photos/sports.png"],
+          "photos": [
+            "/catalog-card-photos/sports.png",
+            "/catalog-card-photos/sports.png"
+          ],
           "rating": 4.0,
           "comments": [
             {
@@ -428,7 +548,10 @@
           "price": 1200,
           "quantity": 5,
           "discount": null,
-          "photos": ["/catalog-card-photos/sports.png", "/catalog-card-photos/sports.png"],
+          "photos": [
+            "/catalog-card-photos/sports.png",
+            "/catalog-card-photos/sports.png"
+          ],
           "rating": 4.8,
           "comments": [
             {
@@ -451,7 +574,10 @@
           "price": 15,
           "quantity": 200,
           "discount": null,
-          "photos": ["/catalog-card-photos/sports.png", "/catalog-card-photos/sports.png"],
+          "photos": [
+            "/catalog-card-photos/sports.png",
+            "/catalog-card-photos/sports.png"
+          ],
           "rating": 4.2,
           "comments": [
             {
@@ -469,7 +595,10 @@
           "price": 25,
           "quantity": 100,
           "discount": null,
-          "photos": ["/catalog-card-photos/sports.png", "/catalog-card-photos/sports.png"],
+          "photos": [
+            "/catalog-card-photos/sports.png",
+            "/catalog-card-photos/sports.png"
+          ],
           "rating": 4.5,
           "comments": [
             {
@@ -494,7 +623,10 @@
           "price": 40,
           "quantity": 60,
           "discount": null,
-          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "photos": [
+            "/catalog-card-photos/books.png",
+            "/catalog-card-photos/books.png"
+          ],
           "rating": 4.9,
           "comments": [
             {
@@ -518,7 +650,10 @@
           "price": 40,
           "quantity": 60,
           "discount": null,
-          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "photos": [
+            "/catalog-card-photos/books.png",
+            "/catalog-card-photos/books.png"
+          ],
           "rating": 3,
           "comments": [
             {
@@ -542,7 +677,10 @@
           "price": 40,
           "quantity": 60,
           "discount": null,
-          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "photos": [
+            "/catalog-card-photos/books.png",
+            "/catalog-card-photos/books.png"
+          ],
           "rating": 3,
           "comments": [
             {
@@ -566,7 +704,10 @@
           "price": 40,
           "quantity": 60,
           "discount": null,
-          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "photos": [
+            "/catalog-card-photos/books.png",
+            "/catalog-card-photos/books.png"
+          ],
           "rating": 3,
           "comments": [
             {
@@ -590,7 +731,10 @@
           "price": 40,
           "quantity": 60,
           "discount": null,
-          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "photos": [
+            "/catalog-card-photos/books.png",
+            "/catalog-card-photos/books.png"
+          ],
           "rating": 3,
           "comments": [
             {
@@ -614,7 +758,10 @@
           "price": 40,
           "quantity": 60,
           "discount": null,
-          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "photos": [
+            "/catalog-card-photos/books.png",
+            "/catalog-card-photos/books.png"
+          ],
           "rating": 3,
           "comments": [
             {
@@ -638,7 +785,10 @@
           "price": 40,
           "quantity": 60,
           "discount": null,
-          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "photos": [
+            "/catalog-card-photos/books.png",
+            "/catalog-card-photos/books.png"
+          ],
           "rating": 3,
           "comments": [
             {
@@ -662,7 +812,10 @@
           "price": 40,
           "quantity": 60,
           "discount": null,
-          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "photos": [
+            "/catalog-card-photos/books.png",
+            "/catalog-card-photos/books.png"
+          ],
           "rating": 3,
           "comments": [
             {
@@ -686,7 +839,10 @@
           "price": 40,
           "quantity": 60,
           "discount": null,
-          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "photos": [
+            "/catalog-card-photos/books.png",
+            "/catalog-card-photos/books.png"
+          ],
           "rating": 3,
           "comments": [
             {
@@ -710,7 +866,10 @@
           "price": 40,
           "quantity": 60,
           "discount": null,
-          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "photos": [
+            "/catalog-card-photos/books.png",
+            "/catalog-card-photos/books.png"
+          ],
           "rating": 3,
           "comments": [
             {
@@ -734,7 +893,10 @@
           "price": 40,
           "quantity": 60,
           "discount": null,
-          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "photos": [
+            "/catalog-card-photos/books.png",
+            "/catalog-card-photos/books.png"
+          ],
           "rating": 3,
           "comments": [
             {
@@ -758,7 +920,10 @@
           "price": 40,
           "quantity": 60,
           "discount": null,
-          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "photos": [
+            "/catalog-card-photos/books.png",
+            "/catalog-card-photos/books.png"
+          ],
           "rating": 3,
           "comments": [
             {
@@ -782,7 +947,10 @@
           "price": 40,
           "quantity": 60,
           "discount": null,
-          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "photos": [
+            "/catalog-card-photos/books.png",
+            "/catalog-card-photos/books.png"
+          ],
           "rating": 3,
           "comments": [
             {
@@ -806,7 +974,10 @@
           "price": 40,
           "quantity": 60,
           "discount": null,
-          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "photos": [
+            "/catalog-card-photos/books.png",
+            "/catalog-card-photos/books.png"
+          ],
           "rating": 3,
           "comments": [
             {
@@ -830,7 +1001,10 @@
           "price": 35,
           "quantity": 80,
           "discount": 5,
-          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "photos": [
+            "/catalog-card-photos/books.png",
+            "/catalog-card-photos/books.png"
+          ],
           "rating": 4.8,
           "comments": [
             {
@@ -853,7 +1027,10 @@
           "price": 25,
           "quantity": 100,
           "discount": null,
-          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "photos": [
+            "/catalog-card-photos/books.png",
+            "/catalog-card-photos/books.png"
+          ],
           "rating": 4.7,
           "comments": [
             {
@@ -871,7 +1048,10 @@
           "price": 30,
           "quantity": 90,
           "discount": null,
-          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "photos": [
+            "/catalog-card-photos/books.png",
+            "/catalog-card-photos/books.png"
+          ],
           "rating": 4.6,
           "comments": [
             {
@@ -894,7 +1074,10 @@
           "price": 25,
           "quantity": 100,
           "discount": null,
-          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "photos": [
+            "/catalog-card-photos/books.png",
+            "/catalog-card-photos/books.png"
+          ],
           "rating": 4.7,
           "comments": [
             {
@@ -912,7 +1095,10 @@
           "price": 30,
           "quantity": 90,
           "discount": null,
-          "photos": ["/catalog-card-photos/books.png", "/catalog-card-photos/books.png"],
+          "photos": [
+            "/catalog-card-photos/books.png",
+            "/catalog-card-photos/books.png"
+          ],
           "rating": 4.6,
           "comments": [
             {

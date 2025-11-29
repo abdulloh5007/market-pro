@@ -6,13 +6,24 @@ import { Product } from "@/lib/products";
 interface CartItem {
   product: Product;
   quantity: number;
+  selectedVariants?: {
+    memory?: string;
+    color?: string;
+    size?: string;
+  };
+  price: number; // Price at time of adding to cart
 }
 
 interface CartContextType {
   cartItems: CartItem[];
-  addToCart: (product: Product, quantity: number) => void;
-  removeFromCart: (productId: string) => void;
-  updateQuantity: (productId: string, quantity: number) => void;
+  addToCart: (
+    product: Product,
+    quantity: number,
+    selectedVariants?: { memory?: string; color?: string; size?: string },
+    price?: number
+  ) => void;
+  removeFromCart: (productId: string, variantKey?: string) => void;
+  updateQuantity: (productId: string, quantity: number, variantKey?: string) => void;
   clearCart: () => void;
 }
 
@@ -24,6 +35,15 @@ export function useCart() {
     throw new Error("useCart must be used within a CartProvider");
   }
   return context;
+}
+
+// Helper function to create a unique key for product + variant combination
+function getCartItemKey(productId: string, variants?: { memory?: string; color?: string; size?: string }): string {
+  if (!variants || (!variants.memory && !variants.color && !variants.size)) {
+    return productId;
+  }
+  const variantStr = JSON.stringify(variants);
+  return `${productId}__${variantStr}`;
 }
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
@@ -40,33 +60,55 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem("cart", JSON.stringify(cartItems));
   }, [cartItems]);
 
-  const addToCart = (product: Product, quantity: number) => {
+  const addToCart = (
+    product: Product,
+    quantity: number,
+    selectedVariants?: { memory?: string; color?: string; size?: string },
+    price?: number
+  ) => {
     setCartItems((prevItems) => {
+      const itemKey = getCartItemKey(product.id, selectedVariants);
       const existingItem = prevItems.find(
-        (item) => item.product.id === product.id
+        (item) => getCartItemKey(item.product.id, item.selectedVariants) === itemKey
       );
+
       if (existingItem) {
         return prevItems.map((item) =>
-          item.product.id === product.id
+          getCartItemKey(item.product.id, item.selectedVariants) === itemKey
             ? { ...item, quantity: item.quantity + quantity }
             : item
         );
       }
-      return [...prevItems, { product, quantity }];
+
+      return [
+        ...prevItems,
+        {
+          product,
+          quantity,
+          selectedVariants,
+          price: price ?? product.price,
+        },
+      ];
     });
   };
 
-  const removeFromCart = (productId: string) => {
+  const removeFromCart = (productId: string, variantKey?: string) => {
     setCartItems((prevItems) =>
-      prevItems.filter((item) => item.product.id !== productId)
+      prevItems.filter((item) => {
+        const itemKey = getCartItemKey(item.product.id, item.selectedVariants);
+        const targetKey = variantKey ?? productId;
+        return itemKey !== targetKey;
+      })
     );
   };
 
-  const updateQuantity = (productId: string, quantity: number) => {
+  const updateQuantity = (productId: string, quantity: number, variantKey?: string) => {
     setCartItems((prevItems) =>
-      prevItems.map((item) =>
-        item.product.id === productId ? { ...item, quantity } : item
-      )
+      prevItems.map((item) => {
+        const itemKey = getCartItemKey(item.product.id, item.selectedVariants);
+        const targetKey = variantKey ?? productId;
+        return itemKey === targetKey ? { ...item, quantity } : item;
+      })
     );
   };
 

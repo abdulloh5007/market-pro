@@ -8,6 +8,8 @@ const dictionaries: Record<Locale, typeof uz> = {
   ru,
 };
 
+export type Dictionary = typeof uz;
+
 export async function getDictionary(locale: Locale) {
   return dictionaries[locale];
 }

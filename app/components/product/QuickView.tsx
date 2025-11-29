@@ -1,6 +1,7 @@
 "use client";
 
-import { Product } from "@/lib/products";
+import { useState } from "react";
+import { Product, calculatePrice } from "@/lib/products";
 import { ProductImageGallery, ProductVariants, ProductActions } from ".";
 
 interface QuickViewProps {
@@ -9,13 +10,28 @@ interface QuickViewProps {
 }
 
 export function QuickView({ product, dictionary }: QuickViewProps) {
+  const [selectedVariants, setSelectedVariants] = useState<{
+    memory?: string;
+    color?: string;
+    size?: string;
+  }>({
+    memory: Array.isArray(product.memory) ? product.memory[0] : product.memory,
+    color: Array.isArray(product.color) ? product.color[0] : product.color,
+    size: product.size && product.size.length > 0 ? product.size[0] : undefined,
+  });
+
+  const currentPrice = calculatePrice(product, selectedVariants);
   const originalPrice = product.discount
-    ? Math.round(product.price / (1 - product.discount / 100))
+    ? Math.round(currentPrice / (1 - product.discount / 100))
     : null;
+
+  const handleVariantChange = (variants: { memory?: string; color?: string; size?: string }) => {
+    setSelectedVariants(variants);
+  };
 
   return (
     <div className="flex flex-col h-full">
-      <div className="flex-grow pb-48 md:pb-0">
+      <div className="flex-grow">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="w-full mt-3">
             <ProductImageGallery images={product.photos} productName={product.name} />
@@ -30,8 +46,8 @@ export function QuickView({ product, dictionary }: QuickViewProps) {
                   <svg
                     key={i}
                     className={`w-5 h-5 ${i < Math.floor(product.rating)
-                        ? "text-yellow-400 fill-yellow-400"
-                        : "text-neutral-300 dark:text-neutral-600"
+                      ? "text-yellow-400 fill-yellow-400"
+                      : "text-neutral-300 dark:text-neutral-600"
                       }`}
                     viewBox="0 0 20 20"
                     fill="currentColor"
@@ -48,7 +64,7 @@ export function QuickView({ product, dictionary }: QuickViewProps) {
             <div className="mb-4">
               <div className="flex items-baseline gap-3 mb-2">
                 <span className="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
-                  {product.price} {dictionary.currency}
+                  {currentPrice} {dictionary.currency}
                 </span>
                 {product.discount && (
                   <span className="text-xl text-red-600 dark:text-red-400 font-semibold">
@@ -63,16 +79,30 @@ export function QuickView({ product, dictionary }: QuickViewProps) {
               )}
             </div>
             <div className="mb-6">
-              <ProductVariants product={product} dictionary={dictionary} />
+              <ProductVariants
+                product={product}
+                dictionary={dictionary}
+                onVariantChange={handleVariantChange}
+              />
             </div>
             <div className="hidden md:block">
-              <ProductActions product={product} dictionary={dictionary} />
+              <ProductActions
+                product={product}
+                dictionary={dictionary}
+                selectedVariants={selectedVariants}
+                currentPrice={currentPrice}
+              />
             </div>
           </div>
         </div>
       </div>
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-neutral-800 p-4 border-t border-neutral-200 dark:border-neutral-700">
-        <ProductActions product={product} dictionary={dictionary} />
+      <div className="md:hidden w-full mt-6 pt-4 border-t border-neutral-200 dark:border-neutral-700">
+        <ProductActions
+          product={product}
+          dictionary={dictionary}
+          selectedVariants={selectedVariants}
+          currentPrice={currentPrice}
+        />
       </div>
 
     </div>

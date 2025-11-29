@@ -124,16 +124,15 @@ export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 top-14 z-50 min-w-[180px] rounded-2xl border border-neutral-200 bg-white p-2 shadow-lg dark:border-neutral-700 dark:bg-neutral-800">
+        <div className="absolute right-0 top-14 z-50 min-w-[180px] rounded-2xl border border-neutral-200/50 bg-white/90 backdrop-blur-xl p-2 shadow-xl dark:border-neutral-700/50 dark:bg-neutral-800/90 animate-slide-down">
           {SUPPORTED_LOCALES.map((locale) => (
             <button
               key={locale}
               onClick={() => handleLocaleChange(locale)}
-              className={`flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-sm transition cursor-pointer ${
-                locale === currentLocale
-                  ? "bg-[var(--color-primary-surface)] text-[var(--color-primary-text)]"
-                  : "text-neutral-700 hover:bg-neutral-50 dark:text-neutral-300 dark:hover:bg-neutral-700"
-              }`}
+              className={`flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-sm transition cursor-pointer ${locale === currentLocale
+                ? "bg-[var(--color-primary-surface)] text-[var(--color-primary-text)]"
+                : "text-neutral-700 hover:bg-neutral-50 dark:text-neutral-300 dark:hover:bg-neutral-700"
+                }`}
             >
               <FlagIcon locale={locale} className="h-5 w-5 flex-shrink-0 rounded-full" />
               <span className="font-medium">{languageLabels[locale]}</span>

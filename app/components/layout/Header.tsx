@@ -4,13 +4,12 @@ import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import type { Locale } from "@/lib/i18n/config";
 import { useCart } from "@/app/context/CartContext";
-import { LanguageSwitcher } from "../../[lang]/(components)/LanguageSwitcher";
-import { ThemeSwitcher } from "../../[lang]/(components)/ThemeSwitcher";
+import type { Dictionary } from "@/lib/i18n/get-dictionary";
+import { LanguageSwitcher } from "@/app/components/common/LanguageSwitcher";
+import { ThemeSwitcher } from "@/app/components/common/ThemeSwitcher";
 import { SearchDropdown } from "./SearchDropdown";
-import { SearchDropdownForMobile } from "./SearchDropdownForMobile";
 
-// @ts-ignore
-const navActions = (dictionary: any, locale: Locale, cartItemCount: number) => [
+const navActions = (dictionary: Dictionary["header"], locale: Locale, cartItemCount: number) => [
   {
     label: "Ergashev",
     description: dictionary.profile,
@@ -88,8 +87,7 @@ const navActions = (dictionary: any, locale: Locale, cartItemCount: number) => [
 
 type HeaderProps = {
   locale: Locale;
-  // @ts-ignore
-  dictionary: any;
+  dictionary: Dictionary;
 };
 
 export function Header({ locale, dictionary }: HeaderProps) {
@@ -228,7 +226,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
                 />
               </svg>
             </button>
-            {isSearchFocused && <SearchDropdownForMobile query={query} locale={locale} dictionary={dictionary} onClose={() => setIsSearchFocused(false)} />}
+            {isSearchFocused && <SearchDropdown query={query} locale={locale} dictionary={dictionary} onClose={() => setIsSearchFocused(false)} id="search-dropdown-mobile" />}
           </form>
         </div>
 
@@ -292,7 +290,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden border-t border-neutral-100 dark:border-neutral-800">
+        <div className="md:hidden border-t border-neutral-100 dark:border-neutral-800 animate-slide-down">
           <div className="mx-auto max-w-6xl px-4 py-4 md:px-6">
             <form
               className="relative mb-4"
@@ -331,7 +329,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
                   />
                 </svg>
               </button>
-              {isSearchFocused && <SearchDropdown query={query} locale={locale} dictionary={dictionary} onClose={() => setIsSearchFocused(false)} />}
+              {isSearchFocused && <SearchDropdown query={query} locale={locale} dictionary={dictionary} onClose={() => setIsSearchFocused(false)} id="search-dropdown" />}
             </form>
 
             <nav className="flex flex-col gap-2 border-b border-neutral-100 pb-4 dark:border-neutral-800">
