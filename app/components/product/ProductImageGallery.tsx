@@ -15,14 +15,14 @@ export function ProductImageGallery({ images, productName }: ProductImageGallery
   const displayImages = images.length > 0 ? images : ["/catalog-card-photos/technics.png"];
 
   return (
-    <div className="flex flex-col gap-3 sm:gap-4">
+    <div className="flex flex-col gap-3 sm:gap-4 lg:max-w-[520px] lg:mx-0 mx-auto">
       {/* Основное изображение */}
-      <div className="relative aspect-square w-full overflow-hidden rounded-lg sm:rounded-xl bg-neutral-100 dark:bg-neutral-800 shadow-md">
+      <div className="group relative aspect-square w-full overflow-hidden rounded-lg sm:rounded-xl bg-neutral-100 dark:bg-neutral-800 shadow-md">
         <Image
           src={displayImages[selectedImage]}
           alt={`${productName} - Image ${selectedImage + 1}`}
           fill
-          className="object-contain p-3 sm:p-4 transition-opacity duration-300"
+          className="object-contain p-3 sm:p-4 md:p-5 transition-transform duration-300 ease-out group-hover:scale-110"
           priority
           onError={(e) => {
             // Если изображение не загружается, используем заглушку
@@ -34,12 +34,12 @@ export function ProductImageGallery({ images, productName }: ProductImageGallery
 
       {/* Миниатюры */}
       {displayImages.length > 1 && (
-        <div className="flex gap-2 pb-2 scrollbar-hide">
+        <div className="flex flex-wrap gap-2 sm:gap-3">
           {displayImages.map((image, index) => (
             <button
               key={index}
               onClick={() => setSelectedImage(index)}
-              className={`relative flex-shrink-0 aspect-square w-16 sm:w-20 md:w-24 lg:w-28 overflow-hidden rounded-lg border-2 transition-all duration-200 ${
+              className={`relative flex-shrink-0 aspect-square w-16 sm:w-20 md:w-24 lg:w-24 overflow-hidden rounded-lg border-2 transition-all duration-200 ${
                 selectedImage === index
                   ? "border-[var(--color-primary)] dark:[var(--color-primary)] scale-105 shadow-md"
                   : "border-neutral-200 dark:border-neutral-700 dark:hover:border-[var(--color-primary-hover)] hover:scale-105"
@@ -63,4 +63,3 @@ export function ProductImageGallery({ images, productName }: ProductImageGallery
     </div>
   );
 }
-

@@ -21,10 +21,10 @@
             "Gold"
           ],
           "photos": [
-            "/catalog-card-photos/technics.png",
-            "/catalog-card-photos/technics.png",
-            "/catalog-card-photos/technics.png",
-            "/catalog-card-photos/technics.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "model": "Galaxy S23 Ultra",
           "rating": 4.8,
@@ -78,10 +78,10 @@
             "Gold"
           ],
           "photos": [
-            "/catalog-card-photos/technics.png",
-            "/catalog-card-photos/technics.png",
-            "/catalog-card-photos/technics.png",
-            "/catalog-card-photos/technics.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "model": "iPhone 15 Pro Max",
           "rating": 4.9,
@@ -120,8 +120,10 @@
           "memory": "8GB RAM, 256GB SSD",
           "model": "MacBook Air",
           "photos": [
-            "/catalog-card-photos/technics.png",
-            "/catalog-card-photos/technics.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 4.7,
           "comments": [
@@ -149,8 +151,10 @@
           "memory": "16GB RAM, 512GB SSD",
           "model": "XPS 15",
           "photos": [
-            "/catalog-card-photos/technics.png",
-            "/catalog-card-photos/technics.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 4.6,
           "comments": [
@@ -182,8 +186,10 @@
           "discount": null,
           "model": "AirPods Pro 2",
           "photos": [
-            "/catalog-card-photos/technics.png",
-            "/catalog-card-photos/technics.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 4.7,
           "comments": [
@@ -210,8 +216,10 @@
           "discount": 15,
           "model": "AirPods 3",
           "photos": [
-            "/catalog-card-photos/technics.png",
-            "/catalog-card-photos/technics.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 4.5,
           "comments": [
@@ -244,8 +252,10 @@
           "quantity": 150,
           "discount": null,
           "photos": [
-            "/catalog-card-photos/clothes.png",
-            "/catalog-card-photos/clothes.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 4.2,
           "comments": [
@@ -265,8 +275,10 @@
           "quantity": 120,
           "discount": 5,
           "photos": [
-            "/catalog-card-photos/clothes.png",
-            "/catalog-card-photos/clothes.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 4.5,
           "comments": [
@@ -302,8 +314,10 @@
             "Blue"
           ],
           "photos": [
-            "/catalog-card-photos/clothes.png",
-            "/catalog-card-photos/clothes.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 4.3,
           "comments": [
@@ -333,8 +347,10 @@
             "Dark Blue"
           ],
           "photos": [
-            "/catalog-card-photos/clothes.png",
-            "/catalog-card-photos/clothes.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 4.6,
           "comments": [
@@ -364,10 +380,12 @@
             "XL"
           ],
           "photos": [
-            "/catalog-card-photos/clothes.png",
-            "/catalog-card-photos/clothes.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
-          "rating": 4.0,
+          "rating": 4,
           "comments": [
             {
               "user": "Quinn",
@@ -390,8 +408,10 @@
             "L"
           ],
           "photos": [
-            "/catalog-card-photos/clothes.png",
-            "/catalog-card-photos/clothes.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 4.4,
           "comments": [
@@ -425,8 +445,10 @@
             "44"
           ],
           "photos": [
-            "/catalog-card-photos/clothes.png",
-            "/catalog-card-photos/clothes.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 4.5,
           "comments": [
@@ -453,8 +475,10 @@
             "40"
           ],
           "photos": [
-            "/catalog-card-photos/clothes.png",
-            "/catalog-card-photos/clothes.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 4.1,
           "comments": [
@@ -481,8 +505,10 @@
           "quantity": 25,
           "discount": null,
           "photos": [
-            "/catalog-card-photos/sports.png",
-            "/catalog-card-photos/sports.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 4.3,
           "comments": [
@@ -502,8 +528,10 @@
           "quantity": 15,
           "discount": 10,
           "photos": [
-            "/catalog-card-photos/sports.png",
-            "/catalog-card-photos/sports.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 4.7,
           "comments": [
@@ -528,10 +556,12 @@
           "quantity": 10,
           "discount": null,
           "photos": [
-            "/catalog-card-photos/sports.png",
-            "/catalog-card-photos/sports.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
-          "rating": 4.0,
+          "rating": 4,
           "comments": [
             {
               "user": "Wendy",
@@ -549,8 +579,10 @@
           "quantity": 5,
           "discount": null,
           "photos": [
-            "/catalog-card-photos/sports.png",
-            "/catalog-card-photos/sports.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 4.8,
           "comments": [
@@ -575,8 +607,10 @@
           "quantity": 200,
           "discount": null,
           "photos": [
-            "/catalog-card-photos/sports.png",
-            "/catalog-card-photos/sports.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 4.2,
           "comments": [
@@ -596,8 +630,10 @@
           "quantity": 100,
           "discount": null,
           "photos": [
-            "/catalog-card-photos/sports.png",
-            "/catalog-card-photos/sports.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 4.5,
           "comments": [
@@ -624,8 +660,10 @@
           "quantity": 60,
           "discount": null,
           "photos": [
-            "/catalog-card-photos/books.png",
-            "/catalog-card-photos/books.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 4.9,
           "comments": [
@@ -651,8 +689,10 @@
           "quantity": 60,
           "discount": null,
           "photos": [
-            "/catalog-card-photos/books.png",
-            "/catalog-card-photos/books.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 3,
           "comments": [
@@ -678,8 +718,10 @@
           "quantity": 60,
           "discount": null,
           "photos": [
-            "/catalog-card-photos/books.png",
-            "/catalog-card-photos/books.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 3,
           "comments": [
@@ -705,8 +747,10 @@
           "quantity": 60,
           "discount": null,
           "photos": [
-            "/catalog-card-photos/books.png",
-            "/catalog-card-photos/books.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 3,
           "comments": [
@@ -732,8 +776,10 @@
           "quantity": 60,
           "discount": null,
           "photos": [
-            "/catalog-card-photos/books.png",
-            "/catalog-card-photos/books.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 3,
           "comments": [
@@ -759,8 +805,10 @@
           "quantity": 60,
           "discount": null,
           "photos": [
-            "/catalog-card-photos/books.png",
-            "/catalog-card-photos/books.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 3,
           "comments": [
@@ -786,8 +834,10 @@
           "quantity": 60,
           "discount": null,
           "photos": [
-            "/catalog-card-photos/books.png",
-            "/catalog-card-photos/books.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 3,
           "comments": [
@@ -813,8 +863,10 @@
           "quantity": 60,
           "discount": null,
           "photos": [
-            "/catalog-card-photos/books.png",
-            "/catalog-card-photos/books.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 3,
           "comments": [
@@ -840,8 +892,10 @@
           "quantity": 60,
           "discount": null,
           "photos": [
-            "/catalog-card-photos/books.png",
-            "/catalog-card-photos/books.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 3,
           "comments": [
@@ -867,8 +921,10 @@
           "quantity": 60,
           "discount": null,
           "photos": [
-            "/catalog-card-photos/books.png",
-            "/catalog-card-photos/books.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 3,
           "comments": [
@@ -894,8 +950,10 @@
           "quantity": 60,
           "discount": null,
           "photos": [
-            "/catalog-card-photos/books.png",
-            "/catalog-card-photos/books.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 3,
           "comments": [
@@ -921,8 +979,10 @@
           "quantity": 60,
           "discount": null,
           "photos": [
-            "/catalog-card-photos/books.png",
-            "/catalog-card-photos/books.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 3,
           "comments": [
@@ -948,8 +1008,10 @@
           "quantity": 60,
           "discount": null,
           "photos": [
-            "/catalog-card-photos/books.png",
-            "/catalog-card-photos/books.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 3,
           "comments": [
@@ -975,8 +1037,10 @@
           "quantity": 60,
           "discount": null,
           "photos": [
-            "/catalog-card-photos/books.png",
-            "/catalog-card-photos/books.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 3,
           "comments": [
@@ -1002,8 +1066,10 @@
           "quantity": 80,
           "discount": 5,
           "photos": [
-            "/catalog-card-photos/books.png",
-            "/catalog-card-photos/books.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 4.8,
           "comments": [
@@ -1028,8 +1094,10 @@
           "quantity": 100,
           "discount": null,
           "photos": [
-            "/catalog-card-photos/books.png",
-            "/catalog-card-photos/books.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 4.7,
           "comments": [
@@ -1049,8 +1117,10 @@
           "quantity": 90,
           "discount": null,
           "photos": [
-            "/catalog-card-photos/books.png",
-            "/catalog-card-photos/books.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 4.6,
           "comments": [
@@ -1075,8 +1145,10 @@
           "quantity": 100,
           "discount": null,
           "photos": [
-            "/catalog-card-photos/books.png",
-            "/catalog-card-photos/books.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 4.7,
           "comments": [
@@ -1096,8 +1168,10 @@
           "quantity": 90,
           "discount": null,
           "photos": [
-            "/catalog-card-photos/books.png",
-            "/catalog-card-photos/books.png"
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510552776732-03e61cf4b144?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
           ],
           "rating": 4.6,
           "comments": [

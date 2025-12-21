@@ -29,7 +29,7 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
                     <span className="mx-2">/</span>
                     <span className="text-neutral-900 dark:text-neutral-100 line-clamp-1">Profile</span>
                 </nav>
-                <div className="flex min-h-screen items-center justify-center bg-white dark:bg-neutral-900">
+                <div className="mt-4 flex justify-center sm:mt-6">
                     <div className="text-center">
                         <div className="w-64 h-64 mx-auto mb-8">
                             <AnimationPlayer src={ProfileAnimationUrl} loop={true} autoplay={true} />

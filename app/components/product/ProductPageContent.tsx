@@ -79,7 +79,7 @@ export function ProductPageContent({ product, locale, dictionary }: ProductPageC
 
                 <div className="grid gap-4 sm:gap-6 md:gap-8 lg:grid-cols-2">
                     {/* Left column - Images */}
-                    <div className="w-full">
+                    <div className="w-full lg:sticky lg:top-24 lg:self-start">
                         <ProductImageGallery images={product.photos ?? []} productName={product.name ?? ""} />
                     </div>
 
@@ -138,6 +138,23 @@ export function ProductPageContent({ product, locale, dictionary }: ProductPageC
                             />
                         </div>
 
+                        {/* Stock */}
+                        <div className="mb-4 sm:mb-6">
+                            <div className="flex items-center gap-2 flex-wrap">
+                                <span className="text-xs sm:text-sm font-medium text-neutral-600 dark:text-neutral-400 min-w-[80px] sm:min-w-[100px]">
+                                    {dictionary.product?.quantity || "В наличии"}:
+                                </span>
+                                <span
+                                    className={`text-xs sm:text-sm font-semibold ${product.quantity > 0 ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"
+                                        }`}
+                                >
+                                    {product.quantity > 0
+                                        ? `${product.quantity} ${dictionary.product?.items || "шт."}`
+                                        : dictionary.product?.outOfStock || "Нет в наличии"}
+                                </span>
+                            </div>
+                        </div>
+
                         {/* Characteristics (only for single values) */}
                         {product.model && !Array.isArray(product.memory) && !Array.isArray(product.color) && (
                             <div className="mb-4 sm:mb-6 space-y-2 sm:space-y-3">
@@ -165,17 +182,6 @@ export function ProductPageContent({ product, locale, dictionary }: ProductPageC
                                         <span className="text-xs sm:text-sm text-neutral-900 dark:text-neutral-100">{product.color}</span>
                                     </div>
                                 )}
-                                <div className="flex items-center gap-2 flex-wrap">
-                                    <span className="text-xs sm:text-sm font-medium text-neutral-600 dark:text-neutral-400 min-w-[80px] sm:min-w-[100px]">
-                                        {dictionary.product?.quantity || "В наличии"}:
-                                    </span>
-                                    <span
-                                        className={`text-xs sm:text-sm font-semibold ${product.quantity > 0 ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"
-                                            }`}
-                                    >
-                                        {product.quantity > 0 ? `${product.quantity} ${dictionary.product?.items || "шт."}` : dictionary.product?.outOfStock || "Нет в наличии"}
-                                    </span>
-                                </div>
                             </div>
                         )}
 
@@ -195,6 +201,7 @@ export function ProductPageContent({ product, locale, dictionary }: ProductPageC
                             dictionary={dictionary}
                             selectedVariants={selectedVariants}
                             currentPrice={currentPrice}
+                            showStock={false}
                         />
                     </div>
                 </div>

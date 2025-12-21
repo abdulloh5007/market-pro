@@ -51,6 +51,25 @@ export function calculatePrice(
 
 export async function getProductById(id: string): Promise<Product | null> {
   try {
+    if (typeof window === "undefined") {
+      try {
+        const { readFile } = await import("fs/promises");
+        const filePath = `${process.cwd()}/public/products.json`;
+        const data = JSON.parse(await readFile(filePath, "utf8"));
+
+        for (const category in data) {
+          for (const subCategory of data[category]) {
+            const product = subCategory.products?.find(
+              (p: Product) => p.id === id
+            );
+            if (product) return product;
+          }
+        }
+      } catch (error) {
+        console.error("Error reading products from file:", error);
+      }
+    }
+
     let url = "/products.json";
 
     // Если код выполняется на сервере — делаем абсолютный путь

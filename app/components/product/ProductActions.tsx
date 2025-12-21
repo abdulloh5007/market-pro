@@ -10,9 +10,16 @@ interface ProductActionsProps {
   dictionary: any;
   selectedVariants?: { memory?: string; color?: string; size?: string };
   currentPrice?: number;
+  showStock?: boolean;
 }
 
-export function ProductActions({ product, dictionary, selectedVariants, currentPrice }: ProductActionsProps) {
+export function ProductActions({
+  product,
+  dictionary,
+  selectedVariants,
+  currentPrice,
+  showStock = true,
+}: ProductActionsProps) {
   const [isLiked, setIsLiked] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const { addToCart } = useCart();
@@ -21,6 +28,14 @@ export function ProductActions({ product, dictionary, selectedVariants, currentP
     const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
     setIsLiked(favorites.includes(product.id));
   }, [product.id]);
+
+  useEffect(() => {
+    if (product.quantity <= 0) {
+      setQuantity(1);
+      return;
+    }
+    setQuantity((prev) => Math.min(Math.max(1, prev), product.quantity));
+  }, [product.quantity]);
 
   const toggleLike = () => {
     const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
@@ -39,12 +54,31 @@ export function ProductActions({ product, dictionary, selectedVariants, currentP
   };
 
   const handleAddToCart = () => {
+    if (product.quantity <= 0) {
+      return;
+    }
     addToCart(product, quantity, selectedVariants, currentPrice);
     alert(dictionary.product?.addedToCart || "Товар добавлен в корзину");
   };
 
   return (
     <div className="space-y-3 sm:space-y-4">
+      {showStock && (
+        <div className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400">
+          {dictionary.product?.quantity || "В наличии"}:{" "}
+          <span
+            className={
+              product.quantity > 0
+                ? "text-green-600 dark:text-green-400 font-medium"
+                : "text-red-600 dark:text-red-400 font-medium"
+            }
+          >
+            {product.quantity > 0
+              ? `${product.quantity} ${dictionary.product?.items || "шт."}`
+              : dictionary.product?.outOfStock || "Нет в наличии"}
+          </span>
+        </div>
+      )}
       {/* Количество */}
       <div className="flex items-center gap-2 sm:gap-4 flex-wrap">
         <span className="text-xs sm:text-sm font-medium text-neutral-600 dark:text-neutral-400">
@@ -114,4 +148,3 @@ export function ProductActions({ product, dictionary, selectedVariants, currentP
     </div>
   );
 }
-

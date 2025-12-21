@@ -3,7 +3,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { Product } from "@/lib/products";
 
-interface CartItem {
+export interface CartItem {
   product: Product;
   quantity: number;
   selectedVariants?: {
@@ -38,7 +38,7 @@ export function useCart() {
 }
 
 // Helper function to create a unique key for product + variant combination
-function getCartItemKey(productId: string, variants?: { memory?: string; color?: string; size?: string }): string {
+export function getCartItemKey(productId: string, variants?: { memory?: string; color?: string; size?: string }): string {
   if (!variants || (!variants.memory && !variants.color && !variants.size)) {
     return productId;
   }
@@ -67,6 +67,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     price?: number
   ) => {
     setCartItems((prevItems) => {
+      const available = Math.max(0, product.quantity ?? 0);
+      if (available === 0) {
+        return prevItems;
+      }
       const itemKey = getCartItemKey(product.id, selectedVariants);
       const existingItem = prevItems.find(
         (item) => getCartItemKey(item.product.id, item.selectedVariants) === itemKey
@@ -75,16 +79,24 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       if (existingItem) {
         return prevItems.map((item) =>
           getCartItemKey(item.product.id, item.selectedVariants) === itemKey
-            ? { ...item, quantity: item.quantity + quantity }
+            ? {
+                ...item,
+                quantity: Math.min(item.quantity + quantity, available),
+              }
             : item
         );
+      }
+
+      const initialQuantity = Math.min(quantity, available);
+      if (initialQuantity <= 0) {
+        return prevItems;
       }
 
       return [
         ...prevItems,
         {
           product,
-          quantity,
+          quantity: initialQuantity,
           selectedVariants,
           price: price ?? product.price,
         },
@@ -104,10 +116,19 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   const updateQuantity = (productId: string, quantity: number, variantKey?: string) => {
     setCartItems((prevItems) =>
-      prevItems.map((item) => {
+      prevItems.flatMap((item) => {
         const itemKey = getCartItemKey(item.product.id, item.selectedVariants);
         const targetKey = variantKey ?? productId;
-        return itemKey === targetKey ? { ...item, quantity } : item;
+        if (itemKey !== targetKey) {
+          return item;
+        }
+
+        const available = Math.max(0, item.product.quantity ?? 0);
+        const nextQuantity = Math.min(Math.max(1, quantity), available);
+        if (available === 0) {
+          return [];
+        }
+        return { ...item, quantity: nextQuantity };
       })
     );
   };

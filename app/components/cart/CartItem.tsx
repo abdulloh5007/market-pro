@@ -1,17 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useCart } from "@/app/context/CartContext";
-import type { Product } from "@/lib/products";
-
+import { useCart, getCartItemKey, type CartItem as CartItemType } from "@/app/context/CartContext";
 interface CartItemProps {
-  item: { product: Product; quantity: number };
+  item: CartItemType;
   dictionary: any;
   lang: string;
 }
 
 export function CartItem({ item, dictionary, lang }: CartItemProps) {
   const { updateQuantity, removeFromCart } = useCart();
-  const { product, quantity } = item;
+  const { product, quantity, selectedVariants } = item;
+  const itemKey = getCartItemKey(product.id, selectedVariants);
 
   const discountedPrice = product.discount
     ? product.price * (1 - product.discount / 100)
@@ -62,7 +61,7 @@ export function CartItem({ item, dictionary, lang }: CartItemProps) {
         <div className="flex items-center justify-between mt-4 col-span-2 md:col-span-1">
           <div className="flex items-center gap-1 sm:gap-2 border border-neutral-300 dark:border-neutral-600 rounded-lg overflow-hidden">
             <button
-              onClick={() => updateQuantity(product.id, Math.max(1, quantity - 1))}
+              onClick={() => updateQuantity(product.id, Math.max(1, quantity - 1), itemKey)}
               disabled={quantity <= 1}
               className="px-2 sm:px-3 py-2 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 disabled:text-neutral-300 dark:disabled:text-neutral-600 disabled:cursor-not-allowed transition-all duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-700 active:scale-95"
               type="button"
@@ -97,7 +96,7 @@ export function CartItem({ item, dictionary, lang }: CartItemProps) {
               "
             />
             <button
-              onClick={() => updateQuantity(product.id, quantity + 1)}
+              onClick={() => updateQuantity(product.id, quantity + 1, itemKey)}
               disabled={quantity >= product.quantity}
               className="px-2 sm:px-3 py-2 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 disabled:text-neutral-300 dark:disabled:text-neutral-600 disabled:cursor-not-allowed transition-all duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-700 active:scale-95 cursor-pointer"
               type="button"
@@ -118,7 +117,7 @@ export function CartItem({ item, dictionary, lang }: CartItemProps) {
             </button>
           </div>
           <button
-            onClick={() => removeFromCart(product.id)}
+            onClick={() => removeFromCart(product.id, itemKey)}
             className="text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-200 p-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors cursor-pointer"
             aria-label={dictionary.cart?.remove || "Удалить"}
           >
@@ -142,4 +141,3 @@ export function CartItem({ item, dictionary, lang }: CartItemProps) {
     </div>
   );
 }
-

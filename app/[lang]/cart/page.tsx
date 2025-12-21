@@ -105,7 +105,7 @@ export default function CartPage({ params: paramsPromise }: CartPageProps) {
             </div>
           </div>
         ) : (
-          <div className="flex min-h-screen items-center justify-center bg-white dark:bg-neutral-900">
+          <div className="mt-4 flex justify-center sm:mt-6">
             <div className="text-center">
               <div className="w-64 h-64 mx-auto mb-8">
                 <AnimationPlayer src={noItemsAnimationUrl} loop={true} autoplay={true} />

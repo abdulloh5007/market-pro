@@ -29,7 +29,7 @@ export function AnnouncementBar({ dictionary }: AnnouncementBarProps) {
             </svg>
           </div>
 
-          <span className="flex">
+          <span className="flex items-center">
             <span className="bg-[var(--color-primary)] text-white px-2 py-1 rounded-full text-xs font-bold mr-2">-50%</span>
             {/* <span className="mx-1">•</span> */}
             <p className="text-neutral-700 dark:text-neutral-300 font-bold">{dictionary.announcement.promoText} <span className="text-[var(--color-primary-text)] font-bold">{dictionary.announcement.promoName}</span></p>
