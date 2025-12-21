@@ -7,28 +7,24 @@ import { ProductCard } from '@/app/components/product';
 import { getDictionary } from '@/lib/i18n/get-dictionary';
 import { resolveLocale, type Locale } from '@/lib/i18n/config';
 import { AnimationPlayer } from '@/app/components/common/AnimationPlayer';
+import { useParams } from 'next/navigation';
 
-type FavoritesPageProps = {
-  params: {
-    lang?: string;
-  };
-};
-
-export default function FavoritesPage({ params }: FavoritesPageProps) {
+export default function FavoritesPage() {
   const [favoriteProducts, setFavoriteProducts] = useState<Product[]>([]);
   const [dictionary, setDictionary] = useState<any>({});
-  const [locale, setLocale] = useState<Locale>('ru');
+  const params = useParams<{ lang?: string }>();
+  const langParam = Array.isArray(params?.lang) ? params?.lang[0] : params?.lang;
+  const resolvedLocale = resolveLocale(langParam);
+  const [locale, setLocale] = useState<Locale>(resolvedLocale);
 
   useEffect(() => {
     async function fetchData() {
-      const { lang } = await params;
-      const resolvedLocale = resolveLocale(lang);
       setLocale(resolvedLocale);
       const dict = await getDictionary(resolvedLocale);
       setDictionary(dict);
     }
     fetchData();
-  }, [params]);
+  }, [resolvedLocale]);
 
   useEffect(() => {
     const favoriteIds = JSON.parse(localStorage.getItem('favorites') || '[]');

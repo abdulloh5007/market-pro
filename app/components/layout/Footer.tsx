@@ -32,7 +32,7 @@ export function Footer({ dictionary }) {
 
   return (
     <footer className="mt-auto bg-neutral-100 text-sm text-neutral-600 dark:bg-neutral-900 dark:text-neutral-400">
-      <div className="mx-auto w-full max-w-6xl px-4 py-8 md:px-6">
+      <div className="mx-auto w-full max-w-6xl px-4 py-4 md:px-6">
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <div className="flex flex-wrap gap-3">
             {socialLinks.map((social) => (

@@ -1,13 +1,21 @@
+export type LocalizedText = string | { ru?: string; uz?: string; [key: string]: string | undefined };
+
 export interface Product {
   id: string;
   name: string;
-  description: string;
+  description: LocalizedText;
   price: number;
   quantity: number;
   discount: number | null;
   memory?: string | string[];
   color?: string | string[];
   size?: string[];
+  variantStock?: Array<{
+    memory?: string;
+    color?: string;
+    size?: string;
+    quantity: number;
+  }>;
   photos: string[];
   model: string;
   rating: number;
@@ -47,6 +55,47 @@ export function calculatePrice(
   }
 
   return product.price;
+}
+
+export function getLocalizedDescription(description: LocalizedText, locale?: string): string {
+  if (typeof description === "string") {
+    return description;
+  }
+
+  if (!description || typeof description !== "object") {
+    return "";
+  }
+
+  if (locale && typeof description[locale] === "string") {
+    return description[locale] as string;
+  }
+
+  return (description.ru as string) || (description.uz as string) || "";
+}
+
+export function getVariantStockQuantity(
+  product: Product,
+  selectedVariants?: { memory?: string; color?: string; size?: string }
+): number {
+  if (!product.variantStock || product.variantStock.length === 0) {
+    return product.quantity ?? 0;
+  }
+
+  if (!selectedVariants) {
+    return 0;
+  }
+
+  const match = product.variantStock.find((entry) => {
+    const memoryMatch =
+      (entry.memory ?? null) === (selectedVariants.memory ?? null);
+    const colorMatch =
+      (entry.color ?? null) === (selectedVariants.color ?? null);
+    const sizeMatch =
+      (entry.size ?? null) === (selectedVariants.size ?? null);
+    return memoryMatch && colorMatch && sizeMatch;
+  });
+
+  return match?.quantity ?? 0;
 }
 
 export async function getProductById(id: string): Promise<Product | null> {

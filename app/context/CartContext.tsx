@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, useEffect } from "react";
-import { Product } from "@/lib/products";
+import { Product, getVariantStockQuantity } from "@/lib/products";
 
 export interface CartItem {
   product: Product;
@@ -76,18 +76,25 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         (item) => getCartItemKey(item.product.id, item.selectedVariants) === itemKey
       );
 
+      const availableForVariant = getVariantStockQuantity(product, selectedVariants);
+      const existingQuantity = existingItem?.quantity ?? 0;
+      const remaining = Math.max(0, availableForVariant - existingQuantity);
+
       if (existingItem) {
+        if (remaining <= 0) {
+          return prevItems;
+        }
         return prevItems.map((item) =>
           getCartItemKey(item.product.id, item.selectedVariants) === itemKey
             ? {
                 ...item,
-                quantity: Math.min(item.quantity + quantity, available),
+                quantity: Math.min(item.quantity + quantity, availableForVariant),
               }
             : item
         );
       }
 
-      const initialQuantity = Math.min(quantity, available);
+      const initialQuantity = Math.min(quantity, remaining);
       if (initialQuantity <= 0) {
         return prevItems;
       }
@@ -123,7 +130,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
           return item;
         }
 
-        const available = Math.max(0, item.product.quantity ?? 0);
+        const available = Math.max(0, getVariantStockQuantity(item.product, item.selectedVariants));
         const nextQuantity = Math.min(Math.max(1, quantity), available);
         if (available === 0) {
           return [];

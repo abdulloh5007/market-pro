@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCart, getCartItemKey, type CartItem as CartItemType } from "@/app/context/CartContext";
+import { getVariantStockQuantity } from "@/lib/products";
 interface CartItemProps {
   item: CartItemType;
   dictionary: any;
@@ -10,11 +11,22 @@ interface CartItemProps {
 export function CartItem({ item, dictionary, lang }: CartItemProps) {
   const { updateQuantity, removeFromCart } = useCart();
   const { product, quantity, selectedVariants } = item;
+  const variantParts: string[] = [];
+  if (selectedVariants?.memory) {
+    variantParts.push(`${dictionary.product?.memory || "Память"}: ${selectedVariants.memory}`);
+  }
+  if (selectedVariants?.color) {
+    variantParts.push(`${dictionary.product?.color || "Цвет"}: ${selectedVariants.color}`);
+  }
+  if (selectedVariants?.size) {
+    variantParts.push(`${dictionary.product?.size || "Размер"}: ${selectedVariants.size}`);
+  }
   const itemKey = getCartItemKey(product.id, selectedVariants);
 
   const discountedPrice = product.discount
     ? product.price * (1 - product.discount / 100)
     : product.price;
+  const availableQuantity = getVariantStockQuantity(product, selectedVariants);
 
   return (
     <div className="grid grid-cols-[auto_1fr] gap-4 p-4 mb-4 border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-sm md:flex md:flex-row md:items-start">
@@ -54,8 +66,13 @@ export function CartItem({ item, dictionary, lang }: CartItemProps) {
               </p>
             )}
           </div>
+          {variantParts.length > 0 && (
+            <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
+              {variantParts.join(" · ")}
+            </p>
+          )}
           <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
-            {dictionary.cart?.stock || "В наличии"}: {product.quantity}
+            {dictionary.cart?.stock || "В наличии"}: {availableQuantity}
           </p>
         </div>
         <div className="flex items-center justify-between mt-4 col-span-2 md:col-span-1">

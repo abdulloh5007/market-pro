@@ -3,7 +3,12 @@
 import { useState } from "react";
 import { notFound } from "next/navigation";
 import { type Locale } from "@/lib/i18n/config";
-import { type Product, calculatePrice } from "@/lib/products";
+import {
+    type Product,
+    calculatePrice,
+    getVariantStockQuantity,
+    getLocalizedDescription,
+} from "@/lib/products";
 import {
     ProductImageGallery,
     ProductActions,
@@ -30,6 +35,7 @@ export function ProductPageContent({ product, locale, dictionary }: ProductPageC
     });
 
     const currentPrice = calculatePrice(product, selectedVariants);
+    const availableQuantity = getVariantStockQuantity(product, selectedVariants);
     const originalPrice = product.discount && typeof product.discount === "number" && product.discount > 0 && currentPrice > 0
         ? Math.round(currentPrice / (1 - product.discount / 100))
         : null;
@@ -148,8 +154,8 @@ export function ProductPageContent({ product, locale, dictionary }: ProductPageC
                                     className={`text-xs sm:text-sm font-semibold ${product.quantity > 0 ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"
                                         }`}
                                 >
-                                    {product.quantity > 0
-                                        ? `${product.quantity} ${dictionary.product?.items || "шт."}`
+                                    {availableQuantity > 0
+                                        ? `${availableQuantity} ${dictionary.product?.items || "шт."}`
                                         : dictionary.product?.outOfStock || "Нет в наличии"}
                                 </span>
                             </div>
@@ -191,7 +197,7 @@ export function ProductPageContent({ product, locale, dictionary }: ProductPageC
                                 {dictionary.product?.description || "Описание"}
                             </h2>
                             <p className="text-xs sm:text-sm md:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                                {product.description}
+                                {getLocalizedDescription(product.description, String(locale))}
                             </p>
                         </div>
 

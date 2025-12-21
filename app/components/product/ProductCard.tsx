@@ -7,7 +7,7 @@ import { useParams } from "next/navigation";
 import { Modal } from "@/app/components/common/Modal";
 import { QuickView } from "./QuickView";
 import { emitFavoritesUpdated } from "@/lib/favorites";
-import { Product } from "@/lib/products";
+import { Product, getLocalizedDescription } from "@/lib/products";
 
 interface ProductCardProps {
   product: Product;
@@ -117,7 +117,9 @@ export function ProductCard({ product, imageUrl, dictionary }: ProductCardProps)
               )}
             </div>
           </div>
-          <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 h-8 sm:h-10 mt-1 overflow-hidden line-clamp-2">{product.description}</p>
+          <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 h-8 sm:h-10 mt-1 overflow-hidden line-clamp-2">
+            {getLocalizedDescription(product.description, String(lang))}
+          </p>
           <button 
             onClick={handleAddToCartClick}
             className="mt-2 sm:mt-3 md:mt-4 w-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white text-xs sm:text-sm md:text-base font-bold py-1 sm:py-1.5 rounded-lg transform hover:scale-103 transition-all duration-200 cursor-pointer"
@@ -133,4 +135,3 @@ export function ProductCard({ product, imageUrl, dictionary }: ProductCardProps)
     </>
   );
 }
-

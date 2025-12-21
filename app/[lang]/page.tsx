@@ -22,7 +22,7 @@ export default async function LangHomePage({ params }: PageProps) {
 
   return (
     <div className="bg-white dark:bg-neutral-900 overflow-hidden">
-      <section className="mx-auto w-full max-w-6xl px-4 pt-3 pb-6 md:px-6">
+      <section className="mx-auto w-full max-w-6xl px-4 py-4 md:px-6">
         <HeroCarousel />
       </section>
 
@@ -32,7 +32,7 @@ export default async function LangHomePage({ params }: PageProps) {
 
       <FilteredProducts dictionary={dictionary} />
 
-      <section className="mx-auto w-full max-w-6xl px-4 pb-20 md:px-6">
+      <section className="mx-auto w-full max-w-6xl px-4 py-4 md:px-6">
         <TopProducts dictionary={dictionary} />
       </section>
     </div>

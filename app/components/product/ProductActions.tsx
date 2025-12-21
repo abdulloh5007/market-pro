@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import type { Product } from "@/lib/products";
 import { emitFavoritesUpdated } from "@/lib/favorites";
-import { useCart } from "@/app/context/CartContext";
+import { useCart, getCartItemKey } from "@/app/context/CartContext";
+import { getVariantStockQuantity } from "@/lib/products";
 
 interface ProductActionsProps {
   product: Product;
@@ -22,7 +23,16 @@ export function ProductActions({
 }: ProductActionsProps) {
   const [isLiked, setIsLiked] = useState(false);
   const [quantity, setQuantity] = useState(1);
-  const { addToCart } = useCart();
+  const { addToCart, cartItems } = useCart();
+
+  const itemKey = getCartItemKey(product.id, selectedVariants);
+  const cartItem = cartItems.find(
+    (item) => getCartItemKey(item.product.id, item.selectedVariants) === itemKey
+  );
+  const inCartQuantity = cartItem?.quantity ?? 0;
+  const availableQuantity = getVariantStockQuantity(product, selectedVariants);
+  const remainingQuantity = Math.max(0, availableQuantity - inCartQuantity);
+  const isInCart = inCartQuantity > 0;
 
   useEffect(() => {
     const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
@@ -30,12 +40,12 @@ export function ProductActions({
   }, [product.id]);
 
   useEffect(() => {
-    if (product.quantity <= 0) {
+    if (availableQuantity <= 0) {
       setQuantity(1);
       return;
     }
-    setQuantity((prev) => Math.min(Math.max(1, prev), product.quantity));
-  }, [product.quantity]);
+    setQuantity((prev) => Math.min(Math.max(1, prev), Math.max(1, remainingQuantity)));
+  }, [availableQuantity, remainingQuantity]);
 
   const toggleLike = () => {
     const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
@@ -54,7 +64,7 @@ export function ProductActions({
   };
 
   const handleAddToCart = () => {
-    if (product.quantity <= 0) {
+    if (availableQuantity <= 0 || isInCart) {
       return;
     }
     addToCart(product, quantity, selectedVariants, currentPrice);
@@ -73,8 +83,8 @@ export function ProductActions({
                 : "text-red-600 dark:text-red-400 font-medium"
             }
           >
-            {product.quantity > 0
-              ? `${product.quantity} ${dictionary.product?.items || "шт."}`
+            {availableQuantity > 0
+              ? `${availableQuantity} ${dictionary.product?.items || "шт."}`
               : dictionary.product?.outOfStock || "Нет в наличии"}
           </span>
         </div>
@@ -87,7 +97,7 @@ export function ProductActions({
         <div className="flex items-center gap-1 sm:gap-2 border border-neutral-300 dark:border-neutral-600 rounded-lg overflow-hidden">
           <button
             onClick={() => setQuantity(Math.max(1, quantity - 1))}
-            disabled={quantity <= 1}
+            disabled={quantity <= 1 || isInCart}
             className="px-2 sm:px-3 py-2 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 disabled:text-neutral-300 dark:disabled:text-neutral-600 disabled:cursor-not-allowed transition-all duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-700 active:scale-95"
             type="button"
           >
@@ -100,7 +110,7 @@ export function ProductActions({
           </span>
           <button
             onClick={() => setQuantity(quantity + 1)}
-            disabled={quantity >= product.quantity}
+            disabled={quantity >= remainingQuantity || isInCart || remainingQuantity <= 0}
             className="px-2 sm:px-3 py-2 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 disabled:text-neutral-300 dark:disabled:text-neutral-600 disabled:cursor-not-allowed transition-all duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-700 active:scale-95"
             type="button"
           >
@@ -115,11 +125,11 @@ export function ProductActions({
       <div className="flex flex-row gap-2 sm:gap-3">
         <button
           onClick={handleAddToCart}
-          disabled={product.quantity === 0}
+          disabled={availableQuantity === 0 || isInCart}
           className="flex-1 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] disabled:bg-neutral-400 disabled:cursor-not-allowed text-white font-semibold py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg transition-all duration-300 transform hover:scale-101 active:scale-[0.98] hover:shadow-lg disabled:hover:scale-100 disabled:hover:shadow-none text-sm sm:text-base cursor-pointer"
           type="button"
         >
-          {dictionary.addToCart || "В корзину"}
+          {isInCart ? (dictionary.cart?.inCart || "В корзине") : (dictionary.addToCart || "В корзину")}
         </button>
         <button
           onClick={toggleLike}

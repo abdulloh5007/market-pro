@@ -7,27 +7,24 @@ import { CartSummary } from "@/app/components/cart/CartSummary";
 import { PromoCodeCard } from "@/app/components/cart/PromoCodeCard";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { resolveLocale, type Locale } from "@/lib/i18n/config";
-import { useState, useEffect, use as useReact } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Modal } from "@/app/components/common/Modal";
 import { AnimationPlayer } from "@/app/components/common/AnimationPlayer";
+import { getCartItemKey } from "@/app/context/CartContext";
+import { useParams } from "next/navigation";
 
-type CartPageProps = {
-  params: Promise<{
-    lang?: string;
-  }>;
-};
-
-export default function CartPage({ params: paramsPromise }: CartPageProps) {
+export default function CartPage() {
   const { cartItems, clearCart } = useCart();
   const [dictionary, setDictionary] = useState<any>({});
-  const [locale, setLocale] = useState<Locale>("ru");
+  const params = useParams<{ lang?: string }>();
+  const langParam = Array.isArray(params?.lang) ? params?.lang[0] : params?.lang;
+  const resolvedLocale = resolveLocale(langParam);
+  const [locale, setLocale] = useState<Locale>(resolvedLocale);
   const [isOrderSuccessModalOpen, setIsOrderSuccessModalOpen] = useState(false);
   const [orderPlacedItems, setOrderPlacedItems] = useState<typeof cartItems>([]);
   const [appliedPromoCode, setAppliedPromoCode] = useState("");
   const [promoMessage, setPromoMessage] = useState("");
-
-  const params = useReact(paramsPromise);
 
   const handlePlaceOrder = () => {
     setOrderPlacedItems(cartItems);
@@ -47,14 +44,12 @@ export default function CartPage({ params: paramsPromise }: CartPageProps) {
 
   useEffect(() => {
     async function fetchData() {
-      const lang = params.lang;
-      const resolvedLocale = resolveLocale(lang);
       setLocale(resolvedLocale);
       const dict = await getDictionary(resolvedLocale);
       setDictionary(dict);
     }
     fetchData();
-  }, [params]);
+  }, [resolvedLocale]);
 
   if (Object.keys(dictionary).length === 0) {
     return null; // Or a loading spinner
@@ -83,7 +78,7 @@ export default function CartPage({ params: paramsPromise }: CartPageProps) {
             <div className="lg:col-span-2">
               {cartItems.map((item) => (
                 <CartItem
-                  key={item.product.id}
+                  key={getCartItemKey(item.product.id, item.selectedVariants)}
                   item={item}
                   dictionary={dictionary}
                   lang={locale}
@@ -144,7 +139,7 @@ export default function CartPage({ params: paramsPromise }: CartPageProps) {
                 <div className="grid grid-cols-1 gap-4">
                   {orderPlacedItems.map((item) => (
                     <OrderedItemCard
-                      key={item.product.id}
+                      key={getCartItemKey(item.product.id, item.selectedVariants)}
                       item={item}
                       dictionary={dictionary}
                     />

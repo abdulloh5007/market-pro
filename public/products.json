@@ -6,7 +6,10 @@
         {
           "id": "e1_s1",
           "name": "Samsung Galaxy S23 Ultra",
-          "description": "Powerful smartphone with advanced camera system.",
+          "description": {
+            "ru": "Мощный смартфон с продвинутой камерой.",
+            "uz": "Ilg'or kamera tizimiga ega kuchli smartfon."
+          },
           "price": 1080,
           "quantity": 50,
           "discount": 10,
@@ -58,12 +61,62 @@
               "date": "2023-10-26",
               "rating": 4
             }
+          ],
+          "variantStock": [
+            {
+              "quantity": 6,
+              "memory": "256GB",
+              "color": "Phantom Black"
+            },
+            {
+              "quantity": 6,
+              "memory": "256GB",
+              "color": "Silver"
+            },
+            {
+              "quantity": 6,
+              "memory": "256GB",
+              "color": "Gold"
+            },
+            {
+              "quantity": 6,
+              "memory": "512GB",
+              "color": "Phantom Black"
+            },
+            {
+              "quantity": 6,
+              "memory": "512GB",
+              "color": "Silver"
+            },
+            {
+              "quantity": 5,
+              "memory": "512GB",
+              "color": "Gold"
+            },
+            {
+              "quantity": 5,
+              "memory": "1TB",
+              "color": "Phantom Black"
+            },
+            {
+              "quantity": 5,
+              "memory": "1TB",
+              "color": "Silver"
+            },
+            {
+              "quantity": 5,
+              "memory": "1TB",
+              "color": "Gold"
+            }
           ]
         },
         {
           "id": "e1_s2",
           "name": "iPhone 15 Pro Max",
-          "description": "Latest iPhone with A17 Bionic chip.",
+          "description": {
+            "ru": "Новейший iPhone с чипом A17 Bionic.",
+            "uz": "A17 Bionic chipiga ega eng so'nggi iPhone."
+          },
           "price": 1199,
           "quantity": 70,
           "discount": null,
@@ -103,6 +156,53 @@
               "date": "2023-10-28",
               "rating": 5
             }
+          ],
+          "variantStock": [
+            {
+              "quantity": 8,
+              "memory": "256GB",
+              "color": "Black"
+            },
+            {
+              "quantity": 8,
+              "memory": "256GB",
+              "color": "Silver"
+            },
+            {
+              "quantity": 8,
+              "memory": "256GB",
+              "color": "Gold"
+            },
+            {
+              "quantity": 8,
+              "memory": "512GB",
+              "color": "Black"
+            },
+            {
+              "quantity": 8,
+              "memory": "512GB",
+              "color": "Silver"
+            },
+            {
+              "quantity": 8,
+              "memory": "512GB",
+              "color": "Gold"
+            },
+            {
+              "quantity": 8,
+              "memory": "1TB",
+              "color": "Black"
+            },
+            {
+              "quantity": 7,
+              "memory": "1TB",
+              "color": "Silver"
+            },
+            {
+              "quantity": 7,
+              "memory": "1TB",
+              "color": "Gold"
+            }
           ]
         }
       ]
@@ -113,7 +213,10 @@
         {
           "id": "e2_l1",
           "name": "MacBook Air M2",
-          "description": "Thin and light laptop with M2 chip.",
+          "description": {
+            "ru": "Тонкий и лёгкий ноутбук с чипом M2.",
+            "uz": "M2 chipli yupqa va yengil noutbuk."
+          },
           "price": 1100,
           "quantity": 30,
           "discount": 5,
@@ -144,7 +247,10 @@
         {
           "id": "e2_l2",
           "name": "Dell XPS 15",
-          "description": "High-performance laptop for professionals.",
+          "description": {
+            "ru": "Высокопроизводительный ноутбук для профессионалов.",
+            "uz": "Mutaxassislar uchun yuqori unumli noutbuk."
+          },
           "price": 1800,
           "quantity": 20,
           "discount": null,
@@ -180,7 +286,10 @@
         {
           "id": "e3_a1",
           "name": "AirPods Pro 2nd Gen",
-          "description": "Active Noise Cancellation and Adaptive Transparency.",
+          "description": {
+            "ru": "Активное шумоподавление и адаптивная прозрачность.",
+            "uz": "Faol shovqinni bekor qilish va moslashuvchan shaffoflik."
+          },
           "price": 249,
           "quantity": 100,
           "discount": null,
@@ -210,7 +319,10 @@
         {
           "id": "e3_a2",
           "name": "AirPods 3rd Gen",
-          "description": "Spatial Audio with dynamic head tracking.",
+          "description": {
+            "ru": "Пространственный звук с динамическим отслеживанием головы.",
+            "uz": "Bosh harakatini dinamik kuzatish bilan fazoviy audio."
+          },
           "price": 179,
           "quantity": 80,
           "discount": 15,
@@ -247,7 +359,10 @@
         {
           "id": "c1_h1",
           "name": "Baseball Cap",
-          "description": "Classic cotton baseball cap.",
+          "description": {
+            "ru": "Классическая хлопковая бейсболка.",
+            "uz": "Klassik paxtali beysbolkepka."
+          },
           "price": 20,
           "quantity": 150,
           "discount": null,
@@ -270,7 +385,10 @@
         {
           "id": "c1_h2",
           "name": "Beanie Hat",
-          "description": "Warm knitted beanie for winter.",
+          "description": {
+            "ru": "Тёплая вязаная шапка для зимы.",
+            "uz": "Qish uchun issiq to'qilgan shapka."
+          },
           "price": 25,
           "quantity": 120,
           "discount": 5,
@@ -298,7 +416,10 @@
         {
           "id": "c2_c1",
           "name": "Men's T-Shirt",
-          "description": "Comfortable cotton t-shirt.",
+          "description": {
+            "ru": "Удобная хлопковая футболка.",
+            "uz": "Qulay paxtali futbolka."
+          },
           "price": 30,
           "quantity": 200,
           "discount": null,
@@ -327,12 +448,77 @@
               "date": "2023-07-20",
               "rating": 4
             }
+          ],
+          "variantStock": [
+            {
+              "quantity": 17,
+              "color": "White",
+              "size": "S"
+            },
+            {
+              "quantity": 17,
+              "color": "White",
+              "size": "M"
+            },
+            {
+              "quantity": 17,
+              "color": "White",
+              "size": "L"
+            },
+            {
+              "quantity": 17,
+              "color": "White",
+              "size": "XL"
+            },
+            {
+              "quantity": 17,
+              "color": "Black",
+              "size": "S"
+            },
+            {
+              "quantity": 17,
+              "color": "Black",
+              "size": "M"
+            },
+            {
+              "quantity": 17,
+              "color": "Black",
+              "size": "L"
+            },
+            {
+              "quantity": 17,
+              "color": "Black",
+              "size": "XL"
+            },
+            {
+              "quantity": 16,
+              "color": "Blue",
+              "size": "S"
+            },
+            {
+              "quantity": 16,
+              "color": "Blue",
+              "size": "M"
+            },
+            {
+              "quantity": 16,
+              "color": "Blue",
+              "size": "L"
+            },
+            {
+              "quantity": 16,
+              "color": "Blue",
+              "size": "XL"
+            }
           ]
         },
         {
           "id": "c2_c2",
           "name": "Women's Jeans",
-          "description": "Stylish slim-fit jeans.",
+          "description": {
+            "ru": "Стильные джинсы slim fit.",
+            "uz": "Zamonaviy slim fit jinsi."
+          },
           "price": 70,
           "quantity": 100,
           "discount": 10,
@@ -360,6 +546,48 @@
               "date": "2023-08-01",
               "rating": 5
             }
+          ],
+          "variantStock": [
+            {
+              "quantity": 13,
+              "color": "Blue",
+              "size": "XS"
+            },
+            {
+              "quantity": 13,
+              "color": "Blue",
+              "size": "S"
+            },
+            {
+              "quantity": 13,
+              "color": "Blue",
+              "size": "M"
+            },
+            {
+              "quantity": 13,
+              "color": "Blue",
+              "size": "L"
+            },
+            {
+              "quantity": 12,
+              "color": "Dark Blue",
+              "size": "XS"
+            },
+            {
+              "quantity": 12,
+              "color": "Dark Blue",
+              "size": "S"
+            },
+            {
+              "quantity": 12,
+              "color": "Dark Blue",
+              "size": "M"
+            },
+            {
+              "quantity": 12,
+              "color": "Dark Blue",
+              "size": "L"
+            }
           ]
         }
       ]
@@ -370,7 +598,10 @@
         {
           "id": "c3_u1",
           "name": "Men's Boxer Briefs",
-          "description": "Soft and breathable boxer briefs.",
+          "description": {
+            "ru": "Мягкие и дышащие боксёры.",
+            "uz": "Yumshoq va nafas oladigan bokserlar."
+          },
           "price": 15,
           "quantity": 300,
           "discount": null,
@@ -393,12 +624,29 @@
               "date": "2023-06-10",
               "rating": 4
             }
+          ],
+          "variantStock": [
+            {
+              "quantity": 100,
+              "size": "M"
+            },
+            {
+              "quantity": 100,
+              "size": "L"
+            },
+            {
+              "quantity": 100,
+              "size": "XL"
+            }
           ]
         },
         {
           "id": "c3_u2",
           "name": "Women's Bra",
-          "description": "Comfortable everyday bra.",
+          "description": {
+            "ru": "Удобный повседневный бюстгальтер.",
+            "uz": "Har kungi qulay byustgalter."
+          },
           "price": 25,
           "quantity": 180,
           "discount": null,
@@ -421,6 +669,20 @@
               "date": "2023-07-05",
               "rating": 5
             }
+          ],
+          "variantStock": [
+            {
+              "quantity": 60,
+              "size": "S"
+            },
+            {
+              "quantity": 60,
+              "size": "M"
+            },
+            {
+              "quantity": 60,
+              "size": "L"
+            }
           ]
         }
       ]
@@ -431,7 +693,10 @@
         {
           "id": "c4_f1",
           "name": "Sneakers",
-          "description": "Sporty and comfortable sneakers.",
+          "description": {
+            "ru": "Спортивные и удобные кроссовки.",
+            "uz": "Sportbop va qulay krossovkalar."
+          },
           "price": 80,
           "quantity": 90,
           "discount": 10,
@@ -458,12 +723,45 @@
               "date": "2023-09-01",
               "rating": 5
             }
+          ],
+          "variantStock": [
+            {
+              "quantity": 13,
+              "size": "38"
+            },
+            {
+              "quantity": 13,
+              "size": "39"
+            },
+            {
+              "quantity": 13,
+              "size": "40"
+            },
+            {
+              "quantity": 13,
+              "size": "41"
+            },
+            {
+              "quantity": 13,
+              "size": "42"
+            },
+            {
+              "quantity": 13,
+              "size": "43"
+            },
+            {
+              "quantity": 12,
+              "size": "44"
+            }
           ]
         },
         {
           "id": "c4_f2",
           "name": "Sandals",
-          "description": "Lightweight summer sandals.",
+          "description": {
+            "ru": "Лёгкие летние сандалии.",
+            "uz": "Yengil yozgi sandallar."
+          },
           "price": 40,
           "quantity": 110,
           "discount": null,
@@ -488,6 +786,28 @@
               "date": "2023-07-15",
               "rating": 4
             }
+          ],
+          "variantStock": [
+            {
+              "quantity": 22,
+              "size": "36"
+            },
+            {
+              "quantity": 22,
+              "size": "37"
+            },
+            {
+              "quantity": 22,
+              "size": "38"
+            },
+            {
+              "quantity": 22,
+              "size": "39"
+            },
+            {
+              "quantity": 22,
+              "size": "40"
+            }
           ]
         }
       ]
@@ -500,7 +820,10 @@
         {
           "id": "s1_b1",
           "name": "Standard Barbell Set",
-          "description": "Includes barbell and weight plates.",
+          "description": {
+            "ru": "В комплекте штанга и блины.",
+            "uz": "To'plamda shtanga va disklari bor."
+          },
           "price": 150,
           "quantity": 25,
           "discount": null,
@@ -523,7 +846,10 @@
         {
           "id": "s1_b2",
           "name": "Olympic Barbell",
-          "description": "High-quality Olympic barbell for serious lifters.",
+          "description": {
+            "ru": "Качественная олимпийская штанга для серьёзных тренировок.",
+            "uz": "Jiddiy mashg'ulotlar uchun sifatli olimpiya shtangasi."
+          },
           "price": 200,
           "quantity": 15,
           "discount": 10,
@@ -551,7 +877,10 @@
         {
           "id": "s2_t1",
           "name": "Folding Treadmill",
-          "description": "Compact and easy to store treadmill.",
+          "description": {
+            "ru": "Компактная беговая дорожка, легко хранить.",
+            "uz": "Ixcham, saqlash oson yugurish yo'lakchasi."
+          },
           "price": 500,
           "quantity": 10,
           "discount": null,
@@ -574,7 +903,10 @@
         {
           "id": "s2_t2",
           "name": "Professional Treadmill",
-          "description": "Durable treadmill with multiple programs.",
+          "description": {
+            "ru": "Надёжная беговая дорожка с несколькими программами.",
+            "uz": "Bir nechta dasturga ega mustahkam yugurish yo'lakchasi."
+          },
           "price": 1200,
           "quantity": 5,
           "discount": null,
@@ -602,7 +934,10 @@
         {
           "id": "s3_j1",
           "name": "Speed Jump Rope",
-          "description": "Adjustable jump rope for speed training.",
+          "description": {
+            "ru": "Регулируемая скакалка для скоростных тренировок.",
+            "uz": "Tezlik mashqlari uchun sozlanadigan sakragich."
+          },
           "price": 15,
           "quantity": 200,
           "discount": null,
@@ -625,7 +960,10 @@
         {
           "id": "s3_j2",
           "name": "Weighted Jump Rope",
-          "description": "Heavy jump rope for strength and endurance.",
+          "description": {
+            "ru": "Тяжёлая скакалка для силы и выносливости.",
+            "uz": "Kuch va chidamlilik uchun og'ir sakragich."
+          },
           "price": 25,
           "quantity": 100,
           "discount": null,
@@ -655,7 +993,10 @@
         {
           "id": "b1_p1",
           "name": "Clean Code",
-          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "description": {
+            "ru": "Справочник по agile-мастерству разработки от Роберта Мартина.",
+            "uz": "Robert Martinning agile dasturchilik bo'yicha qo'llanmasi."
+          },
           "price": 40,
           "quantity": 60,
           "discount": null,
@@ -684,7 +1025,10 @@
         {
           "id": "b1_p2",
           "name": "Clean Code",
-          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "description": {
+            "ru": "Справочник по agile-мастерству разработки от Роберта Мартина.",
+            "uz": "Robert Martinning agile dasturchilik bo'yicha qo'llanmasi."
+          },
           "price": 40,
           "quantity": 60,
           "discount": null,
@@ -713,7 +1057,10 @@
         {
           "id": "b1_p3",
           "name": "Clean Code",
-          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "description": {
+            "ru": "Справочник по agile-мастерству разработки от Роберта Мартина.",
+            "uz": "Robert Martinning agile dasturchilik bo'yicha qo'llanmasi."
+          },
           "price": 40,
           "quantity": 60,
           "discount": null,
@@ -742,7 +1089,10 @@
         {
           "id": "b1_p4",
           "name": "Clean Code",
-          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "description": {
+            "ru": "Справочник по agile-мастерству разработки от Роберта Мартина.",
+            "uz": "Robert Martinning agile dasturchilik bo'yicha qo'llanmasi."
+          },
           "price": 40,
           "quantity": 60,
           "discount": null,
@@ -771,7 +1121,10 @@
         {
           "id": "b1_p5",
           "name": "Clean Code",
-          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "description": {
+            "ru": "Справочник по agile-мастерству разработки от Роберта Мартина.",
+            "uz": "Robert Martinning agile dasturchilik bo'yicha qo'llanmasi."
+          },
           "price": 40,
           "quantity": 60,
           "discount": null,
@@ -800,7 +1153,10 @@
         {
           "id": "b1_p6",
           "name": "Clean Code",
-          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "description": {
+            "ru": "Справочник по agile-мастерству разработки от Роберта Мартина.",
+            "uz": "Robert Martinning agile dasturchilik bo'yicha qo'llanmasi."
+          },
           "price": 40,
           "quantity": 60,
           "discount": null,
@@ -829,7 +1185,10 @@
         {
           "id": "b1_p7",
           "name": "Clean Code",
-          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "description": {
+            "ru": "Справочник по agile-мастерству разработки от Роберта Мартина.",
+            "uz": "Robert Martinning agile dasturchilik bo'yicha qo'llanmasi."
+          },
           "price": 40,
           "quantity": 60,
           "discount": null,
@@ -858,7 +1217,10 @@
         {
           "id": "b1_p8",
           "name": "Clean Code",
-          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "description": {
+            "ru": "Справочник по agile-мастерству разработки от Роберта Мартина.",
+            "uz": "Robert Martinning agile dasturchilik bo'yicha qo'llanmasi."
+          },
           "price": 40,
           "quantity": 60,
           "discount": null,
@@ -887,7 +1249,10 @@
         {
           "id": "b1_p9",
           "name": "Clean Code",
-          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "description": {
+            "ru": "Справочник по agile-мастерству разработки от Роберта Мартина.",
+            "uz": "Robert Martinning agile dasturchilik bo'yicha qo'llanmasi."
+          },
           "price": 40,
           "quantity": 60,
           "discount": null,
@@ -916,7 +1281,10 @@
         {
           "id": "b1_p10",
           "name": "Clean Code",
-          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "description": {
+            "ru": "Справочник по agile-мастерству разработки от Роберта Мартина.",
+            "uz": "Robert Martinning agile dasturchilik bo'yicha qo'llanmasi."
+          },
           "price": 40,
           "quantity": 60,
           "discount": null,
@@ -945,7 +1313,10 @@
         {
           "id": "b1_p11",
           "name": "Clean Code",
-          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "description": {
+            "ru": "Справочник по agile-мастерству разработки от Роберта Мартина.",
+            "uz": "Robert Martinning agile dasturchilik bo'yicha qo'llanmasi."
+          },
           "price": 40,
           "quantity": 60,
           "discount": null,
@@ -974,7 +1345,10 @@
         {
           "id": "b1_p12",
           "name": "Clean Code",
-          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "description": {
+            "ru": "Справочник по agile-мастерству разработки от Роберта Мартина.",
+            "uz": "Robert Martinning agile dasturchilik bo'yicha qo'llanmasi."
+          },
           "price": 40,
           "quantity": 60,
           "discount": null,
@@ -1003,7 +1377,10 @@
         {
           "id": "b1_p13",
           "name": "Clean Code",
-          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "description": {
+            "ru": "Справочник по agile-мастерству разработки от Роберта Мартина.",
+            "uz": "Robert Martinning agile dasturchilik bo'yicha qo'llanmasi."
+          },
           "price": 40,
           "quantity": 60,
           "discount": null,
@@ -1032,7 +1409,10 @@
         {
           "id": "b1_p14",
           "name": "Clean Code",
-          "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+          "description": {
+            "ru": "Справочник по agile-мастерству разработки от Роберта Мартина.",
+            "uz": "Robert Martinning agile dasturchilik bo'yicha qo'llanmasi."
+          },
           "price": 40,
           "quantity": 60,
           "discount": null,
@@ -1061,7 +1441,10 @@
         {
           "id": "b1_p15",
           "name": "The Pragmatic Programmer",
-          "description": "Your Journey To Mastery by David Thomas and Andrew Hunt.",
+          "description": {
+            "ru": "Ваш путь к мастерству от Дэвида Томаса и Эндрю Ханта.",
+            "uz": "David Thomas va Andrew Huntdan ustalik sari yo'l."
+          },
           "price": 35,
           "quantity": 80,
           "discount": 5,
@@ -1089,7 +1472,10 @@
         {
           "id": "b2_s1",
           "name": "Cosmos",
-          "description": "Carl Sagan's classic exploration of the universe.",
+          "description": {
+            "ru": "Классическое исследование Вселенной от Карла Сагана.",
+            "uz": "Karl Saganning koinot haqidagi klassik tadqiqoti."
+          },
           "price": 25,
           "quantity": 100,
           "discount": null,
@@ -1112,7 +1498,10 @@
         {
           "id": "b2_s2",
           "name": "Sapiens: A Brief History of Humankind",
-          "description": "Yuval Noah Harari's groundbreaking book on human history.",
+          "description": {
+            "ru": "Прорывная книга Юваля Ноя Харари об истории человечества.",
+            "uz": "Yuval Noah Harariyning insoniyat tarixi haqidagi inqilobiy kitobi."
+          },
           "price": 30,
           "quantity": 90,
           "discount": null,
@@ -1140,7 +1529,10 @@
         {
           "id": "b3_s1",
           "name": "Cosmos",
-          "description": "Carl Sagan's classic exploration of the universe.",
+          "description": {
+            "ru": "Классическое исследование Вселенной от Карла Сагана.",
+            "uz": "Karl Saganning koinot haqidagi klassik tadqiqoti."
+          },
           "price": 25,
           "quantity": 100,
           "discount": null,
@@ -1163,7 +1555,10 @@
         {
           "id": "b3_s2",
           "name": "Sapiens: A Brief History of Humankind",
-          "description": "Yuval Noah Harari's groundbreaking book on human history.",
+          "description": {
+            "ru": "Прорывная книга Юваля Ноя Харари об истории человечества.",
+            "uz": "Yuval Noah Harariyning insoniyat tarixi haqidagi inqilobiy kitobi."
+          },
           "price": 30,
           "quantity": 90,
           "discount": null,
